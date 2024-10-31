@@ -19,6 +19,7 @@ tags:   [Cheatsheets, Tools, Active-Directory]
   - [Checking Credentials & Password Spraying](#checking-credentials--password-spraying-1)
   - [Dumping Credentials](#dumping-credentials-1)
   - [Command Execution](#command-execution-1)
+
 # Getting NetExec and CrackMapExec
 ```shell
 sudo apt install netexec
