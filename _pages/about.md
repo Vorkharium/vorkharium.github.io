@@ -19,7 +19,7 @@ image: '/images/01.jpg'
 
 <div class="gallery-box" style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
   <img src="{{site.baseurl}}/images/CPTS.png" alt="HTB CPTS Certification" style="width: 200px; border-radius: 8px;">
-  <img src="{{site.baseurl}}/images/PNPT.png" alt="PNPT Certification" style="width: 180px; border-radius: 8px;">
+  <img src="{{site.baseurl}}/images/PNPT.png" alt="PNPT Certification" style="height: 180px; border-radius: 8px;">
 </div>
 
 <div style="margin-top: 30px;">
