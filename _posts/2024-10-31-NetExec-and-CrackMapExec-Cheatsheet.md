@@ -73,7 +73,18 @@ nxc smb 172.16.150.20 -u john -p 'Password123!' --sessions
 
 # Disk
 nxc smb 172.16.150.20 -u john -p 'Password123!' --disks
-```
+
+# RDP
+nxc rdp 172.16.150.20 -u john -p 'Password123!'
+nxc rdp 172.16.150.20 -u john -p 'Password123!' --local-auth
+
+# WinRM
+nxc winrm 172.16.150.20 -u john -p 'Password123!'
+nxc winrm 172.16.150.20 -u john -p 'Password123!' --local-auth
+
+# MSSQL
+nxc mssql 172.16.150.20 -u john -p 'Password123!'
+nxc mssql 172.16.150.20 -u john -p 'Password123!' --local-auth
 
 ## Checking Credentials & Password Spraying
 Important Note: Always check Domain Password Policy before Password Spraying to prevent Account Lockouts.
