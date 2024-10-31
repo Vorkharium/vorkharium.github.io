@@ -14,9 +14,9 @@ menu-settings:
     - title: 'About Me'
       url: '/about/'
     - title: 'CTF Write-ups'
-      url: '/styleguide/'
+      url: '/write-ups/'
     - title: 'Cheatsheets'
-      url: '/styleguide/'
+      url: '/cheatsheets/'
     - title: 'Contact Me'
       url: '/contact/'
 
@@ -32,7 +32,7 @@ author:
 # Hero Settings
 hero:
   title: Vorkharium
-  description: Ethical Hacking | Penetration Testing | Red Teaming | CTFs
+  description: Ethical Hacking | Penetration Testing | Red Teaming | CTF Write-ups
   image: '/images/01.jpg'
 
 
