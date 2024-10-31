@@ -8,7 +8,6 @@ tags:   [Cheatsheets, Tools, Pivoting]
 ---
 # Table of Contents
 - [Getting Ligolo-Ng](#getting-ligolo-ng)
-- [Alternative with Package Installer](#alternative-with-package-installer)
 - [Basic Pivot](#basic-pivot)
 - [File Transfer Example with Single Pivot](#file-transfer-example-with-single-pivot)
 - [Reverse Shell Example with Single Pivot](#reverse-shell-example-with-single-pivot)
