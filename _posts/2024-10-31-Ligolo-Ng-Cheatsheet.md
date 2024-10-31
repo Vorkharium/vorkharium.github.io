@@ -6,6 +6,14 @@ date:   2024-10-31 09:00:00 +0300
 image:  '/images/21.jpg'
 tags:   [Cheatsheets, Tools, Pivoting]
 ---
+# Table of Contents
+- [Getting Ligolo-Ng](#getting-ligolo-ng)
+- [Alternative with Package Installer](#alternative-with-package-installer)
+- [Basic Pivot](#basic-pivot)
+- [File Transfer Example with Single Pivot](#file-transfer-example-with-single-pivot)
+- [Reverse Shell Example with Single Pivot](#reverse-shell-example-with-single-pivot)
+- [Easy Double Pivot to Access a Second Internal Network](#easy-double-pivot-to-access-a-second-internal-network)
+
 # Getting Ligolo-Ng
 Important Note: Make sure you are always using the same version of Proxy and Agent (For example, both Proxy and Agent must be 0.7.2).
 
