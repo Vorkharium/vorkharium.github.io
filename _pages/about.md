@@ -19,7 +19,7 @@ image: '/images/01.jpg'
 </div>
 
 <div style="margin-top: 40px;">
-  <h3 style="color: #00d9ff;">Professional Certifications</h3>
+  <h3 style="color: #ffffff;">Professional Certifications</h3>
   <ul style="list-style: none; padding: 0; margin: 0;">
     <li style="margin: 5px 0; font-weight: bold;">🔹 HTB Certified Penetration Testing Specialist (CPTS)</li>
     <li style="margin: 5px 0; font-weight: bold;">🔹 TCM Practical Network Penetration Tester (PNPT)</li>
@@ -27,7 +27,7 @@ image: '/images/01.jpg'
 </div>
 
 <div style="margin-top: 30px;">
-  <h3 style="color: #00d9ff;">CTF Achievements</h3>
+  <h3 style="color: #ffffff;">CTF Achievements</h3>
   <ul style="list-style: none; padding: 0; margin: 0;">
     <li style="margin: 5px 0;">🌐 Over <strong>90 system compromises</strong> in Hack The Box Labs</li>
     <li style="margin: 5px 0;">🌐 More than <strong>50 system compromises</strong> in OffSec Playgrounds</li>
