@@ -1,7 +1,7 @@
 ---
 layout: page
-title: About Me
-permalink: /about/
+title: CTF Write-ups
+permalink: /write-ups/
 image: '/images/01.jpg'
 ---
 

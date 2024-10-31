@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About
+title: Cheatsheets
 permalink: /about/
 image: '/images/01.jpg'
 ---
