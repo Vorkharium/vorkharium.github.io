@@ -19,7 +19,7 @@ I hold industry certifications, such as:
 - TCM Practical Network Penetration Tester (PNPT)
 
 My extensive experience in Capture The Flag (CTF) competitions includes:
-- 90+ System Owns in Hack The Box Labs.
-- 50+ System Owns in OffSec Playgrounds.
-- Achieved HTB Elite Hacker rank (Highest Placement: 169th Worldwide (Top 0.1%) | 17th in Germany)
+- Over 90 system compromises in Hack The Box Labs.
+- More than 50 system compromises in OffSec Playgrounds.
+- Achieved HTB Elite Hacker rank (Highest Placement: 169th Worldwide (Top 0.1%) | 17th in Germany).
 <hr>
