@@ -10,7 +10,7 @@ tags:   [Cheatsheets, Tools, Active-Directory]
 ```shell
 sudo apt install netexec
 ```
-CrackMapExec is by default installed in Kali Linux. However, we can use the following command of an installation is needed:
+CrackMapExec comes pre-installed on Kali Linux by default. However, if installation is required, the following command can be used:
 ```shell
 sudo apt install crackmapexec
 ```
