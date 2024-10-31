@@ -153,7 +153,7 @@ nxc smb 172.16.150.20 -u john -p 'Password123!' -x "whoami"
 
 # MSSQL
 nxc mssql 172.16.150.20 -u john -p 'Password123!' -x "whoami"
-nxc mssql 172.16.150.20 -u john -p 'Password123!' -x "Enter PowerShell #3 (Base64) Reverse Shell from revshells.com here"
+nxc mssql 172.16.150.20 -u john -p 'Password123!' -x "Enter PowerShell#3 (Base64) Reverse Shell from revshells.com here"
 ```
 
 ## Testing CVEs
