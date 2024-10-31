@@ -36,7 +36,7 @@ The IP address 172.16.150.20 will be used as an example for the Domain Controlle
 ## Enumeration
 ```shell
 # Enumerating Network (Find active reachable hosts)
-nxc smb
+nxc smb 172.16.150.0/24
 
 # Null Session (Access without Credentials)
 nxc smb 172.16.150.20 -u '' -p ''
@@ -173,7 +173,7 @@ As of 2024, CrackMapExec is deprecated, and I primarily use NetExec. However, th
 ## Enumeration
 ```shell
 # Enumerating Network (Find active reachable hosts)
-crackmapexec smb
+crackmapexec smb 172.16.150.0/24
 
 # Null Session (Access without Credentials)
 crackmapexec smb 172.16.150.20 -u '' -p ''
