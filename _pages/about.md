@@ -4,11 +4,6 @@ title: About Me
 permalink: /about/
 image: '/images/01.jpg'
 ---
-<div class="gallery-box" style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
-  <img src="{{site.baseurl}}/images/CPTS.png" alt="HTB CPTS Certification" style="width: 200px; border-radius: 8px;">
-  <img src="{{site.baseurl}}/images/PNPT.png" alt="PNPT Certification" style="width: 200px; border-radius: 8px;">
-</div>
-
 <div style="text-align: center; margin-top: 30px;">
   <p>Hi, my name is Raúl, also known as <strong>Vorkharium</strong>.</p>
   <p>I am a passionate Ethical Hacker specializing in Penetration Testing.</p>
@@ -20,6 +15,11 @@ image: '/images/01.jpg'
     <li style="margin: 5px 0; font-weight: bold;">🔹 HTB Certified Penetration Testing Specialist (CPTS)</li>
     <li style="margin: 5px 0; font-weight: bold;">🔹 TCM Practical Network Penetration Tester (PNPT)</li>
   </ul>
+</div>
+
+<div class="gallery-box" style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
+  <img src="{{site.baseurl}}/images/CPTS.png" alt="HTB CPTS Certification" style="width: 200px; border-radius: 8px;">
+  <img src="{{site.baseurl}}/images/PNPT.png" alt="PNPT Certification" style="width: 200px; border-radius: 8px;">
 </div>
 
 <div style="margin-top: 30px;">
