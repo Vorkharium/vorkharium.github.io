@@ -7,8 +7,8 @@ image:  '/images/21.jpg'
 tags:   [Cheatsheets, Tools, Pivoting]
 ---
 # Installing Ligolo-Ng
-Important Note
-Make sure you are always using the same version of Proxy and Agent.
+Important Note: Make sure you are always using the same version of Proxy and Agent.
+
 ## Download the binaries manually (recommended)
 ### PROXY (Run this on Kali)
 Linux 64-bits Proxy
