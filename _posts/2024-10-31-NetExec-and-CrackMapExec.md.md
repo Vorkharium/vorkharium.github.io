@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Cheatsheet - NetExec and CrackMapExec
+title:  NetExec and CrackMapExec
 description: Using NetExec & CrackMapExec in Active Directory Environments
 date:   2024-10-31 15:01:35 +0300
 image:  '/images/20.jpg'
