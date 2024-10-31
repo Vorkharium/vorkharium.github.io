@@ -15,10 +15,10 @@ CrackMapExec comes pre-installed on Kali Linux by default. However, if installat
 sudo apt install crackmapexec
 ```
 
-`Important Note`: Sometimes it's worth using both tools to discard false negatives and false positives.
+Important Note: Sometimes it's worth using both tools to discard false negatives and false positives.
 
 # NetExec Commands
-The IP address `172.16.150.20` will be used as an example for the Domain Controller (DC01) IP address.
+The IP address 172.16.150.20 will be used as an example for the Domain Controller (DC01) IP address.
 ## Enumeration
 ```shell
 # Enumerating Network (Find active reachable hosts)
@@ -62,7 +62,7 @@ nxc smb 172.16.150.20 -u john -p 'Password123!' --disks
 ```
 
 ## Checking Credentials & Password Spraying
-`Important Note`: Always check Domain Password Policy before Password Spraying to prevent Account Lockouts.
+Important Note: Always check Domain Password Policy before Password Spraying to prevent Account Lockouts.
 ```shell
 # Check Credentials - with Password
 nxc smb 172.16.150.20 -u john -p 'Password123!'
