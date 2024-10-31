@@ -23,8 +23,10 @@ For more information about Ligolo-Ng, visit its official [GitHub Repository](htt
 # Alternative with Package Installer
 ```shell
 sudo apt install ligolo-ng
-# Locate and copy the needed files (Example with agent file)
+# Locate, copy the needed files and run them (Example with agent file)
 sudo updatedb -v
 locate agent
 sudo cp /path/to/ligolo/agent .
+sudo chmod +x agent
+./agent
 ```
