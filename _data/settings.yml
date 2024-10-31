@@ -13,10 +13,14 @@ menu-settings:
       url: '/'
     - title: 'About Me'
       url: '/about/'
+    - title: 'Cheatsheets'
+      url: '/styleguide/'
+    - title: 'HTB Write-ups'
+      url: '/styleguide/'
+    - title: 'CTF Challenges'
+      url: '/styleguide/'
     - title: 'Contact Me'
       url: '/contact/'
-    - title: 'Style Guide'
-      url: '/styleguide/'
 
 
 #-------------------------------
