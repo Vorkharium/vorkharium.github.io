@@ -1,6 +1,6 @@
 #-------------------------------
 # Site Settings
-title: Norlin
+title: Vorkharium
 logo: # You can add own logo. For example '/images/logo.png'.
 description: Norlin – A Beautiful Dark Blog Theme for Jekyll.
 
@@ -29,8 +29,8 @@ author:
 #-------------------------------
 # Hero Settings
 hero:
-  title: Robert Wilson
-  description: Thoughts, stories and ideas.
+  title: Vorkharium
+  description: Driven by curiosity, powered by passion.
   image: '/images/01.jpg'
 
 
