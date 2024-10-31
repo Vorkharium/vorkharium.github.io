@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Cheatsheets
-permalink: /about/
+permalink: /cheatsheets/
 image: '/images/01.jpg'
 ---
 
