@@ -6,6 +6,19 @@ date:   2024-10-31 01:00:00 +0300
 image:  '/images/20.jpg'
 tags:   [Cheatsheets, Tools, Active-Directory]
 ---
+# Table of Contents
+- [Getting NetExec and CrackMapExec](#getting-netexec-and-crackmapexec)
+- [NetExec Commands](#netexec-commands)
+  - [Enumeration](#enumeration)
+  - [Checking Credentials & Password Spraying](#checking-credentials--password-spraying)
+  - [Dumping Credentials](#dumping-credentials)
+  - [Command Execution](#command-execution)
+  - [Testing CVEs](#testing-cves)
+- [CrackMapExec Commands](#crackmapexec-commands)
+  - [Enumeration](#enumeration-1)
+  - [Checking Credentials & Password Spraying](#checking-credentials--password-spraying-1)
+  - [Dumping Credentials](#dumping-credentials-1)
+  - [Command Execution](#command-execution-1)
 # Getting NetExec and CrackMapExec
 ```shell
 sudo apt install netexec
