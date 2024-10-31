@@ -4,10 +4,6 @@ title: About Me
 permalink: /about/
 image: '/images/01.jpg'
 ---
-<div style="text-align: center; margin-top: 20px;">
-  <h2>About Me</h2>
-</div>
-
 <div class="gallery-box" style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
   <img src="{{site.baseurl}}/images/CPTS.png" alt="HTB CPTS Certification" style="width: 200px; border-radius: 8px;">
   <img src="{{site.baseurl}}/images/PNPT.png" alt="PNPT Certification" style="width: 200px; border-radius: 8px;">
