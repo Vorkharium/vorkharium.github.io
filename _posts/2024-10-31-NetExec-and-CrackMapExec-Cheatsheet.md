@@ -6,6 +6,8 @@ date:   2024-10-31 01:00:00 +0300
 image:  '/images/20.jpg'
 tags:   [Cheatsheets, Tools, Active-Directory, Active-Directory-Enumeration, SMB, Credential-Dumping]
 ---
+<span style="font-size: smaller;">**Disclaimer**: This cheatsheet is regularly updated to ensure accuracy; however, due to updates and evolving tools, some commands may no longer work or may have alternative methods of running them. Please verify commands as needed and consult official documentation or additional resources if a command does not perform as expected.</span>
+
 # Table of Contents
 - [Getting NetExec and CrackMapExec](#getting-netexec-and-crackmapexec)
 - [NetExec Commands](#netexec-commands)

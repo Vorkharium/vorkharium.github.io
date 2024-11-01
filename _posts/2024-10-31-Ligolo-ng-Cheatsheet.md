@@ -6,6 +6,8 @@ date:   2024-10-31 09:00:00 +0300
 image:  '/images/21.jpg'
 tags:   [Cheatsheets, Tools, Pivoting]
 ---
+<span style="font-size: smaller;">**Disclaimer**: This cheatsheet is regularly updated to ensure accuracy; however, due to updates and evolving tools, some commands may no longer work or may have alternative methods of running them. Please verify commands as needed and consult official documentation or additional resources if a command does not perform as expected.</span>
+
 # Table of Contents
 - [Getting Ligolo-ng](#getting-ligolo-ng)
 - [Basic Pivot](#basic-pivot)
