@@ -27,6 +27,8 @@ tags:   [Cheatsheets, Tools, Active-Directory, Active-Directory-Enumeration, SMB
 
 ### Local Credential Hunting
 
+### Runas and RunasCs.exe
+
 ### BloodHound, SharpHound.exe, bloodhound-python
 
 ### PowerView.ps1
