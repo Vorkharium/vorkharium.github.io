@@ -122,16 +122,32 @@ whoami /groups
 Get-ADGroup -Filter *
 Get-ADGroup -Filter *
 Get-ADGroupMember -Identity "Administrators"
-Get-LocalGroup
-Get-LocalGroupMember -Group "Administrators"
 Get-WmiObject -Class Win32_Group | Select-Object Name, Domain
 Get-WmiObject -Class Win32_Group -ComputerName 172.16.150.10
+
+# PowerShell Local Groups
+Get-LocalGroup
+Get-LocalGroupMember -Group "Administrators"
 ```
 ### SMB Shares Enumeration and Access
 ```shell
+# Enumeration
+# NetExec and CrackMapExec
+nxc smb 172.16.150.10 -u john -p 'Password123!' --shares
+crackmapexec smb 172.16.150.10 -u john -p 'Password123!' --shares
+
+# CMD and PowerShell
+net view \\172.16.150.10
+
+# enum4linux
+enum4linux -S 172.16.150.10
+
+# Connection
+smbclient //172.16.150.10/Public -U john
+impacket-smbclient vorkharium.com/john:'Password123!'@172.16.150.10
 
 ```
-### RPC Enumeration
+### RPC Enumeration and Access
 ```shell
 
 ```
