@@ -33,7 +33,11 @@ tags:   [Cheatsheets, Tools, Active-Directory, Active-Directory-Enumeration, SMB
 
 ### PowerView.ps1
 
-### Impacket PsExec, WmiExec and SMBExec to gain Shell Access
+### Impacket PsExec, WmiExec and SMBExec - SMB Shell Access with Password or Pass-the-Hash
+
+### Evil-WinRM - Access WinRM with Password or Pass-the-Hash
+
+### xfreerdp - Access RDP with Password or Pass-the-Hash
 
 ### Kerberoasting with Impacket
 
