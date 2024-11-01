@@ -41,6 +41,9 @@ enumdomusers
 enumdomgroups
 queryuser johnwick
 
+# Command to get users and put them in users_rpc.txt
+rpcclient -U "" 172.16.150.10 -N -c "enumdomusers" | grep -oP '\[.*?\]' | grep "0x" -v | tr -d '[]' > users_rpc.txt
+
 # impacket-rpcdump
 impacket-rpcdump -port 135 vorkharium.com/'':''@172.16.150.10
 
@@ -51,19 +54,18 @@ enum4linux -U 172.16.150.10
 ### Domain Password Policy Enumeration
 ```shell
 # NetExec and CrackMapExec
-nxc smb 172.16.150.10 -u 'vivi' -p 'blackmagevillage' --pass-pol
-crackmapexec smb 172.16.150.10 -u 'tidus' -p 'zanarkand' --pass-pol
+nxc smb 172.16.150.10 -u 'vivi' -p 'Thungada2000' --pass-pol
+crackmapexec smb 172.16.150.10 -u 'tidus' -p 'ToZanarkand2001' --pass-pol
 
 # enum4linux
 enum4linux -U 172.16.150.10 # Without credentials
-enum4linux -u keanu -p cyberpunk2077 -U 172.16.150.10
+enum4linux -u john -p Cyberpunk2077 -U 172.16.150.10
 
-# From CMD CLI
+# CMD and PowerShell
 net accounts
-net user keanu /domain
+net user john /domain
 
-# From PowerShell CLI
-net accounts
+# PowerShell (Some require AD Module to be installed)
 Get-ADDefaultDomainPasswordPolicy
 (Get-ADDomain).DefaultPasswordPolicy
 Get-WmiObject -Class Win32_NetworkLoginProfile | Select-Object -Property Name, PasswordExpirationDate
@@ -71,15 +73,38 @@ Get-WmiObject -Class Win32_NetworkLoginProfile | Select-Object -Property Name, P
 ### Domain Users Enumeration
 ```shell
 # With impacket-GetADUsers
-impacket-GetADUsers -all -dc-ip 172.16.150.10 vorkharium.com/johnwick:'daisythebeagle'
+impacket-GetADUsers -all -dc-ip 172.16.150.10 vorkharium.com/john:'Password123!'
 
 # My custom way of creating a list of domain_users.txt list with one command
-impacket-GetADUsers -all -dc-ip 172.16.150.10 vorkharium.com/johnwick:'daisythebeagle' | awk 'NR>3 {print $1}' >> domain_users.txt
+impacket-GetADUsers -all -dc-ip 172.16.150.10 vorkharium.com/john:'Password123!' | awk 'NR>3 {print $1}' >> domain_users.txt
 
 ```
 ### Groups Enumeration
 ```shell
+# NetExec and CrackMapExec
+nxc smb 172.16.150.10 -u john -p 'Password123!' --groups
+crackmapexec smb 172.16.150.10 -u john -p 'Password123!' --groups
 
+# CMD and PowerShell
+# Domain groups
+net group /domain
+net group "Domain Admins" /domain # Specifying a domain group
+
+# Local groups
+net localgroup
+net localgroup Administrators
+
+# Current User groups
+whoami /groups
+
+# PowerShell (Some require AD Module to be installed)
+Get-ADGroup -Filter *
+Get-ADGroup -Filter *
+Get-ADGroupMember -Identity "Administrators"
+Get-LocalGroup
+Get-LocalGroupMember -Group "Administrators"
+Get-WmiObject -Class Win32_Group | Select-Object Name, Domain
+Get-WmiObject -Class Win32_Group -ComputerName 172.16.150.10
 ```
 ### SMB Shares Enumeration and Access
 ```shell
