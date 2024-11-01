@@ -7,9 +7,9 @@ image:  '/images/10000.jpg'
 tags:   [Cheatsheets, Tools, Active-Directory, Active-Directory-Enumeration, Kerberoasting, AS-REP-Roasting, DCSync, Silver-Ticket, Credential-Dumping, Credential-Hunting]
 ---
 
-# Uncredentialed Enumeration and Attacks
+### Uncredentialed Enumeration and Attacks
 
-# Enumerate Domain Password Policy
+#### Enumerate Domain Password Policy
 
 # Enumerate Domain Users
 
