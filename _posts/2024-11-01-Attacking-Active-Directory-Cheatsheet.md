@@ -8,7 +8,7 @@ tags:   [Cheatsheets, Tools, Active-Directory, Active-Directory-Enumeration, SMB
 ---
 # Table of Contents
 
-- [Identify the Domain Controller](#identify-the-domain-controller)
+- [Identifying the Domain Controller](#identifying-the-domain-controller)
 - [Uncredentialed Enumeration and Attacks](#uncredentialed-enumeration-and-attacks)
 - [Domain Password Policy Enumeration](#domain-password-policy-enumeration)
 - [Domain and Local User Enumeration](#domain-and-local-user-enumeration)
@@ -33,7 +33,7 @@ tags:   [Cheatsheets, Tools, Active-Directory, Active-Directory-Enumeration, SMB
 - [ACLs](#acls)
 - [MSSQL to gain Shell Access](#mssql-to-gain-shell-access)
 
-### Identify the Domain Controller
+### Identifying the Domain Controller
 ```shell
 # Using NetExec and CrackMapExec (Examine results for a host like DC01, for example)
 nxc smb 172.16.150.0/24
