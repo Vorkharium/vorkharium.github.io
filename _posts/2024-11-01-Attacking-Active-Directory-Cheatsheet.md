@@ -9,40 +9,40 @@ tags:   [Cheatsheets, Tools, Active-Directory, Active-Directory-Enumeration, Ker
 
 ### Uncredentialed Enumeration and Attacks
 
-#### Enumerate Domain Password Policy
+### Enumerate Domain Password Policy
 
-# Enumerate Domain Users
+### Enumerate Domain Users
 
-# Enumerate Groups
+### Enumerate Groups
 
-# Enumerate SMB Shares
+### Enumerate SMB Shares
 
-# GPO cPassword
+### GPO cPassword
 
-# Password Spraying
+### Password Spraying
 
-# Local PowerShell Enumeration
+### Local PowerShell Enumeration
 
-# Local Credential Hunting
+### Local Credential Hunting
 
-# BloodHound, SharpHound.exe, bloodhound-python
+### BloodHound, SharpHound.exe, bloodhound-python
 
-# PowerView.ps1
+### PowerView.ps1
 
-# Impacket PsExec, WmiExec and SMBExec to gain Shell Access
+### Impacket PsExec, WmiExec and SMBExec to gain Shell Access
 
-# Kerberoasting with Impacket
+### Kerberoasting with Impacket
 
-# Kerberoasting with Rubeus.exe
+### Kerberoasting with Rubeus.exe
 
-# AS-REP Roasting with Impacket
+### AS-REP Roasting with Impacket
 
-# Remote Credential Dumping
+### Remote Credential Dumping
 
-# Local Credential Dumping
+### Local Credential Dumping
 
-# Silver Ticket
+### Silver Ticket
 
-# ACLs
+### ACLs
 
-# MSSQL to gain Shell
+### MSSQL to gain Shell
