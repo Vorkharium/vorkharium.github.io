@@ -543,13 +543,13 @@ samdump2 system sam
 ```
 ### Silver Ticket
 ```shell
-
+Comming soon.
 ```
 ### ACLs
 ```shell
-
+Comming soon.
 ```
 ### MSSQL to gain Shell
 ```shell
-
+Comming soon.
 ```
