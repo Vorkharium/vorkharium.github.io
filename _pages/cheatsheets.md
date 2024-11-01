@@ -26,7 +26,7 @@ image: '/images/01.jpg'
     <a href="/Attacking-Active-Directory-Cheatsheet">
         <img src="/images/10000.jpg" alt="Attacking Active Directory Cheatsheet" style="width: 360px; height: auto; border-radius: 15px;">
         <div style="position: absolute; bottom: 10px; left: 10px; color: white; background-color: rgba(0, 0, 0, 0.6); padding: 5px; border-radius: 5px;">
-            Ligolo-ng Cheatsheet
+            Attacking Active Directory Cheatsheet
         </div>
     </a>
 </div>
