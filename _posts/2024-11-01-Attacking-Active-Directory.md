@@ -446,6 +446,9 @@ hashcat -m 18200 -a 0 -o cracked_jane_hash.txt jane_hash.txt /usr/share/wordlist
 sudo john --wordlist=/usr/share/wordlists/rockyou.txt jane_hash.txt
 sudo john jane_hash.txt --show
 ```
+### DCSync with Impacket
+```shell
+```
 ### Remote Credential Dumping with Impacket and NetExec
 ```shell
 # Using Impacket
