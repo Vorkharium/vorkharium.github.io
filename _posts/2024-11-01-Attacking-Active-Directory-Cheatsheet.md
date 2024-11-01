@@ -315,8 +315,7 @@ runas /netonly /user:vorkharium.com\john cmd
 .\SharpHound.exe --DisableCertVerification --DisableSigning --Domain vorkharium.com --ldapusername john --ldappassword 'Password123!'
 
 # bloodhound-python
-```shell
-# Collect information with valid user "jim"
+# Collect information with valid user "john"
 bloodhound-python -d vorkharium.com -u john -p 'Password123!' -ns 172.16.150.10 -c all --dns-tcp
 
 # Starting BloodHound
