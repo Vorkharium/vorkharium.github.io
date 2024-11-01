@@ -72,11 +72,32 @@ Get-WmiObject -Class Win32_NetworkLoginProfile | Select-Object -Property Name, P
 ```
 ### Domain Users Enumeration
 ```shell
+# NetExec and CrackMapExec
+nxc smb 172.16.150.10 -u john -p 'Password123!' --users
+crackmapexec smb 172.16.150.10 -u john -p 'Password123!' --users
+
 # With impacket-GetADUsers
 impacket-GetADUsers -all -dc-ip 172.16.150.10 vorkharium.com/john:'Password123!'
 
 # My custom way of creating a list of domain_users.txt list with one command
 impacket-GetADUsers -all -dc-ip 172.16.150.10 vorkharium.com/john:'Password123!' | awk 'NR>3 {print $1}' >> domain_users.txt
+
+# LDAP
+ldapsearch -x -H ldap://172.16.150.10 -D "john@vorkharium.com" -w 'Password123!' -b "dc=vorkharium,dc=com" "(objectClass=user)" sAMAccountName
+
+# RPC
+rpcclient -U 'john%Password123!' 172.16.150.10 -c "enumdomusers"
+
+# enum4linux
+enum4linux -u john -p 'Password123!' 172.16.150.10
+
+# PowerView.ps1
+Import-Module .\PowerView.ps1
+Get-NetUser
+
+# PowerShell (AD Module)
+Get-ADUser -Filter * -Property SamAccountName
+Get-ADUser -Filter * -Server 172.16.150.10 -Property SamAccountName
 
 ```
 ### Groups Enumeration
