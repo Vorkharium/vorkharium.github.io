@@ -419,7 +419,7 @@ evil-winrm -i 172.16.150.10 -u Administrator -p 'Password123!'
 # With Hash
 evil-winrm -i 172.16.150.10 -u Administrator -H 1a06b4248879e68a498d3bac51bf91c9
 ```
-### xfreerdp
+### xFreeRDP
 ```shell
 # Create "/home/kali/share" before using it - This folder will allow us to move files easily from inside the xfreerdp session
 
