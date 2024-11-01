@@ -29,9 +29,10 @@ tags:   [Cheatsheets, Tools, Active-Directory, Active-Directory-Enumeration, SMB
 - [DCSync](#dcsync)
 - [Remote Credential Dumping](#remote-credential-dumping)
 - [Local Credential Dumping](#local-credential-dumping)
+- [MSSQL Basics](#mssql-basics)
+- [MSSQL Reverse Shell](#mssql-reverse-shell)
 - [Silver Ticket](#silver-ticket)
 - [ACLs Abuse Attacks](#acl-abuse-attacks)
-- [MSSQL](#mssql)
 
 ### Identifying the Domain Controller
 ```shell
