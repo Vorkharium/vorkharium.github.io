@@ -400,6 +400,9 @@ Get-DomainObjectACL -ResolveGUIDs -Identity * | ? {$_.SecurityIdentifier -eq $si
 # Detect Objects with ACLs (GenericAll) to perform DCSync
 Get-ObjectAcl -DistinguishedName "dc=vorkharium,dc=com" -ResolveGUIDs | 
 Where {	$_.ObjectType -match 'replication-get' -or $_.ActiveDirectoryRights -match 'GenericAll' }
+# Or
+Get-DomainObjectAcl -TargetIdentity "dc=vorkharium,dc=com" -ResolveGUIDs | 
+Where {	$_.ObjectType -match 'replication-get' -or $_.ActiveDirectoryRights -match 'GenericAll' }
 
 # Enumerate ACLs
 $sid = Convert-NameToSid -Name john
