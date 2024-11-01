@@ -6,6 +6,8 @@ date:   2024-11-01 01:00:00 +0300
 image:  '/images/10000.jpg'
 tags:   [Cheatsheets, Tools, Active-Directory, Active-Directory-Enumeration, SMB, Kerberoasting, AS-REP-Roasting, DCSync, Silver-Ticket, ACLs, MSSQL, Credential-Dumping, Credential-Hunting]
 ---
+<span style="font-size: smaller;">**Disclaimer:** This cheatsheet is regularly updated, but due to software changes, some commands may not work or may have alternatives. Please verify functionality as it can vary with permissions or updates. Consult official documentation if you encounter issues.</span>
+
 # Table of Contents
 
 - [Identifying the Domain Controller](#identifying-the-domain-controller)
