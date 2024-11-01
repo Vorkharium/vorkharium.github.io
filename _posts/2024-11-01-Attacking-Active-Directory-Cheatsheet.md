@@ -37,9 +37,9 @@ tags:   [Cheatsheets, Tools, Active-Directory, Active-Directory-Enumeration, Ker
 
 ### AS-REP Roasting with Impacket
 
-### Remote Credential Dumping
+### Remote Credential Dumping with Impacket and NetExec
 
-### Local Credential Dumping
+### Local Credential Dumping with Mimikatz and Impacket
 
 ### Silver Ticket
 
