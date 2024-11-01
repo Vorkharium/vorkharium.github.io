@@ -30,7 +30,7 @@ tags:   [Cheatsheets, Tools, Active-Directory, Active-Directory-Enumeration, SMB
 - [Remote Credential Dumping](#remote-credential-dumping)
 - [Local Credential Dumping](#local-credential-dumping)
 - [Silver Ticket](#silver-ticket)
-- [ACLs](#acls)
+- [ACLs Abuse Attacks](#acl-abuse-attacks)
 - [MSSQL](#mssql)
 
 ### Identifying the Domain Controller
@@ -617,7 +617,7 @@ samdump2 SYSTEM SAM
 ```shell
 Comming soon.
 ```
-### ACL Abuse Attacks
+### ACLs Abuse Attacks
 Note: We can enumerate ACLs using BloodHound too. But using PowerView.ps1 can give us some results that wouldn't show up on BloodHound otherwise.
 ```shell
 # Enumerating ACLs with PowerView.ps1
