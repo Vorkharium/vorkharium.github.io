@@ -218,21 +218,21 @@ rpcclient -U "username%password" 172.16.150.10
 rpcclient //172.16.150.10 -U vorkharium.com/john%1a06b4248879e68a498d3bac51bf91c9 --pw-nt-hash
 
 # All RPC Queries
-srvinfo
-enumdomusers # Users
-enumpriv # Works like "whoami /priv"
-queryuser john # Detailed user info
-getuserdompwinfo <RID> # Password Policy, use the previous command "queryuser" to get the RID to run this command
-lookupnames john # SID of specified user
-createdomuser john # Create a new user
-deletedomuser john # Delete user
-enumdomains
-enumdomgroups
-querygroup <group-RID> # Use the previous command "enumdomgroups" to get the RID to run this command
-querydispinfo # Show description of all users
-netshareenum # Enumerate Shares (This will only work if the current user we used to log in has permissions)
-netshareenumall
-lsaenumsid # SID from all users
+srvinfo                   # Retrieves server information, including the OS version and domain.
+enumdomusers              # Enumerates domain users, listing all users in the specified domain.
+enumpriv                  # Enumerates the current user's privileges, similar to the "whoami /priv" command.
+queryuser john            # Retrieves detailed information for the specified user (e.g., 'john').
+getuserdompwinfo <RID>    # Retrieves the domain password policy for a specific user, requires the user's RID from "queryuser".
+lookupnames john          # Finds and displays the SID (Security Identifier) for the specified user (e.g., 'john').
+createdomuser john        # Creates a new user in the domain with the specified username (e.g., 'john').
+deletedomuser john        # Deletes the specified user from the domain (e.g., 'john').
+enumdomains               # Lists all domains that are accessible within the current network.
+enumdomgroups             # Lists all groups in the domain, including their names and RIDs.
+querygroup <group-RID>    # Displays detailed information for a specific group, requires the group's RID from "enumdomgroups".
+querydispinfo             # Lists descriptions of all users in the domain.
+netshareenum              # Enumerates all shared network resources, requires necessary permissions of the current user.
+netshareenumall           # Enumerates all shared network resources, regardless of user permissions.
+lsaenumsid                # Lists SIDs for all users on the system.
 ```
 ### GPP cpassword
 Check if we can find a file called Groups.xml inside SYSVOL folder through SMB Shares access. This file contains a "cpassword" field. To decrypt the hash in the cpassword field we can use the following command:
