@@ -7,4 +7,42 @@ image:  '/images/10000.jpg'
 tags:   [Cheatsheets, Tools, Active-Directory, Kerberoasting, AS-REP-Roasting, DCSync]
 ---
 
-Unter Construction
+# Uncredentialed Enumeration
+
+# Enumerate Domain Password Policy
+
+# Enumerate Domain Users
+
+# Enumerate Groups
+
+# Enumerate SMB Shares
+
+# GPO cPassword
+
+# Password Spraying
+
+# Local PowerShell Enumeration
+
+# Local Credential Hunting
+
+# BloodHound, SharpHound.exe, bloodhound-python
+
+# PowerView.ps1
+
+# Impacket PsExec, WmiExec and SMBExec to gain Shell Access
+
+# Kerberoasting with Impacket
+
+# Kerberoasting with Rubeus.exe
+
+# AS-REP Roasting with Impacket
+
+# Remote Credential Dumping
+
+# Local Credential Dumping
+
+# Silver Ticket
+
+# ACLs
+
+# MSSQL to gain Shell
