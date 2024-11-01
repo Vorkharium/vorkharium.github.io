@@ -171,7 +171,7 @@ Get-LocalGroupMember -Group "Administrators"
 nxc smb 172.16.150.10 -u john -p 'Password123!' --shares
 crackmapexec smb 172.16.150.10 -u john -p 'Password123!' --shares
 
-# CMD and PowerShell
+# -------------------- CMD and PowerShell --------------------
 net view \\172.16.150.10
 net share
 net use
