@@ -45,6 +45,7 @@ nmap -n -sn 172.16.150.0/24
 
 # Nmap Scan
 nmap -Pn -sT -T4 --top-ports 1000 172.16.150.0/24
+sudo nmap -Pn -sT -T4 --top-ports 1000 172.16.150.0/24
 
 # Nmap through Proxychains
 proxychains -q nmap -Pn -sT -T4 --top-ports 1000 172.16.150.0/24
