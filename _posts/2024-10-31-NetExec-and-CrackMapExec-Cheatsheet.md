@@ -4,7 +4,7 @@ title:  NetExec and CrackMapExec Cheatsheet
 description: Cheatsheet for NetExec and CrackMapExec
 date:   2024-10-31 01:00:00 +0300
 image:  '/images/20.jpg'
-tags:   [Cheatsheets, Tools, Active-Directory, Active-Directory-Enumeration, Credential-Dumping]
+tags:   [Cheatsheets, Tools, Active-Directory, Active-Directory-Enumeration, SMB, Credential-Dumping]
 ---
 # Table of Contents
 - [Getting NetExec and CrackMapExec](#getting-netexec-and-crackmapexec)
