@@ -15,7 +15,7 @@ tags:   [Cheatsheets, Tools, Active-Directory, Active-Directory-Enumeration, Ker
 
 ### Enumerate Groups
 
-### Enumerate SMB Shares
+### Enumerate and Access SMB Shares
 
 ### GPO cPassword
 
