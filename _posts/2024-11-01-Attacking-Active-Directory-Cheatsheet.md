@@ -297,9 +297,9 @@ dir /s *pass* == *cred* == *vnc* == *.config*
 ### Runas and RunasCs.exe
 ```shell
 # Native Runas
-# Change user to "jane"
+# Local - Changing to user "jane"
 runas /user:jane cmd # # Enter the password now when asked
-# With domain
+# Domain - Changing to user "john"
 runas /netonly /user:vorkharium.com\john cmd
 
 # RunasCs.exe
