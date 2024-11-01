@@ -70,7 +70,7 @@ Get-ADDefaultDomainPasswordPolicy
 (Get-ADDomain).DefaultPasswordPolicy
 Get-WmiObject -Class Win32_NetworkLoginProfile | Select-Object -Property Name, PasswordExpirationDate
 ```
-### Domain Users Enumeration
+### Domain and Local User Enumeration
 ```shell
 # NetExec and CrackMapExec
 nxc smb 172.16.150.10 -u john -p 'Password123!' --users
@@ -100,7 +100,7 @@ Get-ADUser -Filter * -Property SamAccountName
 Get-ADUser -Filter * -Server 172.16.150.10 -Property SamAccountName
 
 ```
-### Groups Enumeration
+### Domain and Local Group Enumeration
 ```shell
 # NetExec and CrackMapExec
 nxc smb 172.16.150.10 -u john -p 'Password123!' --groups
