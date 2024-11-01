@@ -169,7 +169,7 @@ nxc smb 172.16.150.20 -u '' -p '' -M nopac
 ```
 
 # CrackMapExec Commands
-As of 2024, CrackMapExec is deprecated, and I primarily use NetExec. However, there are still select cases where CrackMapExec remains useful. Below are the commands I use most frequently:
+As of 2024, CrackMapExec is deprecated, and I primarily use NetExec. However, there are still some cases where CrackMapExec remains useful. Below are the commands I use most frequently:
 ## Enumeration
 ```shell
 # Enumerating Network (Find active reachable hosts)
