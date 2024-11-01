@@ -335,8 +335,24 @@ sudo bloodhound
 ```
 ### PowerView.ps1
 ```shell
+# Enable Running Scripts on PowerShell (as Administrator)
+Set-ExecutionPolicy RemoteSigned
+Set-ExecutionPolicy Unrestricted
+Get-ExecutionPolicy
 
+# Get Domain User Information
+Import-Module .\PowerView.ps1
+$Cred = Get-Credential -UserName "vorkharium.com\john"
+# Enter password
+Get-DomainUser -Identity "john" -Credential $Cred -Verbose
+
+# Detect Kerberoastable Account
+$Pass = ConvertTo-SecureString 'Password123!' -AsPlainText -Force
+$Cred = New-Object System.Management.Automation.PSCredential('vorkharium.com\john, $Pass')
+Get-DomainUser -SPN -Domain vorkharium.com -Credential $Cred | select SamAccountName
 ```
+For a complete and detailed list for PowerView.ps1 check the following link:
+https://book.hacktricks.xyz/windows-hardening/basic-powershell-for-pentesters/powerview
 ### Impacket PsExec, WmiExec and SMBExec - SMB Shell Access with Password or Pass-the-Hash
 ```shell
 
