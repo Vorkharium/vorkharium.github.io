@@ -22,7 +22,7 @@ tags:   [Cheatsheets, Tools, Active-Directory, Active-Directory-Enumeration, SMB
 - [PowerView.ps1](#powerviewps1)
 - [Impacket PsExec, WmiExec and SMBExec](#impacket-psexec-wmiexec-and-smbexec)
 - [Evil-WinRM](#evil-winrm)
-- [xfreerdp](#xfreerdph)
+- [xFreeRDP](#xfreerdph)
 - [Kerberoasting](#kerberoasting)
 - [AS-REP Roasting](#as-rep-roasting)
 - [DCSync](#dcsync)
