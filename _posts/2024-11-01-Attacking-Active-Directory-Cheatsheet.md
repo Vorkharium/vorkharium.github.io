@@ -295,6 +295,10 @@ reg query "HKLM\SOFTWARE\Microsoft\Windows NT\Currentversion\Winlogon" 2>nul | f
 # Display stored credentials
 cmdkey /list
 
+# Show hidden files inside current folder (Similar to "ls -al")
+dir /a /q
+dir /a /o /s
+
 # Finding and Cracking KeePass .kdbx Files
 # CMD
 dir /s /b *.kdbx 
