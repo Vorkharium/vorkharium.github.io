@@ -18,7 +18,7 @@ tags:   [Cheatsheets, Tools, Active-Directory, Active-Directory-Enumeration, SMB
 - [GPP cpassword](#gpp-cpassword)
 - [Password Spraying](#password-spraying-with-kerbrute-netexec-and-crackmapexec)
 - [Runas and RunasCs.exe](#runas-and-runascsexe)
-- [BloodHound, SharpHound.exe, bloodhound-python](#bloodhound-sharphoundexe-bloodhound-python)
+- [BloodHound](#bloodhound-sharphoundexe-bloodhound-python)
 - [PowerView.ps1](#powerviewps1)
 - [Impacket PsExec, WmiExec and SMBExec](#impacket-psexec-wmiexec-and-smbexec---smb-shell-access-with-password-or-pass-the-hash)
 - [Evil-WinRM](#evil-winrm---winrm-access-winrm-with-password-or-pass-the-hash)
