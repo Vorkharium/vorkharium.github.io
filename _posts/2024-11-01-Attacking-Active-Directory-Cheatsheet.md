@@ -51,16 +51,16 @@ enum4linux -U 172.16.150.10
 ### Domain Password Policy Enumeration
 ```shell
 # NetExec and CrackMapExec
-nxc smb 172.16.150.10 -u 'vorkharium' -p 'password' --pass-pol
-crackmapexec smb 172.16.150.10 -u 'vorkharium' -p 'password' --pass-pol
+nxc smb 172.16.150.10 -u 'vivi' -p 'blackmagevillage' --pass-pol
+crackmapexec smb 172.16.150.10 -u 'tidus' -p 'zanarkand' --pass-pol
 
 # enum4linux
 enum4linux -U 172.16.150.10 # Without credentials
-enum4linux -u vorkharium -p password -U 172.16.150.10
+enum4linux -u keanu -p cyberpunk2077 -U 172.16.150.10
 
 # From CMD CLI
 net accounts
-net user vorkharium /domain
+net user keanu /domain
 
 # From PowerShell CLI
 net accounts
@@ -71,10 +71,10 @@ Get-WmiObject -Class Win32_NetworkLoginProfile | Select-Object -Property Name, P
 ### Domain Users Enumeration
 ```shell
 # With impacket-GetADUsers
-impacket-GetADUsers -all -dc-ip 172.16.150.10 vorkharium.com/johnwick:'Password123!'
+impacket-GetADUsers -all -dc-ip 172.16.150.10 vorkharium.com/johnwick:'daisythebeagle'
 
 # My custom way of creating a list of domain_users.txt list with one command
-impacket-GetADUsers -all -dc-ip 172.16.150.10 vorkharium.com/johnwick:'Password123!' | awk 'NR>3 {print $1}' >> domain_users.txt
+impacket-GetADUsers -all -dc-ip 172.16.150.10 vorkharium.com/johnwick:'daisythebeagle' | awk 'NR>3 {print $1}' >> domain_users.txt
 
 ```
 ### Groups Enumeration
