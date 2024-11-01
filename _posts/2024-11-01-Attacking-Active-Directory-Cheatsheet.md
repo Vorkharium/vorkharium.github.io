@@ -54,12 +54,12 @@ enum4linux -U 172.16.150.10
 ### Domain Password Policy Enumeration
 ```shell
 # NetExec and CrackMapExec
-nxc smb 172.16.150.10 -u 'vivi' -p 'Thungada2000' --pass-pol
+nxc smb 172.16.150.10 -u 'vivi' -p 'Thundaga2000' --pass-pol
 crackmapexec smb 172.16.150.10 -u 'tidus' -p 'ToZanarkand2001' --pass-pol
 
 # enum4linux
 enum4linux -U 172.16.150.10 # Without credentials
-enum4linux -u john -p Cyberpunk2077 -U 172.16.150.10
+enum4linux -u john -p 'Password123!' -U 172.16.150.10
 
 # CMD and PowerShell
 net accounts
@@ -79,7 +79,7 @@ crackmapexec smb 172.16.150.10 -u john -p 'Password123!' --users
 # With impacket-GetADUsers
 impacket-GetADUsers -all -dc-ip 172.16.150.10 vorkharium.com/john:'Password123!'
 
-# My custom way of creating a list of domain_users.txt list with one command
+# My custom way of creating a domain_users.txt list with one command
 impacket-GetADUsers -all -dc-ip 172.16.150.10 vorkharium.com/john:'Password123!' | awk 'NR>3 {print $1}' >> domain_users.txt
 
 # LDAP
@@ -129,7 +129,7 @@ Get-WmiObject -Class Win32_Group -ComputerName 172.16.150.10
 Get-LocalGroup
 Get-LocalGroupMember -Group "Administrators"
 ```
-### SMB Shares Enumeration and Access
+### SMB Shares Credentialed Access and Enumeration
 ```shell
 # Enumeration
 # NetExec and CrackMapExec
@@ -147,9 +147,28 @@ smbclient //172.16.150.10/Public -U john
 impacket-smbclient vorkharium.com/john:'Password123!'@172.16.150.10
 
 ```
-### RPC Enumeration and Access
+### RPC Credentialed Access and Enumeration
 ```shell
+rpcclient -U "username%password" 172.16.150.10
+# Using hash
+rpcclient //172.16.150.10 -U vorkharium.com/john%1a06b4248879e68a498d3bac51bf91c9 --pw-nt-hash
 
+# All RPC Queries
+srvinfo
+enumdomusers # Users
+enumpriv # Works like "whoami /priv"
+queryuser <user> # Detailed user info
+getuserdompwinfo <RID> # Password Policy, use the previous command "queryuser" to get the RID to run this command
+lookupnames <user> # SID of specified user
+createdomuser <username> # Create a new user
+deletedomuser <username> # Delete user
+enumdomains
+enumdomgroups
+querygroup <group-RID> # Use the previous command "enumdomgroups" to get the RID to run this command
+querydispinfo # Show description of all users
+netshareenum # Enumerate Shares (This will only work if the current user we used to log in has permissions)
+netshareenumall
+lsaenumsid # SID from all users
 ```
 ### GPO cPassword
 ```shell
