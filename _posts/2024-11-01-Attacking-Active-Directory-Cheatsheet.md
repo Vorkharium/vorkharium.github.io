@@ -157,11 +157,11 @@ rpcclient //172.16.150.10 -U vorkharium.com/john%1a06b4248879e68a498d3bac51bf91c
 srvinfo
 enumdomusers # Users
 enumpriv # Works like "whoami /priv"
-queryuser <user> # Detailed user info
+queryuser john # Detailed user info
 getuserdompwinfo <RID> # Password Policy, use the previous command "queryuser" to get the RID to run this command
-lookupnames <user> # SID of specified user
-createdomuser <username> # Create a new user
-deletedomuser <username> # Delete user
+lookupnames john # SID of specified user
+createdomuser john # Create a new user
+deletedomuser john # Delete user
 enumdomains
 enumdomgroups
 querygroup <group-RID> # Use the previous command "enumdomgroups" to get the RID to run this command
