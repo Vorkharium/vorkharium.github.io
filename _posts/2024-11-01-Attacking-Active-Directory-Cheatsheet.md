@@ -308,7 +308,30 @@ runas /netonly /user:vorkharium.com\john cmd
 ```
 ### BloodHound, SharpHound.exe, bloodhound-python
 ```shell
+# BloodHound Collectors
+# SharpHound v1.1.1 (Use version 1.1.1, otherwise SharpHound.exe results won't work and BloodHound will appear empty after loading them)
+./SharpHound.exe --CollectionMethods All
+.\SharpHound.exe -c All
+.\SharpHound.exe --DisableCertVerification --DisableSigning --Domain vorkharium.com --ldapusername john --ldappassword 'Password123!'
 
+# bloodhound-python
+```shell
+# Collect information with valid user "jim"
+bloodhound-python -d vorkharium.com -u john -p 'Password123!' -ns 172.16.150.10 -c all --dns-tcp
+
+# Starting BloodHound
+sudo neo4j console
+sudo bloodhound
+
+# Clear database
+# Load the .json files we collected with SharpHound.exe or bloodhound-python
+
+# Important queries in BloodHound
+- Find all Domain Admins
+- Find Principals with DCSync Rights
+- List all Kerberoastable Accounts
+- Find AS-REP Roastable Users (DontReqPreAuth)
+- Shortest Path to High Value Targets
 ```
 ### PowerView.ps1
 ```shell
