@@ -172,7 +172,7 @@ ligolo-ng » session
 ```
 ### Fast Pipelines with same Port through Multiple Pivots
 ```shell
-# Note: Our Kali IP  in this example is 192.168.45.200
+# Note: Our Kali IP in this example is 192.168.45.200
 
 # Add listeners inside Ligolo-Ng console
 # On Session 1 - Pivot Host A (172.16.150.1)
