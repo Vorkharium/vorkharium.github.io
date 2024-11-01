@@ -406,10 +406,9 @@ evil-winrm -i 172.16.150.10 -u Administrator -H 1a06b4248879e68a498d3bac51bf91c9
 
 # Connection with share for file transfers
 xfreerdp /u:Administrator /p:'Password123!' /v:172.16.150.10 /drive:share,/home/kali/share
-
 sudo xfreerdp /u:Administrator /p:'Password123!' /v:172.16.150.10 /drive:share,/home/kali/share
-# With extra parameters
 
+# With extra parameters
 xfreerdp /cert-ignore /auto-reconnect /h:1000 /w:1600 /v:172.16.150.10 /u:Administrator /p:'Password123!' /d:vorkharium.com /drive:share,/home/kali/share
 
 # Using hash
