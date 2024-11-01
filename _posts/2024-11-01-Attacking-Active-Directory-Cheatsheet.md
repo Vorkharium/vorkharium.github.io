@@ -68,10 +68,10 @@ cat internal_ips.txt
 ### Uncredentialed Enumeration and Attacks
 ```shell
 # DNS Zone Transfer
-dig @172.16.150.10 AXFR vorkharium.com
+dig @172.16.150.10 AXFR example.com
 
 # LDAP Anonymous Session Dump
-ldapsearch -x -H ldap://172.16.150.10 -b "dc=vorkharium,dc=com"
+ldapsearch -x -H ldap://172.16.150.10 -b "dc=example,dc=com"
 
 # No-PreAuth Kerberos without Username
 impacket-GetNPUsers vorkharium.com/ -dc-ip 172.16.150.10
