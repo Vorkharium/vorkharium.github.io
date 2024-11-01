@@ -12,8 +12,8 @@ image: '/images/01.jpg'
 <div style="margin-top: 40px;">
   <h3 style="color: #ffffff;">Professional Certifications</h3>
   <ul style="list-style: none; padding: 0; margin: 0;">
-    <li style="margin: 5px 0; font-weight: bold;">🔹 HTB Certified Penetration Testing Specialist (CPTS)</li>
-    <li style="margin: 5px 0; font-weight: bold;">🔹 TCM Practical Network Penetration Tester (PNPT)</li>
+    <li style="margin: 5px 0; font-weight: bold;">🔺 HTB Certified Penetration Testing Specialist (CPTS)</li>
+    <li style="margin: 5px 0; font-weight: bold;">🔺 TCM Practical Network Penetration Tester (PNPT)</li>
   </ul>
 </div>
 
