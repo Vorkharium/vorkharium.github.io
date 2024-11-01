@@ -6,6 +6,39 @@ date:   2024-11-01 01:00:00 +0300
 image:  '/images/10000.jpg'
 tags:   [Cheatsheets, Tools, Active-Directory, Active-Directory-Enumeration, SMB, Kerberoasting, AS-REP-Roasting, DCSync, Silver-Ticket, ACLs, MSSQL, Credential-Dumping, Credential-Hunting]
 ---
+### Identify the Domain Controller
+```shell
+# Using NetExec and CrackMapExec (Examine results for a host like DC01, for example)
+nxc smb 172.16.150.0/24
+crackmapexec smb 172.16.150.0/24
+
+# Nmap ARP Discovery
+nmap -n -sn 172.16.150.0/24
+
+# Nmap Scan
+nmap -Pn -sT -T4 --top-ports 1000 172.16.150.0/24
+
+# Nmap through Proxychains
+proxychains -q nmap -Pn -sT -T4 --top-ports 1000 172.16.150.0/24
+
+# To find out which host is the Domain Controller, look for these typical Domain Controller ports in Nmap the results:
+Port 53 - DNS
+Port 88 - Kerberos
+Port 135 - RPC
+Port 389 - LDAP
+Port 445 - SMB
+Port 636 - LDAPS
+Port 3268 - Global Catalog LDAP
+Port 3269 - Global Catalog LDAPS
+
+# Create an internal_ips.txt list with all the alive IPs that we find
+cat internal_ips.txt
+
+10.10.10.2
+10.10.10.5
+10.10.10.6
+10.10.10.11
+```
 ### Uncredentialed Enumeration and Attacks
 ```shell
 # DNS Zone Transfer
