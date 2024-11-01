@@ -32,9 +32,8 @@ author:
 # Hero Settings
 hero:
   title: Vorkharium
-  description: Raúl
-  description_2: Ethical Hacking | Pentesting | Red Team | CTF Write-ups
-
+  description: Ethical Hacking | Pentesting | Red Team | CTF Write-ups
+  
   image: '/images/01.jpg'
 
 
