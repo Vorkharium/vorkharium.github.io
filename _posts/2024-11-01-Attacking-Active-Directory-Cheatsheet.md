@@ -170,9 +170,12 @@ netshareenum # Enumerate Shares (This will only work if the current user we used
 netshareenumall
 lsaenumsid # SID from all users
 ```
-### GPO cPassword
+### GPP cpassword
+Check if we can find a file called Groups.xml inside SYSVOL folder through SMB Shares access. This file contains a "cpassword" field. To decrypt the hash in the cpassword field we can use the following command:
 ```shell
-
+sudo apt install gpp-decrypt
+gpp-decrypt F7HV9AXdOSpNAXTDhwZt0atMg6S/Q0TOnyGDYMIzL7o ​
+# This will give us the credentials for the user the Groups.xml is related to
 ```
 ### Password Spraying
 ```shell
