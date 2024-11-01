@@ -4,9 +4,6 @@ title: Cheatsheets
 permalink: /cheatsheets/
 image: '/images/01.jpg'
 ---
-
-<hr>
-
 <div style="position: relative; display: inline-block; margin-right: 20px;">
     <a href="/NetExec-and-CrackMapExec-Cheatsheet">
         <img src="/images/20.jpg" alt="NetExec and CrackMapExec Cheatsheet" style="width: 360px; height: auto;">
