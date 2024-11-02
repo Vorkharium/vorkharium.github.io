@@ -13,6 +13,8 @@ menu-settings:
       url: '/'
     - title: 'About Me'
       url: '/about/'
+    - title: 'Projects'
+      url: '/projects/'
     - title: 'CTF Write-ups'
       url: '/write-ups/'
     - title: 'Cheatsheets'
