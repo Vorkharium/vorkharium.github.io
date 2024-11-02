@@ -23,6 +23,7 @@ tags:   [Cheatsheets, Tools, Active-Directory, Active-Directory-Enumeration, SMB
   - [cme Command Execution](#cme-command-execution)
 
 # Getting NetExec and CrackMapExec
+We can install NetExec on Kali Linux using the following command:
 ```shell
 sudo apt install netexec
 ```
@@ -31,7 +32,7 @@ CrackMapExec comes pre-installed on Kali Linux by default. However, if installat
 sudo apt install crackmapexec
 ```
 
-Important Note: Sometimes it's worth using both tools to discard false negatives and false positives.
+Important Note: I primarily use NetExec as it is the updated version of CrackMapExec. However, there are situations where trying both tools can be beneficial to minimize the risk of false negatives and false positives.
 
 # NetExec Commands
 The IP address 172.16.150.20 will be used as an example for the Domain Controller (DC01) IP address.
