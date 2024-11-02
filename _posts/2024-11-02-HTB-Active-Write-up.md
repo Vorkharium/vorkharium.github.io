@@ -148,7 +148,7 @@ impacket-GetUserSPNs active.htb/SVC_TGS:'GPPstillStandingStrong2k18' -dc-ip 10.1
 ```
 Eureka!
 
-Using the command above, we are able to successfully carry out our Kerberoasting attack and get the hash for the Administrator user:
+Using the command above, we indeed are able to successfully carry out our Kerberoasting attack and get the hash for the Administrator user:
 ```shell
 Impacket v0.12.0 - Copyright Fortra, LLC and its affiliated companies 
 
