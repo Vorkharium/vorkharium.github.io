@@ -1,0 +1,14 @@
+{% if site.data.settings.mailchimp == 'enable' %}
+<div class="col col-4 col-d-6 col-t-12">
+    <div class="widget widget-flag-counter">
+        <div class="widget__head">
+            <h3 class="widget__title">Visitor Statistics</h3>
+        </div>
+        <p class="flag-counter-subtitle">Check out our global visitors!</p>
+        <a href="https://info.flagcounter.com/7oVI">
+            <img src="https://s11.flagcounter.com/countxl/7oVI/bg_111927/txt_FFFFFF/border_111927/columns_3/maxflags_21/viewers_0/labels_1/pageviews_1/flags_0/percent_0/"
+                alt="Flag Counter" border="0">
+        </a>
+    </div>
+</div>
+{% endif %}
