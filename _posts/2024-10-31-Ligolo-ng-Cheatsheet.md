@@ -114,7 +114,7 @@ listener_add --addr 0.0.0.0:1234 --to 0.0.0.0:9001
 # Start Python server on Kali using Port 1234
 python3 -m http.server 1234
 
-# From the Host B CLI, access Python server through Port 9003 at the Pivot Host
+# From the Host B CLI, access Python server through Port 9001 at the Pivot Host to download the "test.txt" file
 wget http://172.16.150.10:9001/test.txt
 ```
 
