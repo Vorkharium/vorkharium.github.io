@@ -6,6 +6,18 @@ date:   2024-11-02 01:00:00 +0300
 image:  '/images/htb_active.png'
 tags:   [Write-ups, HTB, OSCP+, Windows, Easy, Active-Directory, Kerberoasting]
 ---
+# Table of Contents
+- [Enumeration](#enumeration)
+  - [Nmap](#nmap)
+  - [SMB Null Session access to Replication Share and finding Groups.xml](#smb-null-session-access-to-replication-share-and-finding-groupsxml)
+- [Foothold](#foothold)
+  - [Decrypt GPP cpassword for user SVC_TGS](#decrypt-gpp-cpassword-for-user-svc_tgs)
+  - [Kerberoasting as user SVC_TGS](#kerberoasting-as-user-svc_tgs)
+  - [Access using impacket-psexec](#access-using-impacket-psexec)
+  - [User Flag](#user-flag)
+- [Privilege Escalation](#privilege-escalation)
+  - [Root Flag](#root-flag)
+
 # Enumeration
 ### Nmap
 ```shell
