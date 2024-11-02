@@ -1,6 +1,6 @@
 #-------------------------------
 # Site Settings
-title: vorkharium.com
+title: Vorkharium.com
 logo: # You can add own logo. For example '/images/logo.png'.
 description: Vorkharium – Ethical Hacking | Pentesting | Red Team | CTF Write-ups
 
@@ -41,9 +41,9 @@ hero:
 
 #-------------------------------
 # Contact Settings
-contact:
-  email: your@email.com # Add your email for contact form
-  description: <Under Construction> # Add a description of your form
+# contact:
+#  email: your@email.com # Add your email for contact form
+#  description: <Under Construction> # Add a description of your form
 
 # NOTE
 # Norlin theme comes with a contact form built-in. You can use this form with Formspree (https://formspree.io/) service and get up to 50 submissions for free. Also, you can easily switch to another service if you want.
@@ -67,12 +67,12 @@ contact:
 
 #-------------------------------
 # Comment Section (Disqus)
-disqus-identifier: anvodstudio-demo # Add your shortname for Disqus Comment. For example anvodstudio-demo
+# disqus-identifier: anvodstudio-demo # Add your shortname for Disqus Comment. For example anvodstudio-demo
 
 
 #-------------------------------
 # Google Analytics
-google-analytics: # Add your identifier. For example UA-99631805-1.
+# google-analytics: # Add your identifier. For example UA-99631805-1.
 
 
 #-------------------------------
