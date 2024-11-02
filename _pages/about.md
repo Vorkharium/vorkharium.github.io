@@ -6,7 +6,7 @@ image: '/images/01.jpg'
 ---
 <div style="text-align: center; margin-top: 30px;">
   <p>Hi, my name is Raúl, also known as <strong>Vorkharium</strong>.</p>
-  <p>I am a passionate Ethical Hacker specializing in Penetration Testing.</p>
+  <p>I am a passionate Ethical Hacker specialising in Penetration Testing.</p>
 </div>
 
 <div style="margin-top: 40px;">
