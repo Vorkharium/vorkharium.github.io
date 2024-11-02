@@ -212,6 +212,10 @@ enum4linux -S 172.16.150.10
 smbclient //172.16.150.10/Public -U john
 impacket-smbclient vorkharium.com/john:'Password123!'@172.16.150.10
 
+# Enable Recursive
+smb: \> recurse on
+smb: \> prompt off
+smb: \> ls
 ```
 ### RPC Credentialed
 ```shell
