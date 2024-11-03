@@ -14,7 +14,6 @@ tags:   [Write-ups, HTB, OSCP+, Windows, Easy, Active-Directory, Kerberoasting]
   - [Decrypt GPP cpassword for user SVC_TGS](#decrypt-gpp-cpassword-for-user-svc_tgs)
   - [Kerberoasting as user SVC_TGS](#kerberoasting-as-user-svc_tgs)
   - [Access using impacket-psexec](#access-using-impacket-psexec)
-  - [User Flag](#user-flag)
 - [Privilege Escalation](#privilege-escalation)
   - [Root Flag](#root-flag)
 

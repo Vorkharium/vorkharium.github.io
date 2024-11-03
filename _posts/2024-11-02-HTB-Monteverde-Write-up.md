@@ -14,12 +14,10 @@ tags:   [Write-ups, HTB, OSCP+, Weak-Credentials, RPC-Enumeration, SMB-Shares, A
   - [SMB Access as SABatchJobs and finding Password inside Azure.xml](#smb-access-as-sabatchjobs-and-finding-password-inside-azurexml)
 - [Foothold](#foothold)
   - [Testing Credentials using NetExec leading to valid WinRM Credentials](#testing-credentials-using-netexec-leading-to-valid-winrm-credentials)
-  - [User Flag](#user-flag)
 - [Privilege Escalation](#privilege-escalation)
   - [Enumerating User mhope to find out its in Azure Admins group](#enumerating-user-mhope-to-find-out-its-in-azure-admins-group)
   - [Azure AD Connect Exploitation to obtain Administrator Credentials](#azure-ad-connect-exploitation-to-obtain-administrator-credentials)
   - [Using Evil-WinRM to access as Administrator](#using-evil-winrm-to-access-as-administrator)
-  - [Root Flag](#root-flag)
 
 # Enumeration
 ## Nmap
