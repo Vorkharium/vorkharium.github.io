@@ -12,7 +12,7 @@ image: '/images/01.jpg'
                  style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
             <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
                         background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
-                        border-radius: 5px; font-size: 12px;">
+                        border-radius: 5px; font-size: 14px;">
                 HTB Blackfield Write-up
             </div>
         </a>
@@ -24,7 +24,7 @@ image: '/images/01.jpg'
                  style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
             <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
                         background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
-                        border-radius: 5px; font-size: 12px;">
+                        border-radius: 5px; font-size: 14px;">
                 HTB Monteverde Write-up
             </div>
         </a>
@@ -36,7 +36,7 @@ image: '/images/01.jpg'
                  style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
             <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
                         background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
-                        border-radius: 5px; font-size: 12px;">
+                        border-radius: 5px; font-size: 14px;">
                 HTB Active Write-up
             </div>
         </a>
