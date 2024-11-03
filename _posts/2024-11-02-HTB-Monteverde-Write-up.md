@@ -11,7 +11,7 @@ tags:   [Write-ups, HTB, OSCP+, Weak-Credentials, RPC-Enumeration, SMB-Shares, A
   - [Nmap](#nmap)
   - [RPC Uncredentialed User Enumeration](#rpc-uncredentialed-user-enumeration)
   - [Password Spraying with NetExec using Username as Password](#password-spraying-with-netexec-using-username-as-password)
-  - [SMB Access as SABatchJobs using impacket-smbclient](#smb-access-as-sabatchjobs-using-impacket-smbclient)
+  - [SMB Access as SABatchJobs and finding Password inside Azure.xml](#smb-access-as-sabatchjobs-and-finding-password-inside-azurexml)
 - [Foothold](#foothold)
   - [Testing Credentials using NetExec leading to valid WinRM Credentials](#testing-credentials-using-netexec-leading-to-valid-winrm-credentials)
   - [User Flag](#user-flag)
@@ -141,7 +141,7 @@ If we examine the NetExec results, we will see that we got valid credentials:
 ```shell
 SABatchJobs:SABatchJobs
 ```
-## SMB Access as SABatchJobs using impacket-smbclient
+## SMB Access as SABatchJobs and finding Password inside Azure.xml
 We will use the credentials of SABatchJobs and impacket-smbclient to get SMB access:
 ```shell
 impacket-smbclient 'SABatchJobs':'SABatchJobs'@10.129.228.111
