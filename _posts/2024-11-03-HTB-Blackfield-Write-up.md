@@ -17,7 +17,7 @@ tags:   [Write-ups, HTB, OSCP+, Windows, Hard, Active-Directory, SMB-Shares, AS-
   - [Accessing SMB Share forensic using the user audit2020](#accessing-smb-share-forensic-using-the-user-audit2020)
 - [Privilege Escalation](#privilege-escalation)
   - [Abusing SeBackupPrivilege as svc_backup to Dump SAM](#abusing-sebackupprivilege-as-svc_backup-to-dump-sam)
-  - [Abusing SeBackupPrivilege as svc_backup to NTDS.DIT with diskshadow.exe](#abusing-sebackupprivilege-as-svc_backup-to-ntdsdit-with-diskshadowexe)
+  - [Abusing SeBackupPrivilege as svc_backup to get NTDS.DIT with diskshadow.exe](#abusing-sebackupprivilege-as-svc_backup-to-get-ntdsdit-with-diskshadowexe)
   - [Pass-the-Hash to get Administrator access using Evil-WinRM](#pass-the-hash-to-get-administrator-access-using-evil-winrm)
 
 # Enumeration
@@ -371,7 +371,7 @@ NetExec didn't give us any positive results. We can't use the hash from the SAM 
 
 But we can abuse SeBackupPrivilege enabled to dump the NTDS.DIT file as well, which is the equivalent of SAM in a domain controller.
 
-## Abusing SeBackupPrivilege as svc_backup to NTDS.DIT with diskshadow.exe
+## Abusing SeBackupPrivilege as svc_backup to get NTDS.DIT using diskshadow.exe
 If we just try to dump NTDS.DIT, we will get the error message that it is being used by another process:
 ```shell
 robocopy /b C:\Windows\NTDS C:\Profiles NTDS.DIT
