@@ -8,7 +8,7 @@ image: '/images/01.jpg'
 <div style="position: relative; display: inline-block; margin-bottom: 5px;">
     <a href="/HTB-Blackfield-Write-up">
         <img src="/images/htb_blackfield.png" alt="HTB Blackfield Write-up" 
-             style="width: 360px; height: 200px; border-radius: 15px; object-fit: cover;">
+             style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
         <div style="position: absolute; bottom: 10px; left: 10px; color: white; background-color: rgba(0, 0, 0, 0.6); padding: 5px; border-radius: 5px;">
             HTB Blackfield Write-up
         </div>
@@ -18,7 +18,7 @@ image: '/images/01.jpg'
 <div style="position: relative; display: inline-block; margin-bottom: 5px;">
     <a href="/HTB-Monteverde-Write-up">
         <img src="/images/htb_monteverde.png" alt="HTB Monteverde Write-up" 
-             style="width: 360px; height: 200px; border-radius: 15px; object-fit: cover;">
+             style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
         <div style="position: absolute; bottom: 10px; left: 10px; color: white; background-color: rgba(0, 0, 0, 0.6); padding: 5px; border-radius: 5px;">
             HTB Monteverde Write-up
         </div>
@@ -28,7 +28,7 @@ image: '/images/01.jpg'
 <div style="position: relative; display: inline-block; margin-bottom: 5px;">
     <a href="/HTB-Active-Write-up">
         <img src="/images/htb_active.png" alt="HTB Active Write-up" 
-             style="width: 360px; height: 200px; border-radius: 15px; object-fit: cover;">
+             style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
         <div style="position: absolute; bottom: 10px; left: 10px; color: white; background-color: rgba(0, 0, 0, 0.6); padding: 5px; border-radius: 5px;">
             HTB Active Write-up
         </div>
