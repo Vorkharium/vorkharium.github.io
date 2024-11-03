@@ -15,7 +15,7 @@ tags:   [Write-ups, HTB, OSCP+, Windows, Easy, Active-Directory, Kerberoasting]
   - [Kerberoasting as user SVC_TGS](#kerberoasting-as-user-svc_tgs)
   - [Access using impacket-psexec](#access-using-impacket-psexec)
 - [Privilege Escalation](#privilege-escalation)
-  - [Root Flag](#root-flag)
+  - [Getting Root Flag (This machine has no Privilege Escalation)](#getting-root-flag-this-box-has-no-privilege-escalation)
 
 # Enumeration
 ### Nmap
@@ -224,7 +224,7 @@ type C:\Users\SVC_TGS\Desktop\user.txt
 ```
 
 # Privilege Escalation
-### Root Flag
+### Getting Root Flag (This box has no Privilege Escalation)
 Since we already got a shell as NT AUTHORITY\SYSTEM, we can just grab the root.txt flag with:
 ```shell
 type C:\Users\Administrator\Desktop\root.txt
