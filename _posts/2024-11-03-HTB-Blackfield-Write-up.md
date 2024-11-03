@@ -370,10 +370,7 @@ nxc winrm 10.129.191.43 -u Administrator -H 67ef902eae0d740df6257f273de75051 --l
 NetExec didn't give us any positive results. We can't use the hash from the SAM dump to get access.
 
 But we can abuse SeBackupPrivilege enabled to dump the NTDS.DIT file as well, which is the equivalent of SAM in a domain controller.
-```shell
 
-
-```
 ## Abusing SeBackupPrivilege as svc_backup to NTDS.DIT with diskshadow.exe
 If we just try to dump NTDS.DIT, we will get the error message that it is being used by another process:
 ```shell
