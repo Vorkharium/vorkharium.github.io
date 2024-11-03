@@ -2,7 +2,7 @@
 layout: post
 title:  HTB Blackfield Write-up
 description: Part of the OSCP+ Preparation Series
-date:   2024-11-03 07:00:00 +0300
+date:   2024-11-03 09:00:00 +0300
 image:  '/images/htb_blackfield.png'
 tags:   [Write-ups, HTB, OSCP+, Windows, Hard, Active-Directory, SMB-Shares, AS-REP-Roasting, BloodHound, RPC, Credential-Dumping, Pass-the-Hash]
 ---

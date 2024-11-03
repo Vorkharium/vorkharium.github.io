@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  HTB Active Write-up
-description: Part of the OSCP+ Preparation Active Directory Series
-date:   2024-11-02 01:00:00 +0300
+description: Part of the OSCP+ Preparation Series
+date:   2024-11-03 05:00:00 +0300
 image:  '/images/htb_active.png'
 tags:   [Write-ups, HTB, OSCP+, Windows, Easy, Active-Directory, Kerberoasting]
 ---

@@ -2,7 +2,7 @@
 layout: post
 title:  Ligolo-ng Cheatsheet
 description: Cheatsheet for Ligolo-ng
-date:   2024-10-31 09:00:00 +0300
+date:   2024-11-02 05:00:00 +0300
 image:  '/images/21.jpg'
 tags:   [Cheatsheets, Tools, Pivoting]
 ---
