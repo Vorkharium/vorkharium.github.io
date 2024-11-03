@@ -9,7 +9,7 @@ tags:   [Write-ups, HTB, OSCP+, Weak-Credentials, RPC-Enumeration, SMB-Shares, A
 # Table of Contents
 - [Enumeration](#enumeration)
   - [Nmap](#nmap)
-  - [RPC uncredentialed User Enumeration](#rpc-uncredentialed-user-enumeration)
+  - [RPC Uncredentialed User Enumeration](#rpc-uncredentialed-user-enumeration)
   - [Password Spraying with NetExec using Username as Password](#password-spraying-with-netexec-using-username-as-password)
   - [SMB Access as SABatchJobs using impacket-smbclient](#smb-access-as-sabatchjobs-using-impacket-smbclient)
 - [Foothold](#foothold)
@@ -18,7 +18,7 @@ tags:   [Write-ups, HTB, OSCP+, Weak-Credentials, RPC-Enumeration, SMB-Shares, A
 - [Privilege Escalation](#privilege-escalation)
   - [Enumerating User mhope to find out its in Azure Admins group](#enumerating-user-mhope-to-find-out-its-in-azure-admins-group)
   - [Azure AD Connect Exploitation to obtain Administrator Credentials](#azure-ad-connect-exploitation-to-obtain-administrator-credentials)
-  - [Using Evil-WinRM to Access as Administrator](#using-evil-winrm-to-access-as-administrator)
+  - [Using Evil-WinRM to access as Administrator](#using-evil-winrm-to-access-as-administrator)
   - [Root Flag](#root-flag)
 
 # Enumeration
