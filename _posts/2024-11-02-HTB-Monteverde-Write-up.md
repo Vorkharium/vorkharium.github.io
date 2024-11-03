@@ -221,8 +221,8 @@ Now we can get the user.txt flag:
 type C:\Users\mhope\Desktop\user.txt
 ```
 # Privilege Escalation
-## Enumerating User mhope to find out its in Azure Admins group
-We enumerated the user mhope using the following command:
+## Enumerating User mhope to find out it's in Azure Admins group
+We can enumerate the user mhope using the following command:
 ```shell
 whoami /all
 ```
@@ -279,6 +279,7 @@ Through manual system and folders enumeration, we found traces of Azure AD every
 Notably, the Microsoft Azure Active Directory Connect service is of particular interest, as it synchronizes the entire Active Directory along with password hashes. This indicates that the service possesses DCSync privileges within the domain.
 
 Doing some research, we found the following documentation about how to exploit Azure AD Connect:
+
 https://blog.xpnsec.com/azuread-connect-for-redteam/
 
 This documentation says that the members of Azure Admins group have read rights on the database ADSync in the MSSQL, which contains the encrypted configuration being used for the Microsoft Azure Active Directory Connect service.
