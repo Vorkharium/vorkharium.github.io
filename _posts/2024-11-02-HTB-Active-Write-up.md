@@ -20,7 +20,7 @@ tags:   [Write-ups, HTB, OSCP+, Windows, Easy, Active-Directory, Kerberoasting]
 # Enumeration
 ### Nmap
 ```shell
-nmap -A -Pn -T4 -p- 10.129.149.20
+nmap -A -T4 -p- -Pn 10.129.149.20
 ```
 ```shell
 Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-11-01 23:19 EDT
@@ -103,7 +103,8 @@ sudo gedit /etc/hosts
 We can also see in our Nmap scan results that the target is running **Windows Server 2008 R2 SP1**.
 
 ### SMB Null Session access to Replication Share and finding Groups.xml
-Testing SMB Null Session was successful, we can get access using:
+After testing all uncredentialed enumeration and attack methods (Refer to Attacking Active Directory Cheatsheet), we successfully got access with an uncredentialed SMB Null Session:
+
 ```shell
 impacket-smbclient active.htb/'':''@10.129.149.20
 ```

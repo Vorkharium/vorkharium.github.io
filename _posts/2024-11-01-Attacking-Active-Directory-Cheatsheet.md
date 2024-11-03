@@ -42,9 +42,14 @@ nxc smb 172.16.150.0/24
 crackmapexec smb 172.16.150.0/24
 
 # Nmap Scan (Use -v verbose to see active ports before the scan is completed so we can start planning what we could do)
+nmap -p- 172.16.150.10 -v
 nmap -A -p- 172.16.150.10 -v
 nmap -A -p- -T4 -Pn 172.16.150.10 -v
 nmap -A -p- -T4 -Pn 172.16.150.0/24 -v
+
+# Two Steps Nmap Scan (Identify active ports with first scan, run scripts on active ports with second scan)
+nmap -p- --min-rate 10000 172.16.150.10
+nmap -A -p21,22,25,53,69,80,111,135,139,389,445,636,1433,3268,3269,3389,5985,8000,8080,47001 172.16.150.10
 
 # Nmap ARP Discovery
 nmap -n -sn 172.16.150.0/24

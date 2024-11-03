@@ -22,7 +22,7 @@ tags:   [Write-ups, HTB, OSCP+, Weak-Credentials, RPC-Enumeration, SMB-Shares, A
 # Enumeration
 ## Nmap
 ```shell
-nmap -A -Pn -T4 -p- 10.129.228.111
+nmap -A -T4 -p- -Pn 10.129.228.111
 ```
 
 ```shell
