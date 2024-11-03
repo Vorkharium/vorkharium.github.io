@@ -12,7 +12,7 @@ tags:   [Write-ups, HTB, OSCP+, Windows, Hard, Active-Directory, SMB-Shares, AS-
   - [SMB Null Session access allowed to find a List of Users](#smb-null-session-access-allowed-to-find-a-list-of-users)
 - [Foothold](#foothold)
   - [AS-REP Roasting on the support user](#as-rep-roasting-on-the-support-user)
-  - [BloodHound Enumeration to find out that user support has ForceChangePassword over user audit2020](#bloodhound-enumeration-to-find-out-that-user-support-has-forcechangepassword-over-user-audit2020)
+  - [BloodHound Enumeration to find out that user support has ForceChangePassword on user audit2020](#bloodhound-enumeration-to-find-out-that-user-support-has-forcechangepassword-on-user-audit2020)
   - [Changing the Password of the user audit2020 using rpcclient](#changing-the-password-of-the-user-audit2020-using-rpcclient)
   - [Accessing SMB Share forensic using the user audit2020](#accessing-smb-share-forensic-using-the-user-audit2020)
 - [Privilege Escalation](#privilege-escalation)
@@ -170,7 +170,7 @@ After waiting patiently for a few seconds, we successfully cracked the hash and 
 ```shell
 support:#00^BlackKnight
 ```
-## BloodHound Enumeration to find out that user support has ForceChangePassword over user audit2020
+## BloodHound Enumeration to find out that user support has ForceChangePassword on user audit2020
 We tried to get access using impacket-psexec and evil-winrm, and we also checked for password reuse on the other users but got no luck.
 
 It's time to enumerate the domain further and see if the user support has any interesting rights.
