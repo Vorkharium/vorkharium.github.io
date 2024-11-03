@@ -110,7 +110,7 @@ index: 0xfc7 RID: 0xa2c acb: 0x00000210 Account: svc-bexec      Name: svc-bexec 
 index: 0xfc8 RID: 0xa2d acb: 0x00000210 Account: svc-netapp     Name: svc-netapp        Desc: (null)
 ```
 ## Password Spraying with NetExec using Username as Password
-When dealing with credentials, it's always important to test if a user is using its username as password. In this case, we can create a custom list containin the names of the users:
+When dealing with credentials, it's always important to test if a user is using its username as password. In this case, we can create a custom list containing the names of the users:
 ```shell
 cat usernames.txt
 
