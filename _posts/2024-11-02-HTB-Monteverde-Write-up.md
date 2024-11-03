@@ -4,8 +4,23 @@ title:  HTB Monteverde Write-up (Under Construction)
 description: Part of the OSCP+ Preparation Active Directory Series
 date:   2024-11-03 01:00:00 +0300
 image:  '/images/htb_monteverde.png'
-tags:   [Write-ups, HTB, OSCP+,]
+tags:   [Write-ups, HTB, OSCP+, Weak-Credentials, RPC-Enumeration, SMB-Shares, Azure-AD-Connect]
 ---
+# Table of Contents
+- [Enumeration](#enumeration)
+  - [Nmap](#nmap)
+  - [RPC uncredentialed User Enumeration](#rpc-uncredentialed-user-enumeration)
+  - [Password Spraying with NetExec using Username as Password](#password-spraying-with-netexec-using-username-as-password)
+  - [SMB Access as SABatchJobs using impacket-smbclient](#smb-access-as-sabatchjobs-using-impacket-smbclient)
+- [Foothold](#foothold)
+  - [Testing Credentials using NetExec leading to valid WinRM Credentials](#testing-credentials-using-netexec-leading-to-valid-winrm-credentials)
+  - [User Flag](#user-flag)
+- [Privilege Escalation](#privilege-escalation)
+  - [Enumerating User mhope to find out its in Azure Admins group](#enumerating-user-mhope-to-find-out-its-in-azure-admins-group)
+  - [Azure AD Connect Exploitation to obtain Administrator Credentials](#azure-ad-connect-exploitation-to-obtain-administrator-credentials)
+  - [Using Evil-WinRM to Access as Administrator](#using-evil-winrm-to-access-as-administrator)
+  - [Root Flag](#root-flag)
+
 # Enumeration
 ## Nmap
 ```shell
