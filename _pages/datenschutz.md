@@ -4,7 +4,6 @@ title: Datenschutzerklärung
 permalink: /datenschutz/
 image: '/images/01.jpg'
 ---
-<!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
@@ -74,11 +73,20 @@ image: '/images/01.jpg'
 
     <p>Unsere Hoster verarbeiten Ihre Daten nur insoweit, wie dies zur Erfüllung ihrer Leistungspflichten erforderlich ist und folgen unseren Weisungen in Bezug auf diese Daten.</p>
     <p>Wir setzen folgende Hoster ein:</p>
-    <ul>
-        <li><strong>Cloudflare Germany GmbH</strong><br> Rosental 7, c/o Mindspace, 80331 München</li>
-        <li><strong>GitHub, Inc.</strong><br> 88 Colin P Kelly Jr St, San Francisco, CA 94107, United States of America</li>
-    </ul>
+    <p>
+        <strong>GitHub, Inc.</strong><br>
+        88 Colin P Kelly Jr St 
+        San Francisco, CA 94107
+        United States of America
+    </p>
 
+     <p>
+        <strong>Cloudflare Germany GmbH</strong><br>
+        Rosental 7
+        c/o Mindspace
+        80331 München
+    </p>
+    
     <hr>
 
     <h2>3. Allgemeine Hinweise und Pflichtinformationen</h2>
@@ -96,7 +104,9 @@ image: '/images/01.jpg'
     <p>Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
     <p>
         <strong>Raúl Aribó Escamilla</strong><br>
-        c/o COCENTER, Koppoldstr. 1, 86551 Aichach
+        c/o COCENTER 
+        Koppoldstr. 1 
+        86551 Aichach
     </p>
 
     <hr>
@@ -144,4 +154,4 @@ image: '/images/01.jpg'
         Browsercache, um Texte und Schriftarten korrekt anzuzeigen. Zu diesem Zweck muss Ihr Browser Verbindung zu den Servern von Google aufnehmen,
         wodurch Google Kenntnis darüber erlangt, dass über Ihre IP-Adresse diese Website aufgerufen wurde. Die Nutzung von Google Fonts erfolgt auf
         Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Weitere Informationen zu Google Fonts finden Sie in der
-        <a href="https://policies.google.com/privacy
+        <a href="https://policies.google.com/privacy</a>
