@@ -98,7 +98,9 @@ image: '/images/01.jpg'
    <p><strong>Raúl Aribó Escamilla</strong><br>
         c/o COCENTER<br>
         Koppoldstr. 1<br>
-        86551 Aichach</p>
+        86551 Aichach<br>
+        
+        Email: vorkharium@pm.me</p>
 
     <hr>
 
