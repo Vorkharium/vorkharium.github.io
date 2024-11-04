@@ -64,10 +64,11 @@ Nmap done: 1 IP address (1 host up) scanned in 34.82 seconds
 ```
 
 ### Web Enumeration
-Nmap found a website at port 80. If we visit the website and examine the source code with our web browser, we will see the following:
+Nmap found a website at port 80. If we visit the website:
 ```shell
 http://10.129.146.200/
 ```
+And examine the source code with our web browser, we will see the following:
 ```html
 <b>Hello world!</b>
 
@@ -137,7 +138,7 @@ There we can see that the user admin tried to log in from multiple IPs. So, now 
 ### Guessing the Password of admin user
 We couldn't find much more information. So we will just try to guess the password of the user admin.
 
-We can find the login portal looking at the feroxbuster results:
+We can find the login portal looking at the Feroxbuster results:
 ```shell
 http://10.129.146.200/nibbleblog/admin.php
 ```
