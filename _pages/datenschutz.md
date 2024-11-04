@@ -73,19 +73,16 @@ image: '/images/01.jpg'
 
     <p>Unsere Hoster verarbeiten Ihre Daten nur insoweit, wie dies zur Erfüllung ihrer Leistungspflichten erforderlich ist und folgen unseren Weisungen in Bezug auf diese Daten.</p>
     <p>Wir setzen folgende Hoster ein:</p>
-    <p>
-        <strong>GitHub, Inc.</strong><br>
-        88 Colin P Kelly Jr St 
-        San Francisco, CA 94107
-        United States of America
-    </p>
 
-     <p>
-        <strong>Cloudflare Germany GmbH</strong><br>
-        Rosental 7
-        c/o Mindspace
-        80331 München
-    </p>
+    <p><strong>GitHub, Inc.</strong><br></p>
+    <p>88 Colin P Kelly Jr St</p> 
+    <p>San Francisco, CA 94107</p>
+    <p>United States of America</p>
+
+    <p><strong>Cloudflare Germany GmbH</strong><br></p>
+    <p>Rosental 7</p>
+    <p>c/o Mindspace</p>
+    <p>80331 München</p>
     
     <hr>
 
@@ -102,12 +99,11 @@ image: '/images/01.jpg'
 
     <h3>Hinweis zur verantwortlichen Stelle</h3>
     <p>Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
-    <p>
-        <strong>Raúl Aribó Escamilla</strong><br>
-        c/o COCENTER 
-        Koppoldstr. 1 
-        86551 Aichach
-    </p>
+    
+    <p><strong>Raúl Aribó Escamilla</strong><br></p>
+    <p>c/o COCENTER</p>
+    <p>Koppoldstr. 1</p>
+    <p>86551 Aichach</p>
 
     <hr>
 
