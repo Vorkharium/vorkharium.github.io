@@ -78,11 +78,6 @@ image: '/images/01.jpg'
         88 Colin P Kelly Jr St<br>
         San Francisco, CA 94107<br>
         United States of America</p>
-
-    <p><strong>Cloudflare Germany GmbH</strong><br>
-        Rosental 7<br>
-        c/o Mindspace<br>
-        80331 München</p>
     
     <hr>
 
@@ -139,6 +134,11 @@ image: '/images/01.jpg'
         des europäischen Datenschutzrechts sicherstellt.
     </p>
     <p>Weitere Informationen zum Datenschutz bei Cloudflare finden Sie in deren <a href="https://www.cloudflare.com/de-de/privacypolicy/" target="_blank">Datenschutzerklärung</a>.</p>
+
+    <p><strong>Cloudflare Germany GmbH</strong><br>
+        Rosental 7<br>
+        c/o Mindspace<br>
+        80331 München</p>
 
     <hr>
 
