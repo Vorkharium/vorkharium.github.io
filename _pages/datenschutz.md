@@ -149,6 +149,7 @@ image: '/images/01.jpg'
     <h3>Google Fonts</h3>
     <p>
         Diese Seite nutzt Google Fonts zur einheitlichen Darstellung von Schriftarten. Beim Aufruf einer Seite lädt Ihr Browser die benötigten Fonts in den Browsercache, um Texte und Schriftarten korrekt anzuzeigen. Zu diesem Zweck muss Ihr Browser Verbindung zu den Servern von Google aufnehmen, wodurch Google Kenntnis darüber erlangt, dass über Ihre IP-Adresse diese Website aufgerufen wurde. Die Nutzung von Google Fonts erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Weitere Informationen zu Google Fonts finden Sie in der <a href="https://policies.google.com/privacy">Datenschutzerklärung von Google</a>.
+    </p>
 
     <hr>
 
@@ -156,4 +157,5 @@ image: '/images/01.jpg'
     <p>
         Nutzer dieser Website haben das Recht, der Verarbeitung ihrer personenbezogenen Daten jederzeit zu widersprechen.
         
-        Falls Sie eine Berichtigung, Sperrung, Löschung oder Auskunft über die zu Ihrer Person gespeicherten personenbezogenen Daten wünschen, oder Fragen zur Erhebung, Verarbeitung oder Nutzung Ihrer personenbezogenen Daten haben bzw. eine erteilte Einwilligung widerrufen möchten, wenden Sie sich bitte an folgende E-Mail-Adresse: vorkharium@pm.me</a>.
+        Falls Sie eine Berichtigung, Sperrung, Löschung oder Auskunft über die zu Ihrer Person gespeicherten personenbezogenen Daten wünschen, oder Fragen zur Erhebung, Verarbeitung oder Nutzung Ihrer personenbezogenen Daten haben bzw. eine erteilte Einwilligung widerrufen möchten, wenden Sie sich bitte an folgende E-Mail-Adresse: vorkharium@pm.me.
+    </p>
