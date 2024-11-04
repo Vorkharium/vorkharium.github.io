@@ -157,5 +157,5 @@ image: '/images/01.jpg'
     <p>
         Nutzer dieser Website haben das Recht, der Verarbeitung ihrer personenbezogenen Daten jederzeit zu widersprechen.
         
-        Falls Sie eine Berichtigung, Sperrung, Löschung oder Auskunft über die zu Ihrer Person gespeicherten personenbezogenen Daten wünschen, oder Fragen zur Erhebung, Verarbeitung oder Nutzung Ihrer personenbezogenen Daten haben bzw. eine erteilte Einwilligung widerrufen möchten, wenden Sie sich bitte an folgende E-Mail-Adresse: vorkharium@pm.me.
+        Falls Sie eine Berichtigung, Sperrung, Löschung oder Auskunft über die zu Ihrer Person gespeicherten personenbezogenen Daten wünschen, oder Fragen zur Erhebung, Verarbeitung oder Nutzung Ihrer personenbezogenen Daten haben bzw. eine erteilte Einwilligung widerrufen möchten, wenden Sie sich bitte an folgende E-Mail-Adresse: vorkharium@pm.me
     </p>
