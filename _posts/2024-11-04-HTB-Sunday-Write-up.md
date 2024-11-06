@@ -233,7 +233,7 @@ User sammy may run the following commands on sunday:
     (ALL) ALL
     (root) NOPASSWD: /usr/bin/wget
 ```
-If we visit GTFOBins, we will a way to get root abusing this with the entering the following commands, one line at a time:
+If we visit GTFOBins, we will find a way to get root abusing this entering the following commands, one line at a time:
 ```shell
 TF=$(mktemp)
 chmod +x $TF
