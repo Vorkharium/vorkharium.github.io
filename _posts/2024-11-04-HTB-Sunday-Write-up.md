@@ -220,6 +220,7 @@ ssh -p 22022 sammy@10.129.144.138
 ```
 ### User Flag
 ```shell
+-bash-5.1$ cd ~
 -bash-5.1$ ls
 user.txt
 -bash-5.1$ cat user.txt
