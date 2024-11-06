@@ -4,7 +4,7 @@ title:  HTB Sunday Write-up
 description: Part of the OSCP+ Preparation Series
 date:   2024-11-05 07:00:00 +0300
 image:  '/images/htb_sunday.png'
-tags:   [Write-ups, HTB, OSCP+, Unix, Easy]
+tags:   [Write-ups, HTB, OSCP+, Unix, Easy, SSH-Brute-Force, Shadow, Sudo-l]
 ---
 
 # Table of Contents
