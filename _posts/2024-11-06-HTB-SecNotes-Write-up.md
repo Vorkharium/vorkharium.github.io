@@ -86,7 +86,14 @@ Port 8808 has a Microsoft IIS website without much information.
 
 Port 80 has a login portal, which also allow us to create an account, to enumerate the website further after logging in.
 
+To create a new account, we can click on Sign up now and fill everything as needed:
+![Login](/images/htb_secnotes_login.png)
+![Register](/images/htb_secnotes_register.png)
+
 After creating an account and logging in, we found the following options available.
+
+![First View](htb_secnotes_loginfirstview.png)
+
 - New Note: Allows to create a new note
 - Change Password: Allows us to change the password
 - Sign Out: Signs us out
@@ -104,6 +111,7 @@ And then enter the following message in Contact Us and press Send:
 ```shell
 http://10.10.14.206:8080
 ```
+![Testing XSRF](htb_secnotes_contactus_python_server.png)
 
 After sending the message, we will get a reply in our python server. This means the user tyler clicked on the link we sent, making XSRF a valid attack vector.
 
@@ -112,6 +120,9 @@ We can intercept the HTTP request when changing our password and use it to carry
 ```shell
 http://127.0.0.1:80/change_pass.php?password=password123&confirm_password=password123&submit=submit
 ```
+
+![XSRF to change password of the user tyler](htb_secnotes_change_password_of_tyler.png)
+
 After sending it, we would have changed the password of the user tyler. This means we can now log in as tyler using the following credentials:
 ```shell
 tyler:password123
@@ -119,7 +130,11 @@ tyler:password123
 ### Logging as tyler and finding SMB Credentials
 With the new tyler credentials, we managed to log in and the notes of this user.
 
-Inside the note new-site, we were able to find SMB credentials.
+![tyler First View](htb_secnotes_tyler_first_view.png)
+
+Inside the note new-site, we were able to find SMB credentials:
+
+![tyler SMB credentials](htb_secnotes_smb_credentials.png)
 
 # Foothold
 ### SMB access as tyler
