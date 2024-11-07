@@ -23,7 +23,7 @@ tags:   [Write-ups, HTB, OSCP+, Windows, Medium, XSRF, PHP-Reverse-Shell, SMB, B
 
 # Enumeration
 ### Nmap
-When scanning this machine, it was much faster to do a "Two Step" Nmap scan:
+Doing a "Two Step" Nmap scan gave us better results when doing this machine:
 ```shell
 # Step 1 - Find active ports
 nmap -p- --min-rate 10000 10.129.143.191
