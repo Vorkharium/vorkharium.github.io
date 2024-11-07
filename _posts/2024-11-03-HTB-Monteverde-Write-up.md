@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  HTB Monteverde Write-up
+title:  HTB Monteverde Write-up 2024
 description: Part of the OSCP+ Preparation Series
 date:   2024-11-03 07:00:00 +0300
 image:  '/images/htb_monteverde.png'

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  HTB Blackfield Write-up
+title:  HTB Blackfield Write-up 2024
 description: Part of the OSCP+ Preparation Series
 date:   2024-11-03 09:00:00 +0300
 image:  '/images/htb_blackfield.png'
@@ -28,7 +28,7 @@ When scanning this machine, we got better results doing a "Two Step" Nmap scan:
 nmap -p- --min-rate 10000 10.129.191.43 -v
 
 # Step 2 - Focus scan on the active ports found
-sudo nmap -Pn -A -p53,88,135,139,389,445,593,3268,5985,49678 10.129.191.43 -v
+sudo nmap -A -Pn -p53,88,135,139,389,445,593,3268,5985,49678 10.129.191.43 -v
 ```
 
 ```shell
