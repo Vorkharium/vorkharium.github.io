@@ -114,7 +114,7 @@ image: '/images/01.jpg'
 </div>
 
 <div style="margin-top: 40px; text-align: center;">
-  <h3 style="color: #ffffff;">Linux</h3>
+  <h3 style="color: #ffffff;">Linux/Unix</h3>
 </div>
 
 <div style="display: flex; justify-content: center; gap: 15px;">
