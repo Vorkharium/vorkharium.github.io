@@ -17,7 +17,7 @@ image: '/images/01.jpg'
             <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
                         background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
                         border-radius: 5px; font-size: 14px;">
-                HTB Blackfield Write-up
+                HTB Blackfield
             </div>
         </a>
     </div>
@@ -29,7 +29,7 @@ image: '/images/01.jpg'
             <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
                         background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
                         border-radius: 5px; font-size: 14px;">
-                HTB Monteverde Write-up
+                HTB Monteverde
             </div>
         </a>
     </div>
@@ -41,7 +41,7 @@ image: '/images/01.jpg'
             <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
                         background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
                         border-radius: 5px; font-size: 14px;">
-                HTB Active Write-up
+                HTB Active
             </div>
         </a>
     </div>
@@ -71,7 +71,7 @@ image: '/images/01.jpg'
             <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
                         background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
                         border-radius: 5px; font-size: 14px;">
-                HTB SecNotes Write-up
+                HTB SecNotes
             </div>
         </a>
     </div>
@@ -125,7 +125,7 @@ image: '/images/01.jpg'
             <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
                         background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
                         border-radius: 5px; font-size: 14px;">
-                HTB Sunday Write-up
+                HTB Sunday
             </div>
         </a>
     </div>
@@ -137,7 +137,7 @@ image: '/images/01.jpg'
             <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
                         background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
                         border-radius: 5px; font-size: 14px;">
-                HTB Nibbles Write-up
+                HTB Nibbles
             </div>
         </a>
     </div>
@@ -149,7 +149,7 @@ image: '/images/01.jpg'
             <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
                         background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
                         border-radius: 5px; font-size: 14px;">
-                HTB Pilgrimage Write-up
+                HTB Pilgrimage
             </div>
         </a>
     </div>
