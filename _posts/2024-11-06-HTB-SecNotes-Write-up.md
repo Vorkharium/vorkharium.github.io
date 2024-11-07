@@ -137,7 +137,7 @@ With the new tyler credentials, we managed to log in and the notes of this user.
 
 ![tyler First View](/images/htb_secnotes_tyler_first_view.png)
 
-Inside the note new-site, we were able to find SMB credentials:
+Inside the note new site, we were able to find SMB credentials:
 
 ![tyler SMB credentials](/images/htb_secnotes_smb_credentials.png)
 
