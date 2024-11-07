@@ -84,7 +84,7 @@ Nmap done: 1 IP address (1 host up) scanned in 56.02 seconds
 ### Web Enumeration
 Port 8808 has a Microsoft IIS website without much information.
 
-Port 80 has a login portal, which also allow us to create an account, to enumerate the website further after logging in.
+Port 80 has a login portal, which also allows us to create an account, to enumerate the website further after logging in.
 
 To create a new account, we can click on Sign up now and fill everything as needed:
 ![Login](/images/htb_secnotes_login.png)
