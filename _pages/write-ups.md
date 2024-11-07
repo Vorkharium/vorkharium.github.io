@@ -12,7 +12,7 @@ image: '/images/01.jpg'
 <div style="display: flex; justify-content: center; gap: 15px; margin-top: 15px;">
     <div style="position: relative; display: inline-block;">
         <a href="/HTB-Blackfield-Write-up">
-            <img src="/images/htb_blackfield.png" alt="HTB Blackfield Write-up" 
+            <img src="/images/htb_blackfield.png" alt="HTB Blackfield" 
                  style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
             <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
                         background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
@@ -24,7 +24,7 @@ image: '/images/01.jpg'
 
     <div style="position: relative; display: inline-block;">
         <a href="/HTB-Monteverde-Write-up">
-            <img src="/images/htb_monteverde.png" alt="HTB Monteverde Write-up" 
+            <img src="/images/htb_monteverde.png" alt="HTB Monteverde" 
                  style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
             <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
                         background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
@@ -36,7 +36,7 @@ image: '/images/01.jpg'
 
     <div style="position: relative; display: inline-block;">
         <a href="/HTB-Active-Write-up">
-            <img src="/images/htb_active.png" alt="HTB Active Write-up" 
+            <img src="/images/htb_active.png" alt="HTB Active" 
                  style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
             <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
                         background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
@@ -66,7 +66,7 @@ image: '/images/01.jpg'
 <div style="display: flex; justify-content: center; gap: 15px;">
     <div style="position: relative; display: inline-block;">
         <a href="/HTB-SecNotes-Write-up">
-            <img src="/images/htb_secnotes.png" alt="HTB SecNotes Write-up" 
+            <img src="/images/htb_secnotes.png" alt="HTB SecNotes" 
                  style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
             <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
                         background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
@@ -120,7 +120,7 @@ image: '/images/01.jpg'
 <div style="display: flex; justify-content: center; gap: 15px;">
     <div style="position: relative; display: inline-block;">
         <a href="/HTB-Sunday-Write-up">
-            <img src="/images/htb_sunday.png" alt="HTB Sunday Write-up" 
+            <img src="/images/htb_sunday.png" alt="HTB Sunday" 
                  style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
             <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
                         background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
@@ -132,7 +132,7 @@ image: '/images/01.jpg'
 
     <div style="position: relative; display: inline-block;">
         <a href="/HTB-Nibbles-Write-up">
-            <img src="/images/htb_nibbles.png" alt="HTB Nibbles Write-up" 
+            <img src="/images/htb_nibbles.png" alt="HTB Nibbles" 
                  style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
             <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
                         background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
@@ -144,7 +144,7 @@ image: '/images/01.jpg'
 
     <div style="position: relative; display: inline-block;">
         <a href="/HTB-Pilgrimage-Write-up">
-            <img src="/images/htb_pilgrimage.png" alt="HTB Pilgrimage Write-up" 
+            <img src="/images/htb_pilgrimage.png" alt="HTB Pilgrimage" 
                  style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
             <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
                         background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
