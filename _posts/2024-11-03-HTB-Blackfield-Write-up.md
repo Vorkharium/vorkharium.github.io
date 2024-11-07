@@ -351,7 +351,8 @@ And dump them in our Kali locally:
 impacket-secretsdump -sam SAM -system SYSTEM local
 ```
 
-```shellImpacket v0.12.0 - Copyright Fortra, LLC and its affiliated companies 
+```shell
+Impacket v0.12.0 - Copyright Fortra, LLC and its affiliated companies 
 
 [*] Target system bootKey: 0x73d83e56de8961ca9f243e1a49638393
 [*] Dumping local SAM hashes (uid:rid:lmhash:nthash)
