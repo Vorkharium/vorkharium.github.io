@@ -81,8 +81,8 @@ image: '/images/01.jpg'
     </div>
 
     <div style="position: relative; display: inline-block;">
-        <a href="/images/surprise.png">
-            <img src="/" alt="Comming Soon" 
+        <a href="/">
+            <img src="/images/surprise.png" alt="Comming Soon" 
                  style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
             <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
                         background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
@@ -93,8 +93,8 @@ image: '/images/01.jpg'
     </div>
 
     <div style="position: relative; display: inline-block;">
-        <a href="/images/surprise.png">
-            <img src="/" alt="Comming Soon" 
+        <a href="/">
+            <img src="/images/surprise.png" alt="Comming Soon" 
                  style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
             <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
                         background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
