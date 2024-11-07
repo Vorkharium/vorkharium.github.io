@@ -11,7 +11,7 @@ tags:   [Write-ups, HTB, OSCP+, Linux, Easy, Git, CVE, Arbitrary-File-Read, pspy
 - [Enumeration](#enumeration)
   - [Nmap](#nmap)
   - [git-dumper to enumerate Git repository](#git-dumper-to-enumerate-git-repository)
-  - [Identifying the CVE-2022-44268](#identifying-the-cve-2022-44268)
+  - [Identifying CVE-2022-44268](#identifying-cve-2022-44268)
   - [Arbitrary File Read with CVE-2022-44268](#arbitrary-file-read-with-cve-2022-44268)
 - [Foothold](#foothold)
   - [Getting the password of emily with CVE-2022-44268](#getting-the-password-of-emily-with-cve-2022-44268)
@@ -61,7 +61,7 @@ Let's add pilgrimage.htb to /etc/hosts:
 echo "10.129.143.44 pilgrimage.htb" | sudo tee -a /etc/hosts
 ```
 
-Checking the website, we found an input form that let us choose a file and shrink it. Apart of that, we didnt find much. Lets move on.
+Checking the website, we found an input form that let us choose a file, upload and shrink it. Apart of that, we didnt find much.
 
 Usually, it's worth it running a nmap again if we find a domain like pilgrimage.htb. In this case, running a nmap scan again helped us identifying a Git repository:
 ```shell
@@ -176,7 +176,7 @@ The code tells us how to POST requests with images to to index.php and how they 
 ```shell
 exec("/var/www/pilgrimage.htb/magick convert /var/www/pilgrimage.htb/tmp/" . $upload->getName() . $mime . " -resize 50% /var/www/pilgrimage.htb/shrunk/" . $newname . $mime);
 ```
-### Identifying the CVE-2022-44268
+### Identifying CVE-2022-44268
 We can try using the file command on the magick file inside the git folder we got after using git_dumper:
 ```shell
 file magick
