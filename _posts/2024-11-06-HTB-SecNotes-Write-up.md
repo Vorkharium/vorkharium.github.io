@@ -115,7 +115,10 @@ http://10.10.14.206:8080
 ```
 ![Testing XSRF](/images/htb_secnotes_contactus_python_server.png)
 
-After sending the message, we will get a reply in our python server. This means the user tyler clicked on the link we sent, making XSRF a valid attack vector.
+After sending the message, we will get a reply in our python server. This means the user tyler clicked on the link we sent, making XSRF (Cross-Site Request Forgery) a valid attack vector.
+
+More info about how XSRF works on:
+https://portswigger.net/web-security/csrf
 
 ### Using XSRF to change the password of tyler
 We can intercept the HTTP request when changing our password and use it to carry out a XSRF attack to change the password of tyler entering and sending the following in the Contact Us form:
