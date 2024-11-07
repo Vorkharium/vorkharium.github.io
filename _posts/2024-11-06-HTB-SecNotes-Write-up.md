@@ -90,7 +90,7 @@ To create a new account, we can click on Sign up now and fill everything as need
 ![Login](/images/htb_secnotes_login.png)
 ![Register](/images/htb_secnotes_register.png)
 
-After creating an account and logging in, we found the following options available.
+After creating an account and logging in, we found the following options available:
 
 ![First View](/images/htb_secnotes_loginfirstview.png)
 
