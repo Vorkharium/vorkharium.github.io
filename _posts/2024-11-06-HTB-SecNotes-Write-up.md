@@ -86,8 +86,10 @@ Port 8808 has a Microsoft IIS website without much information.
 
 Port 80 has a login portal, which also allows us to create an account, to enumerate the website further after logging in.
 
-To create a new account, we can click on Sign up now and fill everything as needed:
+To create a new account, we can click on Sign up now:
 ![Login](/images/htb_secnotes_login.png)
+
+And fill everything as needed:
 ![Register](/images/htb_secnotes_register.png)
 
 After creating an account and logging in, we found the following options available:
