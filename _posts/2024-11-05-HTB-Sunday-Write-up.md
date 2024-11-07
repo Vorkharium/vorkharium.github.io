@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  HTB Sunday Write-up 2024
+title:  HTB Sunday Write-up
 description: Part of the OSCP+ Preparation Series
 date:   2024-11-05 07:00:00 +0300
 image:  '/images/htb_sunday.png'

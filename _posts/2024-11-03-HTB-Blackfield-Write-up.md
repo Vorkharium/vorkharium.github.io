@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  HTB Blackfield Write-up 2024
+title:  HTB Blackfield Write-up
 description: Part of the OSCP+ Preparation Series
 date:   2024-11-03 09:00:00 +0300
 image:  '/images/htb_blackfield.png'

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  HTB SecNotes Write-up 2024
+title:  HTB SecNotes Write-up
 description: Part of the OSCP+ Preparation Series
 date:   2024-11-06 07:00:00 +0300
 image:  '/images/htb_secnotes.png'
