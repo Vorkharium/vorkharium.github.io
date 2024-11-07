@@ -79,6 +79,30 @@ image: '/images/01.jpg'
             </div>
         </a>
     </div>
+
+    <div style="position: relative; display: inline-block;">
+        <a href="/">
+            <img src="/" alt="Comming Soon" 
+                 style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
+            <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
+                        background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
+                        border-radius: 5px; font-size: 14px;">
+                Comming Soon
+            </div>
+        </a>
+    </div>
+
+    <div style="position: relative; display: inline-block;">
+        <a href="/">
+            <img src="/" alt="Comming Soon" 
+                 style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
+            <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
+                        background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
+                        border-radius: 5px; font-size: 14px;">
+                Comming Soon
+            </div>
+        </a>
+    </div>
 </div>
 
 
