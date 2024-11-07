@@ -232,7 +232,7 @@ And use identify command to get the contents of the file:
 identify -verbose 672cf840dc6c1.png
 ```
 
-We will copy the part interests us:
+We will copy the part that interests us:
 ```shell
 726f6f743a783a303a303a726f6f743a2f726f6f743a2f62696e2f626173680a6461656d
 6f6e3a783a313a313a6461656d6f6e3a2f7573722f7362696e3a2f7573722f7362696e2f
