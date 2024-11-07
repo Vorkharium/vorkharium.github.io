@@ -29,10 +29,7 @@ image: '/images/01.jpg'
             </div>
         </a>
     </div>
-
-</div>
-
-<div style="display: flex; justify-content: center; gap: 15px;">
+    
     <div style="position: relative; display: inline-block;">
         <a href="/HTB-Nibbles-Write-up">
             <img src="/images/htb_nibbles.png" alt="HTB Nibbles Write-up" 
