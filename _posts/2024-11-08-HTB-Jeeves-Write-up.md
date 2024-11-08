@@ -94,7 +94,7 @@ First we need to go to Manage Jenkins -> Script Console. It will lead us to the 
 ```shell
 http://10.129.142.123:50000/askjeeves/script
 ```
-Now go visit the following URL and get the Groovy reverse shell:
+Now visit the following URL and get the Groovy reverse shell:
 ```shell
 https://gist.github.com/frohoff/fed1ffaab9b9beeb1c76
 ```
