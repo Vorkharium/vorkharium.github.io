@@ -131,7 +131,6 @@ binwalk -e Currency\ Volume\ Report.xlsm
 After running binwalk and analyzing the extracted files, we found some credentials inside the following file:
 
 ```shell
-
 cd '_Currency Volume Report.xlsm.extracted'
 cd xl
 cat vbaProject.bin
@@ -145,7 +144,6 @@ p�      ������  �����   &��     �����   2@
 From it, we could see the following credentials and looking at the queries inside the file also guess that these are the credentials for MSSQL:
 
 ```shell
-
 # Username
 reporting
 # Password
