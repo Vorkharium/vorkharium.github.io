@@ -121,9 +121,11 @@ smb: \> get "Currency Volume Report.xlsm"
 getting file \Currency Volume Report.xlsm of size 12229 as Currency Volume Report.xlsm (59.1 KiloBytes/sec) (average 59.1 KiloBytes/sec)
 ```
 The file seems to be empty. Let's analyze it with binwalk:
+
 ```shell
 binwalk -e Currency\ Volume\ Report.xlsm 
 ```
+
 After running binwalk and analyzing the extracted files, we found some credentials inside the following file:
 
 ```shell
