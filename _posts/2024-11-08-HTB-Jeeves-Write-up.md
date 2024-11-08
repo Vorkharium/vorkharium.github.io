@@ -69,7 +69,8 @@ We will enumerate port 80 first:
 ```shell
 http://10.129.142.123
 ```
-Visiting the website we can see a "Ask Jeeves" logo and a search box. If we try to search anything there we will get an error, giving us information about a Microsoft SQL Server 2005 being used.
+Visiting the website we can see a "Ask Jeeves" logo and a search box. If we try to search anything there we will get an error.
+
 We will now take a look at port 50000:
 ```shell
 http://10.129.142.123:50000
