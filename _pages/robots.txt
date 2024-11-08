@@ -1,0 +1,10 @@
+Disallow: /contact
+Disallow: /impressum
+Disallow: /datenschutz
+Disallow: /contact/
+Disallow: /impressum/
+Disallow: /datenschutz/
+Disallow:/*?author=*
+Disallow:/*&author=*
+Disallow:/*?tag=*
+Disallow:/*&tag=*
