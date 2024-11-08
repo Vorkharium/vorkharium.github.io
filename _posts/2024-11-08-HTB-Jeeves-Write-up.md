@@ -60,8 +60,8 @@ Nmap done: 1 IP address (1 host up) scanned in 134.70 seconds
 
 The Nmap scan gave us as result 4 open ports:
 - Port 80 with a Microsoft IIS website.
-- Ports 135 related to RPC.
-- Ports 445 related to SMB.
+- Ports 135 RPC.
+- Ports 445 SMB.
 - Port 50000 with Jetty 9.4.z-SNAPSHOT.
 
 ### Web Enumeration
