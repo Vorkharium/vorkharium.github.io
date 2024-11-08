@@ -11,7 +11,7 @@ tags:   [Write-ups, HTB, OSCP+, Windows, Medium, Jenkins, KeePass-.kdbx]
 - [Enumeration](#enumeration)
   - [Nmap](#nmap)
   - [Web Enumeration](#web-enumeration)
-  - [Detecting unsecured Jenkins dashboard using Feroxbuster](#detecting-unsecure-jenkins-dashboard-using-feroxbuster)
+  - [Detecting unsecured Jenkins dashboard using Feroxbuster](#detecting-unsecured-jenkins-dashboard-using-feroxbuster)
 - [Foothold](#foothold)
   - [Access as user kohsuke using Groovy Reverse Shell on Jenkins](#access-as-user-kohsuke-using-groovy-reverse-shell-on-jenkins)
 - [Privilege Escalation](#privilege-escalation)
@@ -74,7 +74,7 @@ We will now take a look at port 50000:
 http://10.129.142.123:50000
 ```
 There is not much to see there here.
-### Detecting unsecure Jenkins dashboard using Feroxbuster
+### Detecting unsecured Jenkins dashboard using Feroxbuster
 We can use Feroxbuster to search for directories:
 ```shell
 feroxbuster -u http://10.129.142.123:50000/ -w /usr/share/seclists/Discovery/Web-Content/directory-list-lowercase-2.3-medium.txt
