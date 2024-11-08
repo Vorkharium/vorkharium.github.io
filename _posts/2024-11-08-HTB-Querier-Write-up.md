@@ -87,6 +87,7 @@ Examining the Nmap results we found the following open ports:
 - Ports 139 and 445 related with SMB.
 - Port 1433 MSSQL.
 - Ports 5985 and 47001 related to WinRM.
+
 ### SMB Null Session to find MSSQL credentials
 One of the first things I do when finding SMB service accessible, is to try a null session to get access without credentials.
 We can try to list the available shares with the following command:
