@@ -8,7 +8,7 @@ image: '/images/01.jpg'
 <div style="display: flex; justify-content: center; gap: 15px; margin-top: 15px;">
     <div style="position: relative; display: inline-block;">
         <a href="/Attacking-Active-Directory-Cheatsheet">
-            <img src="/images/10000.png" alt="Attacking Active Directory" 
+            <img src="/images/10000.jpg" alt="Attacking Active Directory" 
                  style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
             <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
                         background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
@@ -53,10 +53,6 @@ image: '/images/01.jpg'
             </div>
         </a>
     </div>
-</div>
-
-<div style="margin-top: 40px; text-align: center;">
-  <h3 style="color: #ffffff;">Windows</h3>
 </div>
 
 <div style="display: flex; justify-content: center; gap: 15px;">
@@ -107,10 +103,6 @@ image: '/images/01.jpg'
             </div>
         </a>
     </div>
-</div>
-
-<div style="margin-top: 40px; text-align: center;">
-  <h3 style="color: #ffffff;">Linux/Unix</h3>
 </div>
 
 <div style="display: flex; justify-content: center; gap: 15px;">
