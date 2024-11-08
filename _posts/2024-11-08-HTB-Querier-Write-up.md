@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  HTB Querier Write-up
+title:  HTB Querier Write-up (Being edited now)
 description: Part of the OSCP+ Preparation Series
 date:   2024-11-08 20:00:00 +0300
 image:  '/images/htb_querier.png'
