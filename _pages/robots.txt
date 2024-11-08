@@ -24,3 +24,4 @@ Disallow:/*?author=*
 Disallow:/*&author=*
 Disallow:/*?tag=*
 Disallow:/*&tag=*
+Sitemap: /sitemap.xml
