@@ -130,6 +130,7 @@ type C:\Users\kohsuke\Desktop\user.txt
 ### Finding and moving .kdbx KeePass file with SMB Server
 Enumerating the folders in the machine, we found a .kdbx KeePass file using our custom cmd search command:
 ```shell
+# Custom cmd search command to find .db and .kdbx files
 for /r C:\ %i in (*.db *.kdbx) do @echo %i
 
 # Results
