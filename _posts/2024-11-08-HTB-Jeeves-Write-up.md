@@ -63,6 +63,7 @@ The Nmap scan gave us as result 4 open ports:
 - Ports 135 related to RPC.
 - Ports 445 related to SMB.
 - Port 50000 with Jetty 9.4.z-SNAPSHOT.
+
 ### Web Enumeration
 We will enumerate port 80 first:
 ```shell
