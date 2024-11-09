@@ -113,7 +113,7 @@ Server: Jetty(10.0.18)
 
 Now we need to examine X-Jenkins. This will tell you that the version of Jenkins is the 2.441.
 
-There is an easier way to enumerate Jenkins version, at the bottom right corner of the website near REST API it says Jenkins 2.441, but I thought it stills important to know we can find out the version of Jenkins using Burp Suite to examine the HTTP request.
+There is an easier way to enumerate Jenkins version, at the bottom right corner of the website near REST API it says Jenkins 2.441, but I thought it is still important to know we can find out the version of Jenkins using Burp Suite to examine the HTTP request.
 
 If we google "jenkins 2.441 exploit", we will find CVE-2024-23897.
 
