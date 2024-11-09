@@ -275,7 +275,8 @@ Use NetExec to check if the new user got successfully added:
 ```shell
 nxc smb 10.129.141.177 -u vorkharium -p 'Password123!' -d htb.local 
 ```
-Nice! It everything worked as intended!
+Nice! If you got a "+" sign, everything worked as intended!
+
 Now use PowerView.ps1 to give DCSync rights to the new user:
 
 ```shell
