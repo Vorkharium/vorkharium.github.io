@@ -77,7 +77,7 @@ If we visit the website, we will see a business website of the company Egotistic
 ```shell
 http://10.129.95.180
 ```
-One page that took our attention is the About Us page. If we scroll down to the bottom, we will see a Meet the Team from with the names of some workers:
+One page that took our attention is the About Us page. If we scroll down to the bottom, we will see a Meet the Team form with the names of some workers:
 ```shell
 http://10.129.95.180/about.html
 ```
