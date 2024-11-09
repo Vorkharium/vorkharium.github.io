@@ -168,7 +168,7 @@ nxc smb 10.129.95.180 -u fsmith -p Thestrokes23
 ```
 If we get a "+" sign, we can confirm that the credentials are right.
 
-Now we can use evil-winrm to get access:
+We can use evil-winrm to get access:
 
 ```shell
 evil-winrm -i 10.129.95.180 -u fsmith -p Thestrokes23
