@@ -24,4 +24,6 @@ Disallow:/*?author=*
 Disallow:/*&author=*
 Disallow:/*?tag=*
 Disallow:/*&tag=*
+Disallow:/images
+Disallow:/images/
 Sitemap: /sitemap.xml
