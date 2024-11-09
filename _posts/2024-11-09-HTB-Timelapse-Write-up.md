@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  HTB Timelapse Write-up (Being edited now)
+title:  HTB Timelapse Write-up
 description: Part of the OSCP+ Preparation Series
 date:   2024-11-09 22:30:00 +0300
 image:  '/images/htb_timelapse.png'
