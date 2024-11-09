@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  HTB ServMon Write-up (Being edited now)
+title:  HTB ServMon Write-up
 description: Part of the OSCP+ Preparation Series
 date:   2024-11-09 20:00:00 +0300
 image:  '/images/htb_servmon.png'
