@@ -207,13 +207,13 @@ image: '/images/01.jpg'
     </div>
 
     <div style="position: relative; display: inline-block;">
-        <a href="/">
-            <img src="/images/surprise.png" alt="Comming Soon" 
+        <a href="/HTB-Builder-Write-up">
+            <img src="/images/htb_builder.png" alt="HTB Builder" 
                  style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
             <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
                         background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
                         border-radius: 5px; font-size: 14px;">
-                Comming Soon
+                HTB Builder
             </div>
         </a>
     </div>
