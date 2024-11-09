@@ -4,7 +4,7 @@ title:  HTB Forest Write-up (Being edited now)
 description: Part of the OSCP+ Preparation Series
 date:   2024-11-09 01:00:00 +0300
 image:  '/images/htb_forest.png'
-tags:   [Write-ups, HTB, OSCP+, Windows, Easy, Active-Directory, RPC, LDAP, AS-REP-Roasting, BloodHound, PowerView.ps1, GenericAll, WriteDacl, DCSync, Pass-the-Hash]
+tags:   [Write-ups, HTB, OSCP+, Windows, Easy, Active-Directory, RPC, LDAP, AS-REP-Roasting, BloodHound, PowerView.ps1, ACLs ,GenericAll, WriteDacl, DCSync, Pass-the-Hash]
 ---
 
 # Table of Contents
