@@ -59,7 +59,7 @@ image: '/images/01.jpg'
     </div>
 </div>
 
-<div style="height: 8px;"></div>
+<div style="height: 5px;"></div>
 
 <div style="display: flex; justify-content: center; gap: 15px; margin-top: 15px;">
     <div style="position: relative; display: inline-block;">
