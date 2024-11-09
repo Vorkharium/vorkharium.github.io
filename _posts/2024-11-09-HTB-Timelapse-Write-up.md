@@ -4,7 +4,7 @@ title:  HTB Timelapse Write-up (Being edited now)
 description: Part of the OSCP+ Preparation Series
 date:   2024-11-09 22:30:00 +0300
 image:  '/images/htb_timelapse.png'
-tags:   [Write-ups, HTB, OSCP+, Windows, Easy, FTP, CVE, Path-Traversal, Password-Spraying, SSH, Port-Forwarding, .bat]
+tags:   [Write-ups, HTB, OSCP+, Windows, Easy, Active-Directory, SMB, SMB-Shares, .PFX, WinRM-.pem, PowerShell-History, LDAP, LDAP-Saved-Password]
 ---
 
 # Table of Contents
