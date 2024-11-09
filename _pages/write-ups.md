@@ -47,6 +47,58 @@ image: '/images/01.jpg'
     </div>
 
     <div style="position: relative; display: inline-block;">
+        <a href="/HTB-Forest-Write-up">
+            <img src="/images/htb_forest.png" alt="HTB Forest" 
+                 style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
+            <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
+                        background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
+                        border-radius: 5px; font-size: 14px;">
+                HTB Forest
+            </div>
+        </a>
+    </div>
+</div>
+
+<hr style="border: 1px solid #ffffff; margin-top: 15px;">
+
+<div style="display: flex; justify-content: center; gap: 15px; margin-top: 15px;">
+    <div style="position: relative; display: inline-block;">
+        <a href="/HTB-Sauna-Write-up">
+            <img src="/images/htb_sauna.png" alt="HTB Sauna" 
+                 style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
+            <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
+                        background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
+                        border-radius: 5px; font-size: 14px;">
+                HTB Sauna
+            </div>
+        </a>
+    </div>
+
+    <div style="position: relative; display: inline-block;">
+        <a href="/">
+            <img src="/images/surprise.png" alt="Comming Soon" 
+                 style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
+            <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
+                        background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
+                        border-radius: 5px; font-size: 14px;">
+                Comming Soon
+            </div>
+        </a>
+    </div>
+
+    <div style="position: relative; display: inline-block;">
+        <a href="/">
+            <img src="/images/surprise.png" alt="Comming Soon" 
+                 style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
+            <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
+                        background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
+                        border-radius: 5px; font-size: 14px;">
+                Comming Soon
+            </div>
+        </a>
+    </div>
+
+    <div style="position: relative; display: inline-block;">
         <a href="/">
             <img src="/images/surprise.png" alt="Comming Soon" 
                  style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
@@ -90,12 +142,12 @@ image: '/images/01.jpg'
 
     <div style="position: relative; display: inline-block;">
         <a href="/">
-            <img src="/images/surprise.png" alt="Comming Soon" 
+            <img src="/images/htb_querier.png" alt="HTB Querier" 
                  style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
             <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
                         background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
                         border-radius: 5px; font-size: 14px;">
-                Comming Soon
+                HTB Querier
             </div>
         </a>
     </div>
