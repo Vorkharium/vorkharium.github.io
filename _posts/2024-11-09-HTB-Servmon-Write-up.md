@@ -214,6 +214,7 @@ When visiting the URL above, we get redirected to:
 http://10.129.141.209/Pages/login.htm
 ```
 It seems to be a login portal for NVMS-1000.
+
 ### CVE 2019-20085 NVMS 1000 Directory Traversal
 Searching on Google for "NVMS 1000 exploit", we found the following exploit:
 
