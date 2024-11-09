@@ -22,6 +22,7 @@ tags:   [Write-ups, HTB, OSCP+, Windows, Easy, FTP, CVE, Path-Traversal, Passwor
 
 # Enumeration
 ### Nmap
+
 ```shell
 # Step 1 - Find active ports (This time its important to use -Pn and sudo, otherwise the scan wont succeed)
 sudo nmap -p- -Pn --min-rate 10000 10.129.141.135
