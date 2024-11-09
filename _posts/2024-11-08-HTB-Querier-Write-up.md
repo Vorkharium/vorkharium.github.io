@@ -4,7 +4,7 @@ title:  HTB Querier Write-up
 description: Part of the OSCP+ Preparation Series
 date:   2024-11-08 20:00:00 +0300
 image:  '/images/htb_querier.png'
-tags:   [Write-ups, HTB, OSCP+, Windows, Medium, SMB, SMB-Shares, MSSQL, PowerUp.ps1, PsExec]
+tags:   [Write-ups, HTB, OSCP+, Windows, Medium, SMB-Null-Session, SMB-Shares, MSSQL, PowerUp.ps1, PsExec]
 ---
 
 # Table of Contents

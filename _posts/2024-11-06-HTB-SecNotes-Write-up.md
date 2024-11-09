@@ -4,7 +4,7 @@ title:  HTB SecNotes Write-up
 description: Part of the OSCP+ Preparation Series
 date:   2024-11-06 07:00:00 +0300
 image:  '/images/htb_secnotes.png'
-tags:   [Write-ups, HTB, OSCP+, Windows, Medium, XSRF, PHP-Reverse-Shell, SMB, Bash-History]
+tags:   [Write-ups, HTB, OSCP+, Windows, Medium, XSRF, PHP-Reverse-Shell, SMB-Shares, Bash-History, SMB-PsExec]
 ---
 
 # Table of Contents

@@ -4,7 +4,7 @@ title:  HTB Jeeves Write-up
 description: Part of the OSCP+ Preparation Series
 date:   2024-11-08 07:00:00 +0300
 image:  '/images/htb_jeeves.png'
-tags:   [Write-ups, HTB, OSCP+, Windows, Medium, Jenkins, KeePass-.kdbx]
+tags:   [Write-ups, HTB, OSCP+, Windows, Medium, Jenkins, Groovy-Reverse-Shell, KeePass-.kdbx]
 ---
 
 # Table of Contents
