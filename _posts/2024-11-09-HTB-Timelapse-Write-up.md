@@ -337,7 +337,7 @@ evil-winrm -i 10.129.141.135 -u Administrator -p 'uvl4s-F$stf,NBy!fP{3wat0' -S
 ```
 
 ### Root Flag
-Now we can get the root.txt flag (Note that the root.txt is inside TRX desktop this time):
+Now we can get the root.txt flag (Note that root.txt is inside TRX desktop this time):
 
 ```shell
 type C:\Users\TRX\Desktop\root.txt
