@@ -1,3 +1,25 @@
+---
+layout: post
+title:  HTB Timelapse Write-up (Being edited now)
+description: Part of the OSCP+ Preparation Series
+date:   2024-11-09 22:30:00 +0300
+image:  '/images/htb_timelapse.png'
+tags:   [Write-ups, HTB, OSCP+, Windows, Easy, FTP, CVE, Path-Traversal, Password-Spraying, SSH, Port-Forwarding, .bat]
+---
+
+# Table of Contents
+- [Enumeration](#enumeration)
+  - [Nmap](#nmap)
+  - [SMB Null Session to find winrm_backup.zip](#smb-null-session-to-find-winrm_backupzip)
+  - [Using zip2john to crack and open winrm_backup.zip](#using-zip2john-to-crack-and-open-winrm_backupzip)
+  - [Extracting credentials from PFX file with pfx2john](#extracting-credentials-from-pfx-file-with-pfx2john)
+- [Foothold](#foothold)
+  - [Access using evil-winrm with key.pem and cert.pem](#access-using-evil-winrm-with-keypem-and-certpem)
+- [Privilege Escalation](#privilege-escalation)
+  - [Finding svc_deploy credentials on powershell history](#finding-svc_deploy-credentials-on-powershell-history)
+  - [svc_deploy is part of LDAP_Readers users](#svc_deploy-is-part-of-ldap_readers-users)
+  - [Finding Administrator password with native PowerShell AD Module thanks LDAP saved password](#finding-administrator-password-with-native-powershell-ad-module-thanks-ldap-saved-password)
+
 # Enumeration
 ### Nmap
 ```shell

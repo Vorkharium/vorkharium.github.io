@@ -12,7 +12,7 @@ tags:   [Write-ups, HTB, OSCP+, Windows, Easy, FTP, CVE, Path-Traversal, Passwor
   - [Nmap](#nmap)
   - [FTP Anonymous access](#ftp-anonymous-access)
   - [Web Enumeration](#web-enumeration)
-  - [### CVE 2019-20085 NVMS 1000 Path Traversal](#cve-2019-20085-nvms-1000-directory-traversal)
+  - [CVE 2019-20085 NVMS 1000 Path Traversal](#cve-2019-20085-nvms-1000-directory-traversal)
 - [Foothold](#foothold)
   - [Password Spraying with NetExec](#password-spraying-with-netexec)
   - [SSH access as user nadine](#ssh-access-as-user-nadine)
