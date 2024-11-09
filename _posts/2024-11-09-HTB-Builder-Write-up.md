@@ -158,7 +158,7 @@ sys:x:3:3:sys:/dev:/usr/sbin/nologin
 sync:x:4:65534:sync:/bin:/bin/sync
 ```
 
- On the documention of the exploit, its also mentioned in which files we could find interesting information:
+ On the documentation of the exploit, its also mentioned in which files we could find interesting information:
 - `/proc/self/environ` Environmental variables including `JENKINS_HOME`
 - `/proc/self/cmdline` Command-line arguments
 - `/etc/hosts` Linux local-DNS resolution
