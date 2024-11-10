@@ -271,7 +271,7 @@ These functions seem to work like the docker functions.
 
 ### Extracting information from container
 
-Inspecting the following documentation:
+Examining the following documentation:
 
 https://docs.docker.com/reference/cli/docker/inspect/
 
