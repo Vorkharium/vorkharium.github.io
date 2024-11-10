@@ -153,22 +153,6 @@ image: '/images/01.jpg'
     </div>
 
     <div style="position: relative; display: inline-block;">
-        <a href="/">
-            <img src="/images/surprise.png" alt="Comming Soon" 
-                 style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
-            <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
-                        background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
-                        border-radius: 5px; font-size: 14px;">
-                Comming Soon
-            </div>
-        </a>
-    </div>
-</div>
-
-<div style="height: 5px;"></div>
-
-<div style="display: flex; justify-content: center; gap: 15px; margin-top: 15px;">
-    <div style="position: relative; display: inline-block;">
         <a href="/HTB-Servmon-Write-up">
             <img src="/images/htb_servmon.png" alt="HTB ServMon" 
                  style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
@@ -179,7 +163,11 @@ image: '/images/01.jpg'
             </div>
         </a>
     </div>
+</div>
 
+<div style="height: 5px;"></div>
+
+<div style="display: flex; justify-content: center; gap: 15px; margin-top: 15px;">
     <div style="position: relative; display: inline-block;">
         <a href="/HTB-Chatterbox-Write-up">
             <img src="/images/htb_chatterbox.png" alt="HTB Chatterbox" 
@@ -188,6 +176,18 @@ image: '/images/01.jpg'
                         background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
                         border-radius: 5px; font-size: 14px;">
                 HTB Chatterbox
+            </div>
+        </a>
+    </div>
+
+    <div style="position: relative; display: inline-block;">
+        <a href="/">
+            <img src="/images/surprise.png" alt="Comming Soon" 
+                 style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
+            <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
+                        background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
+                        border-radius: 5px; font-size: 14px;">
+                Comming Soon
             </div>
         </a>
     </div>
