@@ -4,7 +4,7 @@ title:  HTB Busqueda Write-up
 description: Part of the OSCP+ Preparation Series
 date:   2024-11-10 3:00:00 +0300
 image:  '/images/htb_busqueda.png'
-tags:   [Write-ups, HTB, OSCP+, Linux, Searchor, Git, Gitea, Password-Reuse, SSH, Docker, Bash-Script, Linux-Relative-Path-Abuse]
+tags:   [Write-ups, HTB, OSCP+, Linux, Easy, Searchor, Git, Gitea, Password-Reuse, SSH, Docker, Bash-Script, Linux-Relative-Path-Abuse]
 ---
 
 # Table of Contents

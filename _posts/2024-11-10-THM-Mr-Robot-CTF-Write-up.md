@@ -4,7 +4,7 @@ title:  THM Mr Robot CTF Write-up
 description: Part of the OSCP+ Preparation Series
 date:   2024-11-10 07:00:00 +0300
 image:  '/images/thm_mr_robot_ctf.png'
-tags:   [Write-ups, THM, OSCP+, Linux, WordPress, Login-Brute-Force, WP-Template-PHP-Reverse-Shell, MD5-Hash, Nmap-SUID]
+tags:   [Write-ups, THM, OSCP+, Linux, Medium, WordPress, Login-Brute-Force, WP-Template-PHP-Reverse-Shell, MD5-Hash, Nmap-SUID]
 ---
 
 # Table of Contents
