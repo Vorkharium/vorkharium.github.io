@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  HTB Busqueda Write-up (Being edited now)
+title:  HTB Busqueda Write-up
 description: Part of the OSCP+ Preparation Series
 date:   2024-11-10 3:00:00 +0300
 image:  '/images/htb_busqueda.png'
