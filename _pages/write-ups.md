@@ -75,25 +75,25 @@ image: '/images/01.jpg'
     </div>
 
     <div style="position: relative; display: inline-block;">
-        <a href="/">
-            <img src="/images/surprise.png" alt="Comming Soon" 
+        <a href="/HTB-Return-Write-up">
+            <img src="/images/htb_return.png" alt="HTB Return" 
                  style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
             <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
                         background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
                         border-radius: 5px; font-size: 14px;">
-                Comming Soon
+                HTB Return
             </div>
         </a>
     </div>
 
     <div style="position: relative; display: inline-block;">
-        <a href="/">
-            <img src="/images/surprise.png" alt="Comming Soon" 
+        <a href="/HTB-Timelapse-Write-up">
+            <img src="/images/htb_timelapse.png" alt="HTB Timelapse" 
                  style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
             <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
                         background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
                         border-radius: 5px; font-size: 14px;">
-                Comming Soon
+                HTB Timelapse
             </div>
         </a>
     </div>
@@ -165,6 +165,58 @@ image: '/images/01.jpg'
     </div>
 </div>
 
+<div style="height: 5px;"></div>
+
+<div style="display: flex; justify-content: center; gap: 15px; margin-top: 15px;">
+    <div style="position: relative; display: inline-block;">
+        <a href="/HTB-Servmon-Write-up">
+            <img src="/images/htb_servmon.png" alt="HTB ServMon" 
+                 style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
+            <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
+                        background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
+                        border-radius: 5px; font-size: 14px;">
+                HTB ServMon
+            </div>
+        </a>
+    </div>
+
+    <div style="position: relative; display: inline-block;">
+        <a href="/HTB-Chatterbox-Write-up">
+            <img src="/images/htb_chatterbox.png" alt="HTB Chatterbox" 
+                 style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
+            <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
+                        background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
+                        border-radius: 5px; font-size: 14px;">
+                HTB Chatterbox
+            </div>
+        </a>
+    </div>
+
+    <div style="position: relative; display: inline-block;">
+        <a href="/">
+            <img src="/images/surprise.png" alt="Comming Soon" 
+                 style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
+            <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
+                        background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
+                        border-radius: 5px; font-size: 14px;">
+                Comming Soon
+            </div>
+        </a>
+    </div>
+
+    <div style="position: relative; display: inline-block;">
+        <a href="/">
+            <img src="/images/surprise.png" alt="Comming Soon" 
+                 style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
+            <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
+                        background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
+                        border-radius: 5px; font-size: 14px;">
+                Comming Soon
+            </div>
+        </a>
+    </div>
+</div>
+
 <div style="margin-top: 40px; text-align: center;">
   <h3 style="color: #ffffff;">Linux/Unix</h3>
 </div>
@@ -214,6 +266,58 @@ image: '/images/01.jpg'
                         background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
                         border-radius: 5px; font-size: 14px;">
                 HTB Builder
+            </div>
+        </a>
+    </div>
+</div>
+
+<div style="height: 5px;"></div>
+
+<div style="display: flex; justify-content: center; gap: 15px; margin-top: 15px;">
+    <div style="position: relative; display: inline-block;">
+        <a href="/HTB-Busqueda-Write-up">
+            <img src="/images/htb_busqueda.png" alt="HTB Busqueda" 
+                 style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
+            <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
+                        background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
+                        border-radius: 5px; font-size: 14px;">
+                HTB Busqueda
+            </div>
+        </a>
+    </div>
+
+    <div style="position: relative; display: inline-block;">
+        <a href="/THM-Mr-Robot-CTF-Write-Up">
+            <img src="/images/thm_mr_robot_ctf.png" alt="THM Mr Robot CTF" 
+                 style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
+            <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
+                        background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
+                        border-radius: 5px; font-size: 14px;">
+                THM Mr Robot CTF
+            </div>
+        </a>
+    </div>
+
+    <div style="position: relative; display: inline-block;">
+        <a href="/">
+            <img src="/images/surprise.png" alt="Comming Soon" 
+                 style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
+            <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
+                        background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
+                        border-radius: 5px; font-size: 14px;">
+                Comming Soon
+            </div>
+        </a>
+    </div>
+
+    <div style="position: relative; display: inline-block;">
+        <a href="/">
+            <img src="/images/surprise.png" alt="Comming Soon" 
+                 style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
+            <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
+                        background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
+                        border-radius: 5px; font-size: 14px;">
+                Comming Soon
             </div>
         </a>
     </div>
