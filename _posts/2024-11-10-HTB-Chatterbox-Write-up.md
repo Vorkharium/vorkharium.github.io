@@ -4,7 +4,7 @@ title:  HTB Chatterbox Write-up
 description: Part of the OSCP+ Preparation Series
 date:   2024-11-10 09:00:00 +0300
 image:  '/images/htb_chatterbox.png'
-tags:   [Write-ups, HTB, OSCP+, Windows, Medium, AChat, Buffer Overflow, Credentials-in-Registry, Password-Reuse, PsExec]
+tags:   [Write-ups, HTB, OSCP+, Windows, Medium, AChat, Buffer-Overflow, Credentials-in-Registry, Password-Reuse, PsExec]
 ---
 
 # Table of Contents
@@ -19,6 +19,7 @@ tags:   [Write-ups, HTB, OSCP+, Windows, Medium, AChat, Buffer Overflow, Credent
 
 # Enumeration
 ### Nmap
+
 ```shell
 # Step 1 - Find active ports
 sudo nmap -p- -Pn --min-rate 10000 10.129.140.222
