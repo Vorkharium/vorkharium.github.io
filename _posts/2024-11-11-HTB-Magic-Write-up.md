@@ -20,7 +20,7 @@ tags:   [Write-ups, HTB, OSCP+, Linux, Medium, SQL-Injection-Bypass, File-Upload
   - [Accessing and enumerating MySQL database to find credentials](#accessing-and-enumerating-mysql-database-to-find-credentials)
   - [Using su and the password we found to get shell as theseus](#using-su-and-the-password-we-found-to-get-shell-as-theseus)
 - [Privilege Escalation](#privilege-escalation)
-  - [Finding sysinfo with SETUID bit set using cat binary without absolute path](#finding-sysinfo-with-setuid-bit-set-using-cat-binary-without-absolute-path)
+  - [Finding sysinfo custom binary with SETUID bit set using cat binary without absolute path](#finding-sysinfo-custom-binary-with-setuid-bit-set-using-cat-binary-without-absolute-path)
   - [Changing PATH variable and creating malicious cat binary containing a busybox reverse shell](#changing-path-variable-and-creating-malicious-cat-binary-containing-a-busybox-reverse-shell)
 
 # Enumeration
@@ -392,7 +392,7 @@ cat /home/theseus/user.txt
 ```
 
 # Privilege Escalation
-### Finding sysinfo with SETUID bit set using cat binary without absolute path
+### Finding sysinfo custom binary with SETUID bit set using cat binary without absolute path
 We tried using sudo -l but the user theseus wasnt able to run sudo -l:
 
 ```shell
