@@ -1,5 +1,30 @@
+---
+layout: post
+title:  THM Thompson Write-up
+description: Part of the OSCP+ Preparation Series
+date:   2024-11-11 03:00:00 +0300
+image:  '/images/thm_thompson.png'
+tags:   [Write-ups, THM, OSCP+, Easy, Linux, Tomcat, WAR-Reverse-Shell, Bash-Script, Cron-Job, Etc-Shadow, SSH, Create-id_rsa]
+---
+
+# Table of Contents
+- [Enumeration](#enumeration)
+  - [Nmap](#nmap)
+  - [Tomcat Web Enumeration](#tomcat-web-enumeration)
+  - [Getting access into Tomcat Web Application Manager using default credentials](#getting-access-into-tomcat-web-application-manager-using-default-credentials)
+- [Foothold](#foothold)
+  - [Deploy WAR file created with msfvenom containing a reverse shell to get access](#deploy-war-file-created-with-msfvenom-containing-a-reverse-shell-to-get-access)
+- [Privilege Escalation](#privilege-escalation)
+  - [id.sh bash script manipulation to get the content of root.txt flag](#idsh-bash-script-manipulation-to-get-the-content-of-roottxt-flag)
+  - [Checking Cron Jobs](#checking-cron-jobs)
+  - [Getting the contents of /etc/passwd and /etc/shadow/](#getting-the-contents-of-etcpasswd-and-etcshadow)
+  - [Checking if root has an id_rsa](#checking-if-root-has-an-id_rsar)
+  - [Getting a reverse shell as root manipulating id.sh script](#getting-a-reverse-shell-as-root-manipulating-idsh-script)
+  - [Creating id_rsa for root and getting access using SSH](#creating-id_rsa-for-root-and-getting-access-using-ssh)
+
 # Enumeration
 ### Nmap
+
 ```shell
 # Step 1 - Find active ports
 nmap -p- --min-rate 10000 10.10.121.49

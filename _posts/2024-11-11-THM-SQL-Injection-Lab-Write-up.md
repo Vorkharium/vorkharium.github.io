@@ -2,7 +2,7 @@
 layout: post
 title:  THM SQL Injection Lab Write-up
 description: Part of the OSCP+ Preparation Series
-date:   2024-11-11 03:00:00 +0300
+date:   2024-11-11 00:00:00 +0300
 image:  '/images/thm_sql_injection_lab.png'
 tags:   [Write-ups, THM, OSCP+, Easy, Web-Pentesting, SQL-Injection, Manual-SQL-Injection, SQLMap]
 ---
