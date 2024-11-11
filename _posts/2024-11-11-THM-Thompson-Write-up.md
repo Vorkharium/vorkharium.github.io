@@ -29,7 +29,7 @@ tags:   [Write-ups, THM, OSCP+, Easy, Linux, Tomcat, WAR-Reverse-Shell, Bash-Scr
 # Step 1 - Find active ports
 nmap -p- --min-rate 10000 10.10.121.49
 
-# Step 2 - Focus scan on the active ports found (Note: In this case is important to use -T4 to make the scan succeed)
+# Step 2 - Focus scan on the active ports found
 nmap -A -T4 -Pn -p22,8009,8080 10.10.121.49
 ```
 

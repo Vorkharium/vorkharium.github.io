@@ -35,7 +35,7 @@ tags:   [Write-ups, THM, OSCP+, Linux, Medium, WordPress, Login-Brute-Force, WP-
 # Step 1 - Find active ports
 nmap -p- --min-rate 10000 10.10.22.59
 
-# Step 2 - Focus scan on the active ports found (Note: In this case is important to use -T4 to make the scan succeed)
+# Step 2 - Focus scan on the active ports found
 nmap -A -T4 -Pn -p22,80,443 10.10.22.59
 ```
 
