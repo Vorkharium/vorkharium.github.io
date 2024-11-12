@@ -102,7 +102,7 @@ Its disallowing /admin.html, lets visit it:
 http://10.10.254.245/admin.html
 ```
 
-We just see a gif telling you its a trap. Maybe this is not the way.
+We just see General Ackbar telling us its a trap. Maybe this is not the way.
 
 ### SMB to find presence and directory of id_rsa
 Lets enumerate SMB using a null session without credentials:
