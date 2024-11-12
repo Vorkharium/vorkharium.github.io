@@ -4,7 +4,7 @@ title:  THM Kenobi Write-up
 description: Part of the OSCP+ Preparation Series
 date:   2024-11-12 07:00:00 +0300
 image:  '/images/thm_kenobi.png'
-tags:   [Write-ups, THM, OSCP+, Easy, Linux, SMB, SMB-Null-Session, RPC, FTP, Mount-NFS, SSH, SUID, Relative-Path-Exploitation]
+tags:   [Write-ups, THM, OSCP+, Easy, Linux, SMB, SMB-Null-Session, RPC, FTP, Mount-NFS, SSH, SUID, Linux-Relative-Path-Abuse]
 ---
 
 # Table of Contents
