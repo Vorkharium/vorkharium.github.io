@@ -20,7 +20,7 @@ tags:   [Write-ups, HTB, OSCP+, Linux, Easy, Blind-SSRF, Fuzzing, API, Git, Git-
   - [Finding user prod credentials on Git Commit](#finding-user-prod-credentials-on-git-commit)
   - [Using sudo -l to find out we can run a python script as sudo](#using-sudo--l-to-find-out-we-can-run-a-python-script-as-sudo)
   - [CVE-2022-24439 - Abusing Command Injection vulnerability inside python script to exfiltrate the contents of root.txt](#cve-2022-24439---abusing-command-injection-vulnerability-inside-python-script-to-exfiltrate-the-contents-of-roottxt)
-  - [CVE-2022-24439 - Abusing Command Injection vulnerability inside python script trigger a bash script with a reverse shell and get a shell as root](#cve-2022-24439---abusing-command-injection-vulnerability-inside-python-script-trigger-a-bash-script-with-a-reverse-shell-and-get-a-shell-as-root)
+  - [CVE-2022-24439 - Abusing Command Injection vulnerability inside python script to trigger a bash script with a reverse shell and get a shell as root](#cve-2022-24439---abusing-command-injection-vulnerability-inside-python-script-to-trigger-a-bash-script-with-a-reverse-shell-and-get-a-shell-as-root)
 
 # Enumeration
 ### Nmap
@@ -545,7 +545,7 @@ Which explains us why this happened:
 ```shell
 All versions of package gitpython are vulnerable to Remote Code Execution (RCE) due to improper user input validation, which makes it possible to inject a maliciously crafted remote URL into the clone command. Exploiting this vulnerability is possible because the library makes external calls to git without sufficient sanitization of input arguments.
 ```
-### CVE-2022-24439 - Abusing Command Injection vulnerability inside python script trigger a bash script with a reverse shell and get a shell as root 
+### CVE-2022-24439 - Abusing Command Injection vulnerability inside python script to trigger a bash script with a reverse shell and get a shell as root 
 
 We can also abuse the command injection vulnerability inside the python script to get a reverse shell making root read a bash script containing our reverse shell:
 
