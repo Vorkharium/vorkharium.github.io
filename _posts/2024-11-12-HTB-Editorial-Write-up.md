@@ -534,7 +534,7 @@ sudo /usr/bin/python3 /opt/internal_apps/clone_changes/clone_prod_change.py 'ext
 cat /tmp/root.txt
 ```
 
-It worked! Now we were able to read the contents of root.txt.
+It worked! We were able to read the contents of root.txt.
 
 Searching for more information about this vulnerability, we found CVE-2022-24439:
 
