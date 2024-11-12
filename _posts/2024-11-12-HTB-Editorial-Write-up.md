@@ -540,7 +540,7 @@ Searching for more information about this vulnerability, we found CVE-2022-24439
 
 https://nvd.nist.gov/vuln/detail/CVE-2022-24439
 
-Which explains us why this happened:
+Which explains why this happened:
 
 ```shell
 All versions of package gitpython are vulnerable to Remote Code Execution (RCE) due to improper user input validation, which makes it possible to inject a maliciously crafted remote URL into the clone command. Exploiting this vulnerability is possible because the library makes external calls to git without sufficient sanitization of input arguments.
