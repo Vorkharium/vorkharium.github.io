@@ -17,7 +17,7 @@ tags:   [Write-ups, THM, OSCP+, Medium, API, Arbitrary-File-Read, SSH, GTFOBins-
   - [Getting SSH access as r00t](#getting-ssh-access-as-r00t)
 - [Privilege Escalation](#privilege-escalation)
   - [Using id to find out that r00t is part of docker group](#using-id-to-find-out-that-r00t-is-part-of-docker-group)
-  - [Using shell GTFOBins command to escalate privilegesing shell GTFOBins command to escalate privileges](#using-shell-gtfobins-command-to-escalate-privileges)
+  - [Using shell GTFOBins command to escalate privileges](#using-shell-gtfobins-command-to-escalate-privileges)
   - [Reading id_rsa of root](#reading-id_rsa-of-root)
 
 # Enumeration
