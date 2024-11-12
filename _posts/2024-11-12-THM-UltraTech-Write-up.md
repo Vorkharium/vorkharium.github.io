@@ -100,7 +100,7 @@ If we inspect the source code of /partners.html, we will see this at the bottom:
 </html>
 ```
 
-If we click on js/api.js, it will lead us to another page, where we can see the a line interacting with the API URL:
+If we click on js/api.js, it will lead us to another page, where we can see a line interacting with the API URL:
 
 ```shell
 <SNIP>
