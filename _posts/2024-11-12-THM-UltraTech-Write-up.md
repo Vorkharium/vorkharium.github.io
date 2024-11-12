@@ -197,7 +197,8 @@ hashid 'f357a0c52799563c7c7b76c1e7543a32'
 We got many results of possible valid hash types. Lets suppose its just a normal MD5, which uses -m 0 on hashcat. Now we can try to crack it:
 
 ```shell
-hashcat -m 0 MrRoot_hash.txt /usr/share/wordlists/rockyou.txt
+hashcat -m 0 r00t_hash.txt /usr/share/wordlists/rockyou.txt
+hashcat -m 0 admin_hash.txt /usr/share/wordlists/rockyou.txt
 ```
 
 We were able to successfully crack both of them and retrieve the following passwords:
