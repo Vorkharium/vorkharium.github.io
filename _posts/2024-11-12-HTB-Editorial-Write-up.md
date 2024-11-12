@@ -18,7 +18,7 @@ tags:   [Write-ups, HTB, OSCP+, Linux, Easy, Blind-SSRF, Fuzzing, API, Git, Git-
   - [SSH access as user dev](#ssh-access-as-user-dev)
 - [Privilege Escalation](#privilege-escalation)
   - [Finding user prod credentials on Git Commit](#finding-user-prod-credentials-on-git-commit)
-  - [Using sudo -l to find out we can run a python script as sudo](#using-sudo--l-to-find-out-we-can-run-a-python-script-as-sudo)
+  - [Using sudo -l to find out we can run a python script with sudo](#using-sudo--l-to-find-out-we-can-run-a-python-script-with-sudo)
   - [CVE-2022-24439 - Abusing Command Injection vulnerability inside python script to exfiltrate the contents of root.txt](#cve-2022-24439---abusing-command-injection-vulnerability-inside-python-script-to-exfiltrate-the-contents-of-roottxt)
   - [CVE-2022-24439 - Abusing Command Injection vulnerability inside python script to trigger a bash script with a reverse shell and get a shell as root](#cve-2022-24439---abusing-command-injection-vulnerability-inside-python-script-to-trigger-a-bash-script-with-a-reverse-shell-and-get-a-shell-as-root)
 
@@ -471,7 +471,7 @@ su prod
 # Password: 080217_Producti0n_2023!@
 ```
 
-### Using sudo -l to find out we can run a python script as sudo
+### Using sudo -l to find out we can run a python script with sudo
 Lets use sudo -l and see what we get:
 
 ```shell
@@ -485,7 +485,7 @@ User prod may run the following commands on editorial:
     (root) /usr/bin/python3 /opt/internal_apps/clone_changes/clone_prod_change.py *
 ```
 
-It seems like we can run the clone_prod_change.py as sudo.
+It seems like we can run the clone_prod_change.py with sudo.
 
 Lets check the contents of the script:
 
