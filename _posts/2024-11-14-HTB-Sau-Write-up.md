@@ -23,7 +23,7 @@ tags:   [Write-ups, HTB, OSCP+, Linux, Easy, CVE]
 # Step 1 - Find active ports
 sudo nmap -p- -Pn --min-rate 10000 10.129.138.176
 
-# Step 2 - Focus scan on the active ports found (Note: In this case is important to use -T4 to make the scan succeed)
+# Step 2 - Focus scan on the active ports found
 sudo nmap -A -T4 -Pn -p22,80,8338,55555 10.129.138.176
 ```
 
@@ -95,7 +95,7 @@ OS and Service detection performed. Please report any incorrect results at https
 Nmap done: 1 IP address (1 host up) scanned in 156.79 seconds
 ```
 
-The ports 80 and 8338 seem to be filtered, but we see the port 55555 as open.
+The ports 80 and 8338 seem to be filtered, but we can see that port 55555 is open.
 
 ### Web Enumeration
 
@@ -200,7 +200,7 @@ python3 -c 'import pty; pty.spawn("/bin/bash")'
 Now we can get the user.txt flag:
 
 ```shell
-66675eeedd2b27f8bc12ca5b64779896
+cat /home/puma/user.txt
 ```
 
 # Privilege Escalation
