@@ -21,7 +21,8 @@ tags:   [Write-ups, THM, OSCP+, Easy, SMB-Null-Session, Login-Brute-Force, CVE, 
   - [Alternative Method - Tar Wildcard Expansion Reverse Shell Injection](#alternative-method---tar-wildcard-expansion-reverse-shell-injection)
 
 # Enumeration
-### Nmap 10.10.232.106
+### Nmap
+
 ```shell
 # Step 1 - Find active ports
 nmap -p- --min-rate 10000 10.10.232.106
