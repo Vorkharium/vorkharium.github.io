@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  THM UltraTech Write-up
+title:  THM Skynet Write-up
 description: Part of the OSCP+ Preparation Series
 date:   2024-11-15 09:00:00 +0300
 image:  '/images/thm_skynet.png'
