@@ -385,7 +385,7 @@ cat /home/milesdyson/user.txt
 
 # Privilege Escalation
 ### Tar Wildcard Expansion SUID Injection
-Enumerating the directory of milesdyson, we found the script backup.sh:
+Enumerating the directory of milesdyson, we found out that there is a script backup.sh containing tar *:
 
 ```shell
 www-data@skynet:/home/milesdyson/backups$ ls
