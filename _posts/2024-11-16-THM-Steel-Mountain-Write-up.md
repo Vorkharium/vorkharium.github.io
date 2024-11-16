@@ -129,7 +129,7 @@ https://www.exploit-db.com/exploits/39161
 
 # Foothold
 ### CVE-2014-6287 Rejetto HTTP File Server (HFS) 2.3.x - Remote Command Execution (2)
-I will exploit this machine simulating the OSCP exam conditions, which dont allow the use of Metasploit or automated exploitation tools.
+I will exploit this machine simulating the OSCP exam conditions, which dont allow the use of Metasploit exploitation or other automated exploitation tools.
 
 Since we found the exploit on exploit-db.com, we can use searchsploit to download it:
 
