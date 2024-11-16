@@ -4,7 +4,7 @@ title:  THM UltraTech Write-up
 description: Part of the OSCP+ Preparation Series
 date:   2024-11-12 11:00:00 +0300
 image:  '/images/thm_ultratech.png'
-tags:   [Write-ups, THM, OSCP+, Medium, API, Arbitrary-File-Read, SSH, GTFOBins-Shell, Docker]
+tags:   [Write-ups, THM, OSCP+, Medium, Linux, API, Arbitrary-File-Read, SSH, GTFOBins-Shell, Docker]
 ---
 
 # Table of Contents
