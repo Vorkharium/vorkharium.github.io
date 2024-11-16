@@ -4,7 +4,7 @@ title:  THM Skynet Write-up
 description: Part of the OSCP+ Preparation Series
 date:   2024-11-15 09:00:00 +0300
 image:  '/images/thm_skynet.png'
-tags:   [Write-ups, THM, OSCP+, Easy, SMB-Null-Session, Login-Brute-Force, CVE, RFI, Tar-Wildcard-Expansion]
+tags:   [Write-ups, THM, OSCP+, Easy, Linux, SMB-Null-Session, Login-Brute-Force, CVE, RFI, Tar-Wildcard-Expansion]
 ---
 
 # Table of Contents
