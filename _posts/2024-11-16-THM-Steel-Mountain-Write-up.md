@@ -298,7 +298,7 @@ This means we can exploit it in two different ways:
 1. Abusing CanRestart and Weak File Permission to replace ASCService.exe with an .exe containing a reverse shell to our Kali and restarting the service.
 2. Abusing CanRestart and Unquoted Service Path.
 
-We will do both methods because I think both are important privilege escalation methods to know and very good practise.
+We will do both methods, both are important privilege escalation methods to know and very good practise.
 
 ### Abusing CanRestart and Weak File Permission on ASCService.exe
 Lets create first an .exe with a reverse shell payload using msfvenom on Kali:
