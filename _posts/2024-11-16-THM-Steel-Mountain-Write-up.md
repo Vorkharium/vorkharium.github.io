@@ -180,7 +180,7 @@ sudo gedit exploit.py
 <SNIP>
 ```
 
-Note: Its always worth to analyze the code to see how a exploit works.
+Note: Its always worth to analyze the code to see how the exploit works.
 
 In this case, we also noticed that the exploit uses python2.
 
@@ -263,7 +263,7 @@ Now we can move PowerUp.ps1 and run it with Invoke-AllChecks (I will use PowerUp
 Invoke-AllChecks
 ```
 
-If we examine the results, we will see that the service AdvancedSystemCareService9 is vulnerable to Unquoted Service Path and also has CanRestart set to True, but we can also modify the file to replace it with another .exe containing a reverse shell or add a new local admin user:
+If we examine the results, we will see that the service AdvancedSystemCareService9 is vulnerable to Unquoted Service Path and also has CanRestart set to True, but we are also able to modify the file, this means we can replace ASCService.exe with another .exe containing a reverse shell or add a new local admin user:
 
 ```shell
 <SNIP>
@@ -296,7 +296,7 @@ Check                           : Modifiable Service Files
 This means we can exploit it in two different ways: 
 
 1. Abusing CanRestart and Weak File Permission to replace ASCService.exe with an .exe containing a reverse shell to our Kali and restarting the service.
-2. Abusing Unquoted Service Path.
+2. Abusing CanRestart and Unquoted Service Path.
 
 We will do both methods because I think both are important privilege escalation methods to know and very good practise.
 
