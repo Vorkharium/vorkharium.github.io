@@ -217,6 +217,56 @@ image: '/images/01.jpg'
     </div>
 </div>
 
+<div style="display: flex; justify-content: center; gap: 15px;">
+    <div style="position: relative; display: inline-block;">
+        <a href="/THM-Steel-Mountain-Write-up">
+            <img src="/images/thm_steel_mountain.png" alt="THM Steel Mountain" 
+                 style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
+            <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
+                        background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
+                        border-radius: 5px; font-size: 14px;">
+                THM Steel Mountain
+            </div>
+        </a>
+    </div>
+
+    <div style="position: relative; display: inline-block;">
+        <a href="/THM-Year-of-the-Owl-Write-up">
+            <img src="/images/thm_year_of_the_owl.png" alt="THM Year of the Owl" 
+                 style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
+            <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
+                        background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
+                        border-radius: 5px; font-size: 14px;">
+                THM Year of the Owl
+            </div>
+        </a>
+    </div>
+
+    <div style="position: relative; display: inline-block;">
+        <a href="/">
+            <img src="/images/htb_querier.png" alt="HTB Querier" 
+                 style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
+            <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
+                        background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
+                        border-radius: 5px; font-size: 14px;">
+                HTB Querier
+            </div>
+        </a>
+    </div>
+
+    <div style="position: relative; display: inline-block;">
+        <a href="/HTB-Servmon-Write-up">
+            <img src="/images/htb_servmon.png" alt="HTB ServMon" 
+                 style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
+            <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
+                        background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
+                        border-radius: 5px; font-size: 14px;">
+                HTB ServMon
+            </div>
+        </a>
+    </div>
+</div>
+
 <div style="margin-top: 40px; text-align: center;">
   <h3 style="color: #ffffff;">Linux/Unix</h3>
 </div>
@@ -287,6 +337,44 @@ image: '/images/01.jpg'
     </div>
 
     <div style="position: relative; display: inline-block;">
+        <a href="/HTB-Magic-Write-up">
+            <img src="/images/htb_magic.png" alt="HTB Magic" 
+                 style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
+            <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
+                        background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
+                        border-radius: 5px; font-size: 14px;">
+                HTB Magic
+            </div>
+        </a>
+    </div>
+
+    <div style="position: relative; display: inline-block;">
+        <a href="/HTB-Editorial-Write-up">
+            <img src="/images/htb_editorial.png" alt="HTB Editorial" 
+                 style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
+            <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
+                        background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
+                        border-radius: 5px; font-size: 14px;">
+                HTB Editorial
+            </div>
+        </a>
+    </div>
+
+    <div style="position: relative; display: inline-block;">
+        <a href="/HTB-Sau-Write-up">
+            <img src="/images/htb_sau.png" alt="HTB Sau" 
+                 style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
+            <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
+                        background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
+                        border-radius: 5px; font-size: 14px;">
+                HTB Sau
+            </div>
+        </a>
+    </div>
+</div>
+
+<div style="display: flex; justify-content: center; gap: 15px;">
+    <div style="position: relative; display: inline-block;">
         <a href="/THM-Mr-Robot-CTF-Write-Up">
             <img src="/images/thm_mr_robot_ctf.png" alt="THM Mr Robot CTF" 
                  style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
@@ -299,26 +387,40 @@ image: '/images/01.jpg'
     </div>
 
     <div style="position: relative; display: inline-block;">
-        <a href="/">
-            <img src="/images/surprise.png" alt="Comming Soon" 
+        <a href="/THM-Kenobi-Write-Up">
+            <img src="/images/thm_kenobi.png" alt="THM Kenobi" 
                  style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
             <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
                         background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
                         border-radius: 5px; font-size: 14px;">
-                Comming Soon
+                THM Kenobi
             </div>
         </a>
     </div>
 
     <div style="position: relative; display: inline-block;">
-        <a href="/">
-            <img src="/images/surprise.png" alt="Comming Soon" 
+        <a href="/THM-UltraTech-Write-Up">
+            <img src="/images/thm_ultratech.png" alt="THM UltraTech" 
                  style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
             <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
                         background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
                         border-radius: 5px; font-size: 14px;">
-                Comming Soon
+                THM UltraTech
+            </div>
+        </a>
+    </div>
+
+    <div style="position: relative; display: inline-block;">
+        <a href="/THM-Skynet-Write-Up">
+            <img src="/images/thm_skynet.png" alt="THM Skynet" 
+                 style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
+            <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
+                        background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
+                        border-radius: 5px; font-size: 14px;">
+                THM Skynet
             </div>
         </a>
     </div>
 </div>
+
+<div style="height: 5px;"></div>
