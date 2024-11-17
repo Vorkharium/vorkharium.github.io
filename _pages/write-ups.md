@@ -219,7 +219,7 @@ image: '/images/01.jpg'
 
 <div style="height: 5px;"></div>
 
-<div style="display: flex; justify-content: center; gap: 15px;">
+<div style="display: flex; justify-content: center; gap: 15px; margin-top: 15px;">
     <div style="position: relative; display: inline-block;">
         <a href="/THM-Steel-Mountain-Write-up">
             <img src="/images/thm_steel_mountain.png" alt="THM Steel Mountain" 
@@ -377,7 +377,7 @@ image: '/images/01.jpg'
 
 <div style="height: 5px;"></div>
 
-<div style="display: flex; justify-content: center; gap: 15px;">
+<div style="display: flex; justify-content: center; gap: 15px; margin-top: 15px;">
     <div style="position: relative; display: inline-block;">
         <a href="/THM-Mr-Robot-CTF-Write-Up">
             <img src="/images/thm_mr_robot_ctf.png" alt="THM Mr Robot CTF" 
