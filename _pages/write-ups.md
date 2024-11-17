@@ -217,6 +217,8 @@ image: '/images/01.jpg'
     </div>
 </div>
 
+<div style="height: 5px;"></div>
+
 <div style="display: flex; justify-content: center; gap: 15px;">
     <div style="position: relative; display: inline-block;">
         <a href="/THM-Steel-Mountain-Write-up">
@@ -244,24 +246,24 @@ image: '/images/01.jpg'
 
     <div style="position: relative; display: inline-block;">
         <a href="/">
-            <img src="/images/htb_querier.png" alt="HTB Querier" 
+            <img src="/images/surprise.png" alt="Comming Soon" 
                  style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
             <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
                         background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
                         border-radius: 5px; font-size: 14px;">
-                HTB Querier
+                Comming Soon
             </div>
         </a>
     </div>
 
     <div style="position: relative; display: inline-block;">
-        <a href="/HTB-Servmon-Write-up">
-            <img src="/images/htb_servmon.png" alt="HTB ServMon" 
+        <a href="/">
+            <img src="/images/surprise.png" alt="Comming Soon" 
                  style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
             <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
                         background-color: rgba(0, 0, 0, 0.6); padding: 5px; 
                         border-radius: 5px; font-size: 14px;">
-                HTB ServMon
+                Comming Soon
             </div>
         </a>
     </div>
@@ -372,6 +374,8 @@ image: '/images/01.jpg'
         </a>
     </div>
 </div>
+
+<div style="height: 5px;"></div>
 
 <div style="display: flex; justify-content: center; gap: 15px;">
     <div style="position: relative; display: inline-block;">
