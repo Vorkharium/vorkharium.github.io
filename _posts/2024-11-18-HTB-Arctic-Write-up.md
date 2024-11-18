@@ -17,7 +17,7 @@ tags:   [Write-ups, HTB, OSCP+, Easy, Windows, ColdFusion, CVE, Arbitrary-File-U
   - [Using JuicyPotato.exe to abuse SeImpersonatePrivilege enabled to get access as system with a msfvenom reverse shell](#using-juicypotatoexe-to-abuse-seimpersonateprivilege-enabled-to-get-access-as-system-with-a-msfvenom-reverse-shell)
 
 # Enumeration
-### Nmap 10.129.134.186
+### Nmap
 
 ```shell
 # Step 1 - Find active ports

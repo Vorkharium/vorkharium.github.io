@@ -19,7 +19,7 @@ tags:   [Write-ups, HTB, OSCP+, Easy, Windows, FTP-Anonymous, .mdb, Telnet, Stor
   - [Administrator stored credentials and runas.exe](#administrator-stored-credentials-and-runasexe)
 
 # Enumeration
-### Nmap 10.129.223.141
+### Nmap
 ```shell
 # Step 1 - Find active ports
 nmap -p- -Pn --min-rate 10000 10.129.223.141
