@@ -3,7 +3,7 @@ layout: post
 title:  HTB Mailing Write-up
 description: Part of the OSCP+ Preparation Series
 date:   2024-11-18 03:00:00 +0300
-image:  '/images/thm_mailing.png'
+image:  '/images/htb_mailing.png'
 tags:   [Write-ups, HTB, OSCP+, Easy, Windows, Path-Traversal, CVE, Capturing-NTLMv2-Hashes, WinRM, Credential-Dumping, Pass-the-Hash]
 ---
 
@@ -21,6 +21,7 @@ tags:   [Write-ups, HTB, OSCP+, Easy, Windows, Path-Traversal, CVE, Capturing-NT
 
 # Enumeration
 ### Nmap
+
 ```shell
 # Step 1 - Find active ports
 nmap -p- -Pn --min-rate 10000 10.129.134.116
