@@ -205,7 +205,7 @@ image: '/images/01.jpg'
     </div>
 
     <div style="position: relative; display: inline-block;">
-        <a href="/HTB-Arctic-Write-up">
+        <a href="/HTB-Access-Write-up">
             <img src="/images/htb_access.png" alt="HTB Access" 
                  style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
             <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
