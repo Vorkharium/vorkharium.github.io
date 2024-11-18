@@ -24,15 +24,15 @@ tags:   [Write-ups, HTB, OSCP+, Easy, Windows, Path-Traversal, CVE, Capturing-NT
 
 ```shell
 # Step 1 - Find active ports
-nmap -p- -Pn --min-rate 10000 10.129.134.116
+nmap -p- -Pn --min-rate 10000 10.129.134.249
 
 # Step 2 - Focus scan on the active ports found
-nmap -A -T4 -Pn -p25,80,110,135,139,143,445,465,587,993,5040,47001 10.129.134.116
+nmap -A -T4 -Pn -p25,80,110,135,139,143,445,465,587,993,5040,47001 10.129.134.249
 ```
 
 ```shell
 Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-11-17 13:49 EST
-Nmap scan report for 10.129.134.116
+Nmap scan report for 10.129.134.249
 Host is up (0.036s latency).
 
 PORT      STATE SERVICE       VERSION
@@ -89,7 +89,7 @@ Nmap done: 1 IP address (1 host up) scanned in 206.84 seconds
 We can see the domain mailing.htb on the nmap results. Lets add it to /etc/hosts:
 
 ```shell
-echo "10.129.134.116 mailing.htb" | sudo tee -a /etc/hosts
+echo "10.129.134.249 mailing.htb" | sudo tee -a /etc/hosts
 ```
 
 ### Web Enumeration
@@ -398,7 +398,7 @@ It worked!
 Now we can use the user maya to dump all hashes using NetExec:
 
 ```shell
-netexec smb 10.129.134.116 -u maya -p "m4y4ngs4ri" --sam
+netexec smb 10.129.134.249 -u maya -p "m4y4ngs4ri" --sam
 ```
 
 ```shell
