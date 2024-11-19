@@ -4,7 +4,7 @@ title:  THM Alfred Write-up
 description: Part of the OSCP+ Preparation Series
 date:   2024-11-19 08:00:00 +0300
 image:  '/images/thm_alfred.png'
-tags:   [Write-ups, THM, OSCP+, Easy, Windows, Jenkins, Default-Credentials, Groovy-Reverse-Shell, Incognito.exe, RDP, rdesktop]
+tags:   [Write-ups, THM, OSCP+, Easy, Windows, Jenkins, Default-Credentials, Groovy-Reverse-Shell, Incognito.exe, RDP, rdesktop, Alternative-Without-Metasploit]
 ---
 
 # Table of Contents
