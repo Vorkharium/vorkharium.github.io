@@ -480,7 +480,7 @@ http://127.0.0.1:65432 [200 OK] Bootstrap, Country[RESERVED][ZZ], Frame, Google-
 This is a Microsoft IIS website. The directories of these kind of websites are located at C:\inetpub. We cant access the C:\inetpub directory with svc_apache and S.Moon, but C.Bum would probably give us access.
 
 ### Using RunasCs.exe to get access as C.Bum
-Lets create another shell.php to open another shell session using PHP Ivan Sincek reverse shell since our first shell is forwarding with chisel.exe:
+Lets create another shell.php to open another shell session using PHP Ivan Sincek reverse shell, our first shell is forwarding with chisel.exe:
 
 ```shell
 # Copy the shell.php
