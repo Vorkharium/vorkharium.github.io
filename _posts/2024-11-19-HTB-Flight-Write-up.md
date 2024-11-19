@@ -17,7 +17,7 @@ tags:   [Write-ups, HTB, OSCP+, Hard, Windows, Active-Directory, Vhost-Enumerati
   - [Using S.Moon to create and put a .ini file with a link to our SMB server on Kali to capture the hash of C.Bum](#using-smoon-to-create-and-put-a-ini-file-with-a-link-to-our-smb-server-on-kali-to-capture-the-hash-of-cbum)
 - [Foothold](#foothold)
   - [Using C.Bum write permission on Web SMB share to upload a .php shell](#using-cbum-write-permission-on-web-smb-share-to-upload-a-php-shell)
-  - [Using chisel.exe to forward the localhost port 8000 to our Kali](#using-chiselexe-to-forward-the-localhost-port-8000-to-our-kali)
+  - [Using chisel.exe to forward port 8000 to our Kali](#using-chiselexe-to-forward-the-localhost-port-8000-to-our-kali)
   - [Using RunasCs.exe to get access as C.Bum](#using-runascsexe-to-get-access-as-cbum)
 - [Privilege Escalation](#privilege-escalation)
   - [Uploading cmdasp.aspx into C:\inetpub](#uploading-cmdaspaspx-into-cinetpub)
