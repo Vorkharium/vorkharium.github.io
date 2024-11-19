@@ -433,8 +433,11 @@ flight\svc_apache
 ```
 
 With the svc_apache account there is not much we can do, lets try to get access as another user.
+
 ### Using chisel.exe to forward port 8000 to our Kali
-Enumerating the system we found the port 8000 running on localhost. Being the port 8000, I can try guessing its probably a website. Lets redirect it with chisel.exe:
+Enumerating the system we found the port 8000 running on the target, it didnt appear in our nmap scan.
+
+Being the port 8000, I can try guessing its probably a website. Lets redirect it with chisel.exe:
 
 ```shell
 # Move chisel.exe
