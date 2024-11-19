@@ -4,7 +4,7 @@ title:  THM Retro Write-up
 description: Part of the OSCP+ Preparation Series
 date:   2024-11-19 05:00:00 +0300
 image:  '/images/thm_retro.png'
-tags:   [Write-ups, THM, OSCP+, Hard, WordPress, RDP, Windows-Kernel-Exploit, CVE]
+tags:   [Write-ups, THM, OSCP+, Hard, Windows, WordPress, RDP, Windows-Kernel-Exploit, CVE]
 ---
 
 # Table of Contents
@@ -17,7 +17,8 @@ tags:   [Write-ups, THM, OSCP+, Hard, WordPress, RDP, Windows-Kernel-Exploit, CV
   - [CVE-2017-0213 Kernel Exploit](#cve-2017-0213-kernel-exploit)
 
 # Enumeration
-### Nmap 10.10.48.32
+### Nmap
+
 ```shell
 # Step 1 - Find active ports
 nmap -p- --min-rate 10000 10.10.52.234
