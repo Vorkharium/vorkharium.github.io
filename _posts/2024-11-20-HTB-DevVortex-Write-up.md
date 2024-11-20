@@ -21,7 +21,7 @@ tags:   [Write-ups, HTB, OSCP+, Linux, Easy, Vhost-Enumeration, CVE, Joomla, MyS
 
 # Enumeration
 
-### Nmap 10.129.133.100
+### Nmap
 ```shell
 # Step 1 - Find active ports
 nmap -p- -Pn --min-rate 10000 10.129.133.100
