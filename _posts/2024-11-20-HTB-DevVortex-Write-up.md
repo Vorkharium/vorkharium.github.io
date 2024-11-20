@@ -314,7 +314,7 @@ Lets check the version of apport-cli:
 2.20.11
 ```
 
-Doing some research, we found out that this version is vulnerable to CVE-2023-1326.
+Doing some research, we will find out that this version is vulnerable to CVE-2023-1326.
 
 We can exploit this to escalate privileges following these steps:
 
