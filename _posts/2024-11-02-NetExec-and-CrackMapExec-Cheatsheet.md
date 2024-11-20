@@ -43,6 +43,7 @@ nxc smb 172.16.150.0/24
 
 # Null Session (Access without Credentials)
 nxc smb 172.16.150.20 -u '' -p ''
+netexec smb 10.129.132.249 -u '' -p '' -d "DC=active,DC=htb"
 
 # Shares
 nxc smb 172.16.150.20 -u john -p 'Password123!' --shares
