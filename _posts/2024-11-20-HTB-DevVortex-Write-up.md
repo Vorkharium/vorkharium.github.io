@@ -11,13 +11,13 @@ tags:   [Write-ups, HTB, OSCP+, Linux, Easy, Vhost-Enumeration, CVE, Joomla, MyS
 - [Enumeration](#enumeration)
   - [Nmap](#nmap)
   - [Web Enumeration](#web-enumeration)
-  - [Vhost Enumeration](#web-enumeration)
+  - [Vhost Enumeration](#vhost-enumeration)
 - [Foothold](#foothold)
-  - [CVE-2023-23752 Unauthenticated Information Disclosure](#cve-2023-27163-request-baskets-121--to-expose-target-local-port-80)
-  - [Using lewis credentials to log into Joomla and use a PHP reverse shell to get access](#maltrail-rce-exploit-to-get-access-as-puma)
-  - [Finding credentials of logan in MySQL database and getting access with SSH](#maltrail-rce-exploit-to-get-access-as-puma)
+  - [CVE-2023-23752 Unauthenticated Information Disclosure](#cve-2023-23752-unauthenticated-information-disclosure)
+  - [Using lewis credentials to log into Joomla and use a PHP reverse shell to get access](#using-lewis-credentials-to-log-into-joomla-and-use-a-php-reverse-shell-to-get-access)
+  - [Finding credentials of logan in MySQL database and getting access with SSH](#finding-credentials-of-logan-in-mysql-database-and-getting-access-with-ssh)
 - [Privilege Escalation](#privilege-escalation)
-  - [CVE-2023-1326 apport-cli](#cve-2023-26604-systemctl-to-escalate-privileges)
+  - [CVE-2023-1326 apport-cli](#cve-2023-1326-apport-cli)
 
 # Enumeration
 
