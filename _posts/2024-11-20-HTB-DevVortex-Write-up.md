@@ -210,7 +210,7 @@ script /dev/null -c bash
 ```
 
 ### Finding credentials of logan in MySQL database and getting access with SSH
-Enumerating the system using the following commands we found the port 3306 running:
+Enumerating the system using the following command we found the port 3306 running locally:
 
 ```shell
 ss -tulnp
@@ -220,7 +220,7 @@ ss -tulnp
 tcp     LISTEN   0        151            127.0.0.1:3306           0.0.0.0:*
 ```
 
-We can also see the credentials of lewis in the following file:
+We can also see the credentials of lewis we already obtained before in the following file:
 
 ```shell
 cat configuration.php
