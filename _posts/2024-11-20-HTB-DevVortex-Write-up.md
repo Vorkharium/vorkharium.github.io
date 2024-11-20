@@ -316,7 +316,7 @@ Lets check the version of apport-cli:
 
 Doing some research, we found out that this version is vulnerable to CVE-2023-1326.
 
-We can exploit this to escalate privileges with the following steps:
+We can exploit this to escalate privileges following these steps:
 
 ```shell
 # Get the PID of systemd (in our case 1030)
