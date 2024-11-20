@@ -131,7 +131,7 @@ We can now try to find an exploit for this version.
 ### CVE-2023-23752 Unauthenticated Information Disclosure
 Searching online, I found the CVE-2023-23752, which the Joomla 4.2.6 version is vulnerable to.
 
-We can use the curl command as follow to get some information:
+We can use the curl command as follows to get some information:
 
 ```shell
 curl http://dev.devvortex.htb/api/index.php/v1/config/application?public=true | jq
