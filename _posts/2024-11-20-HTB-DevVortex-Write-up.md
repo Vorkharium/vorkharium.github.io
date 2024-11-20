@@ -199,7 +199,7 @@ whoami
 www-data
 ```
 
-If we have problems triggering our reverse shell, try clicking on Save and then Template Preview.
+If we still have problems triggering our reverse shell, try clicking on Save and then Template Preview.
 
 Lets upgrade our shell now:
 
