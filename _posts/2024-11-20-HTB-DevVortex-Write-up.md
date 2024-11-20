@@ -74,8 +74,9 @@ feroxbuster -u http://devvortex.htb
 ```
 
 Nothing interesting.
+
 ### Vhost Enumeration
-Lets see if we can find a vhost:
+Lets see if we can find any vhost:
 
 ```shell
 gobuster vhost -u http://devvortex.htb/ -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt --append-domain -r
