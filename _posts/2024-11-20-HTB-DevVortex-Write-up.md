@@ -123,7 +123,7 @@ http://dev.devvortex.htb/administrator/manifests/files/joomla.xml
 
 Inside the joomla.xml we found the Joomla version 4.2.6.
 
-Lets search for an exploit for this version.
+We can now try to find an exploit for this version.
 
 # Foothold
 ### CVE-2023-23752 Unauthenticated Information Disclosure
