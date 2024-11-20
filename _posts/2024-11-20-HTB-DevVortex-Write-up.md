@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  HTB DevVortex Write-up
+title:  HTB Devvortex Write-up
 description: Part of the OSCP+ Preparation Series
 date:   2024-11-20 17:00:00 +0300
 image:  '/images/htb_devvortex.png'
