@@ -26,17 +26,12 @@ image: '/images/01.jpg'
   <img src="{{site.baseurl}}/images/PNPT.png" alt="PNPT Certification" style="height: 160px; border-radius: 8px; margin-top: 10px;">
 </div>
 
-
-
 <div style="margin-top: 30px;">
   <h3 style="color: #ffffff;">CTF Achievements</h3>
   <ul style="list-style: none; padding: 0; margin: 0;">
     <li style="margin: 5px 0;">🌐 Over <strong>100 system compromises</strong> in Hack The Box Labs</li>
-<<<<<<< HEAD
     <li style="margin: 5px 0;">🌐 More than <strong>50 system compromises</strong> in OffSec Playgrounds</li>
-=======
     <li style="margin: 5px 0;">🌐 More than <strong>50 system compromises</strong> in OffSec Proving Grounds</li>
->>>>>>> 04e952a594217aade068079238dbce5252cb540b
     <li style="margin: 5px 0;">🏆 Achieved HTB Elite Hacker rank  
        <br><span style="font-style: italic; color: #bbb;">(Highest Placement: 169th Worldwide (Top 0.1%) | 17th in Germany)</span>
     </li>
