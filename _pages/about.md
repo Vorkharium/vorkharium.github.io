@@ -23,7 +23,7 @@ image: '/images/01.jpg'
   <img src="{{site.baseurl}}/images/OSCP_Plus.png" alt="OSCP+ Certification" style="height: 180px; border-radius: 8px;">
   <img src="{{site.baseurl}}/images/OSCP.png" alt="OSCP Certification" style="height: 180px; border-radius: 8px;">
   <img src="{{site.baseurl}}/images/CPTS.png" alt="HTB CPTS Certification" style="height: 180px; border-radius: 8px;">
-  <img src="{{site.baseurl}}/images/PNPT.png" alt="PNPT Certification" style="height: 160px; border-radius: 8px;">
+  <img src="{{site.baseurl}}/images/PNPT.png" alt="PNPT Certification" style="height: 180px; border-radius: 8px;">
 </div>
 
 <div style="margin-top: 30px;">
