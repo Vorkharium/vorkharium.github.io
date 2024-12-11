@@ -3,7 +3,7 @@ layout: post
 title:  HTB Brevi Moduli Solution (Without SageMath)
 description: HTB Cryptography Challenge
 date:   2024-12-11 21:00:00 +0300
-image:  '/images/htb_devvortex.png'
+image:  '/images/htb.png'
 tags:   [Solution, HTB, Challenges, Cryptography, RSA]
 ---
 This is the Python script I created to solve the cryptography Brevi Moduli challenge without using SageMath (I used Msieve through PowerShell instead to get the values of p and q from the given n):
