@@ -26,7 +26,7 @@ Run the script with the following syntax:
 Where <IP>:<PORT> is the address and port of the challenge service.
 
 Note:
-- The script assumes that n = p * q and that the user factorizes n externally (e.g., using a tool like msieve).
+- The script assumes that n = p * q and that the user factorizes n externally (e.g., using a tool like Msieve).
 - The script is designed to handle the interaction with the server through multiple rounds, sending the factors p and q to solve the challenge.
 - The final flag is retrieved after completing all the rounds of the challenge.
 
@@ -52,8 +52,6 @@ from pwn import *
 from Crypto.PublicKey import RSA
 import re
 import sys
-
-print("Imported all required modules.")
 
 def get_process():
     print("Entering get_process()...")
