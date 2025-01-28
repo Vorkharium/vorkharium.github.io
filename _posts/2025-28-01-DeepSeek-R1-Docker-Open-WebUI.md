@@ -57,7 +57,7 @@ To create a web interface for the AI model, we’ll use Docker and Open WebUI. F
 - Open Docker Desktop after restarting your computer.
 
 - If Ollama does not start automatically, launch it manually:
-    - Press `Windows Keyboard Key + X` → Select **Run PowerShell (Administrator)**.
+    - Press `Windows Keyboard Key + X` → Select **Run PowerShell**.
     - Re-run the installation command for your desired model, e.g.:
 ```shell
 ollama run deepseek-r1:8b
