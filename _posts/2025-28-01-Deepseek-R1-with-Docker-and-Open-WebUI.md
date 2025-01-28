@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  Run Deepseek R1 and Other AI Models Locally with Docker and a Ch4tGPT-alike Web Interface (Open WebUI)
-description: A quick guide to install, set up and run Deepseek R1 and other AI models locally with Docker and a Ch4tGPT-alike web interface (Open WebUI)
+title:  Run DeepSeek R1 and Other AI Models Locally with Docker and a Ch4tGPT-alike Web Interface (Open WebUI)
+description: A quick guide to install, set up and run DeepSeek R1 and other AI models locally with Docker and a Ch4tGPT-alike web interface (Open WebUI)
 date:   2025-01-28 09:00:00 +0300
 image:  '/images/10050.jpg'
 tags:   [AI-Model, Artificial-Intelligence, Guides]
@@ -13,12 +13,12 @@ The first thing we need to do is getting the AI model/models we want to use foll
 ### 1. Download Ollama
 - Visit the Ollama website: [https://ollama.com](https://ollama.com).
 - Download the version for your operating system, in this guide I will be using Windows: [https://ollama.com/download](https://ollama.com/download).
-- Open the installer and complete the installation process. A PowerShell window will appear once the process is completed. Note: Do not enter "ollama run llama3.2" unless you really want to install llama3.2, which is a different AI model than Deepseek R1.
+- Open the installer and complete the installation process. A PowerShell window will appear once the process is completed. Note: Do not enter "ollama run llama3.2" unless you really want to install llama3.2, which is a different AI model than DeepSeek R1.
 
 ![](/images/ollama_1.png)
 
 ### 2. Install an AI Model:
-- After installing Ollama, you can use PowerShell to download and install AI models. For example, to install Deepseek R1 (8B), use the following command in PowerShell:
+- After installing Ollama, you can use PowerShell to download and install AI models. For example, to install DeepSeek R1 (8B), use the following command in PowerShell:
 
 ```shell
 ollama run deepseek-r1:8b
@@ -26,19 +26,19 @@ ollama run deepseek-r1:8b
 
 - Wait for the model to download and install. Once completed, you can start interacting with the AI model via PowerShell, but we do not have a web interface like Ch4tGPT yet, this guide explains how to achieve this using Docker and Open WebUI in the following steps.
 
-##  Deepseek R1 Models Table
+##  DeepSeek R1 Models Table
 Below is a table to help you choose the right model based on your hardware:
 
 | AI Model Name      | Recommended GPU     | Speed   | Accuracy | Installation Command          |
 | ------------------ | ------------------- | ------- | -------- | ----------------------------- |
-| Deepseek R1 (1.5B) | Lower-end GPU/PCs   | Fast    | Low      | `ollama run deepseek-r1:1.5b` |
-| Deepseek R1 (7B)   | Medium-high GPUs    | Medium  | Medium   | `ollama run deepseek-r1:7b`   |
-| Deepseek R1 (8B)   | Medium-high GPUs    | Medium  | Medium   | `ollama run deepseek-r1:8b`   |
-| Deepseek R1 (14B)  | RTX 3080 or similar | Medium  | High     | `ollama run deepseek-r1:14b`  |
-| Deepseek R1 (32B)  | Higher-end GPUs     | Slow    | High     | `ollama run deepseek-r1:32b`  |
-| Deepseek R1 (70B)  | Two RTX 4090 GPUs   | Slowest | Highest  | `ollama run deepseek-r1:70b`  |
+| DeepSeek R1 (1.5B) | Lower-end GPU/PCs   | Fast    | Low      | `ollama run deepseek-r1:1.5b` |
+| DeepSeek R1 (7B)   | Medium-high GPUs    | Medium  | Medium   | `ollama run deepseek-r1:7b`   |
+| DeepSeek R1 (8B)   | Medium-high GPUs    | Medium  | Medium   | `ollama run deepseek-r1:8b`   |
+| DeepSeek R1 (14B)  | RTX 3080 or similar | Medium  | High     | `ollama run deepseek-r1:14b`  |
+| DeepSeek R1 (32B)  | Higher-end GPUs     | Slow    | High     | `ollama run deepseek-r1:32b`  |
+| DeepSeek R1 (70B)  | Two RTX 4090 GPUs   | Slowest | Highest  | `ollama run deepseek-r1:70b`  |
 
-**Note:** Based on my personal tests, Deepseek R1 (8B) and (14B) provide great performance with a RTX 3080 or similar GPU on Windows 10 x64.
+**Note:** Based on my personal tests, DeepSeek R1 (8B) and (14B) provide great performance with a RTX 3080 or similar GPU on Windows 10 x64.
 
 **Other AI Models**: You can also install additional models using these commands:
 - **Llama 3.3 (70B)**: `ollama run llama3.3`
