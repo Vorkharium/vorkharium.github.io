@@ -51,7 +51,7 @@ To create a web interface for the AI model, we’ll use Docker and Open WebUI. F
 ### 1. Download and Install Docker
 - Visit Docker's official website: [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop).
 - Choose the Personal Plan (free).
-- Sign up for a personal-use account if prompted.
+- Sign up for a personal-use account.
 - Download Docker Desktop for Windows: [Docker Desktop Setup](https://docs.docker.com/desktop/setup/install/windows-install/).
 - Run the installer and proceed with the default options. Restart your computer after installation.
 
