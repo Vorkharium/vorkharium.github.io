@@ -4,7 +4,7 @@ title:  Run Deepseek R1 and Other AI Models Locally with Docker and a Ch4tGPT-al
 description: A quick guide to install, set up and run Deepseek R1 and other AI models locally with Docker and a Ch4tGPT-alike web interface (Open WebUI)
 date:   2025-01-28 09:00:00 +0300
 image:  '/images/10050.jpg'
-tags:   [AI-Model, Guides]
+tags:   [AI-Model, Artificial-Intelligence, Guides]
 ---
 
 ## Getting Ollama and the AI Model
@@ -12,7 +12,7 @@ The first thing we need to do is getting the AI model/models we want to use foll
 - Go to Ollama: https://ollama.com
 - Download the version for Windows (Or any other OS you are using): https://ollama.com/download
 - Open and install Ollama. A PowerShell window will appear once the process is completed. 
-- Now can use PowerShell to install and run AI models using commands on PowerShell. For example, we can install Deepseek R1 (8b) with the following command:
+- Now we can use PowerShell to install and run AI models using commands on PowerShell. For example, we can install Deepseek R1 (8b) with the following command:
 ```shell
 ollama run deepseek-r1:8b
 ```
@@ -38,6 +38,7 @@ Other AI Models we can install:
 | --------------- | -------------------- |
 | Llama 3.3 (70B) | ollama run llama3.3  |
 | Phi4 (14B)      | ollama run phi4      |
+
 ## Installing Docker
 We will use Docker and Open WebUI to simulate the web interface and make it look like Ch4tGPT following these steps:
 - Go to Docker website:
@@ -51,13 +52,13 @@ https://www.docker.com/products/docker-desktop/
 https://docs.docker.com/desktop/setup/install/windows-install/
 ```
 
-- Click on `Docker Desktop for Windows - x86_64`.
+- Click on "Docker Desktop for Windows - x86_64".
 
 - Install Docker Desktop with the downloaded installer, just let all boxes checked and press Ok/Next, let the installation proceed and restart your computer once the installation is completed.
 
 - Start Docker Desktop again after restarting your computer.
 
-- Start Ollama manually if it doesnt starts automatically after restarting your computer, for example:
+- Start Ollama manually if it doesnt start automatically after restarting your computer, for example:
 ```shell
 # Open PowerShell
 -> Keyboard Windows Key (Between left "Ctrl" and "Alt" keys)+ X
@@ -65,15 +66,15 @@ https://docs.docker.com/desktop/setup/install/windows-install/
 ```
 
 ```shell
-# Re-run the command we used for the installation
+# We can re-run the command we used for the installation
 ollama run deepseek-r1:8b
 ```
 
-- Go to Docker Desktop -> Click on `>_ Terminal` (bottom right) -> Click on `Enable`. 
+- Go to Docker Desktop -> Click on ">_ Terminal" (bottom right) -> Click on "Enable". 
 
 Now we have access to the console. We will need to enter the command line for Open WebUI here, which we are about to get.
 
-## Installing Open WebUI with Docker
+## Getting Open WebUI with Docker
 - Visit the website of Open WebUI:
 
 ```shell
