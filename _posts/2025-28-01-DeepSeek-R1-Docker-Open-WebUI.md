@@ -79,7 +79,9 @@ docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-
 ![](/images/docker2.png)
 
 - Wait for the process to complete. This may take some time.
+
 ### 2. Verify the Installation
+
 - Check Docker Desktop to ensure the Open WebUI container is running. It should look like this:
 ![](/images/docker3.png)
 
