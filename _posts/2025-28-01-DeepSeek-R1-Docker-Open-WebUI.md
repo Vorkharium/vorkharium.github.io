@@ -56,8 +56,6 @@ To create a web interface for the AI model, we’ll use Docker and Open WebUI. F
 ### 2. Start Docker Desktop
 - Open Docker Desktop after restarting your computer.
 
-![](/images/docker1.png)
-
 - If Ollama does not start automatically, launch it manually:
     - Press `Windows Keyboard Key + X` → Select **Run PowerShell (Administrator)**.
     - Re-run the installation command for your desired model, e.g.:
