@@ -24,7 +24,7 @@ The first thing we need to do is getting the AI model/models we want to use foll
 ollama run deepseek-r1:8b
 ```
 
-- Wait for the model to download and install. Once complete, you can start interacting with the AI model via PowerShell, but we do not have a web interface like Ch4tGPT yet, this guide explains how to achieve this using Docker and Open WebUI in the following steps.
+- Wait for the model to download and install. Once completed, you can start interacting with the AI model via PowerShell, but we do not have a web interface like Ch4tGPT yet, this guide explains how to achieve this using Docker and Open WebUI in the following steps.
 
 ##  Deepseek R1 Models Table
 Below is a table to help you choose the right model based on your hardware:
