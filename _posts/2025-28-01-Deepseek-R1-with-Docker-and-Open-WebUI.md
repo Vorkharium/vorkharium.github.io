@@ -100,7 +100,9 @@ docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-
 
 ### 3. Select and Use the AI Model
 - In the WebUI (top left corner), select your installed model (For example: `deepseek-r1:8b`).
-![[ai_model_1 1.png]]
+
+![](/images/ai_model_1_1.png)
+
 - Start interacting with the model.
 
 ![](/images/ds_11.png)
