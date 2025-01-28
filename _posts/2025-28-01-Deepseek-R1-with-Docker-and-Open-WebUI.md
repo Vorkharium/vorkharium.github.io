@@ -8,7 +8,7 @@ tags:   [AI-Model, Artificial-Intelligence, Guides]
 ---
 
 ## Getting Ollama and the AI Model
-To set up and use AI models locally, follow these steps:
+The first thing we need to do is getting the AI model/models we want to use following these steps:
 
 ### 1. Download Ollama
 - Visit the Ollama website: [https://ollama.com](https://ollama.com).
