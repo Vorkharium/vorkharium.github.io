@@ -12,7 +12,7 @@ The first thing we need to do is getting the AI model/models we want to use foll
 
 ### 1. Download Ollama
 - Visit the Ollama website: [https://ollama.com](https://ollama.com).
-- Download the version for your operating system: [https://ollama.com/download](https://ollama.com/download).
+- Download the version for your operating system, in this guide I will be using Windows: [https://ollama.com/download](https://ollama.com/download).
 - Open the installer and complete the installation process. A PowerShell window will appear once the process is completed. Note: Do not enter "ollama run llama3.2" unless you really want to install llama3.2, which is a different AI model than Deepseek R1.
 
 ![](/images/ollama_1.png)
