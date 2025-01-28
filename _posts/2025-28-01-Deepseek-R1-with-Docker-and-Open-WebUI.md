@@ -17,15 +17,15 @@ The first thing we need to do is getting the AI model/models we want to use foll
 ollama run deepseek-r1:8b
 ```
 
-- Wait for the model to get downloaded and installed. After the installation, we can already interact with our AI model, but with the next steps we will also create a Web Interface that looks and feels like Ch4tGPT to use our AI model.
+- Wait for the model to get downloaded and installed. After the installation, we can already interact with our AI model, but with the next steps we will also set up a web interface that looks and feels like Ch4tGPT to use our AI model.
 
-I made a table with multiple Deepseek models you can install (I recommend Deepseek R1 7B or 8B or even 1.5B for lower to medium end GPU/PC):
+I made a table with multiple Deepseek models you can install (I recommend Deepseek R1 7B or 8B or even 1.5B for lower to medium GPU/PC):
 
 | AI Model Name      | Recommended GPU           | Model Speed                       | Model Accuracy | Installation Command           |
 | ------------------ | ------------------------- | --------------------------------- | -------------- | ------------------------------ |
-| Deepseek R1 (1.5B) | Lower end GPU/PCs         | Highest                           | Lowest         | ollama run deepseek-r1:1.5b    |
-| Deepseek R1 (7B)   | Medium-Higher end GPU/PCs |                                   |                | ollama run deepseek-r1:7b      |
-| Deepseek R1 (8B)   | Medium-Higher end GPU/PCs |                                   |                | ollama run deepseek-r1:8b      |
+| Deepseek R1 (1.5B) | Lower GPU/PCs         | Highest                           | Lowest         | ollama run deepseek-r1:1.5b    |
+| Deepseek R1 (7B)   | Medium-Higher GPU/PCs |                                   |                | ollama run deepseek-r1:7b      |
+| Deepseek R1 (8B)   | Medium-Higher GPU/PCs |                                   |                | ollama run deepseek-r1:8b      |
 | Deepseek R1 (14B)  | RTX 3080                  |                                   |                | ollama run deepseek-r1:14b<br> |
 | Deepseek R1 (32B)  |                           |                                   |                | ollama run deepseek-r1:32b     |
 | Deepseek R1 (70B)  | Two RTX 4090              | Lowest (Better Hardware required) | Highest        | ollama run deepseek-r1:70b     |
@@ -72,7 +72,7 @@ ollama run deepseek-r1:8b
 
 - Go to Docker Desktop -> Click on ">_ Terminal" (bottom right) -> Click on "Enable". 
 
-Now we have access to the console. We will need to enter the command line for Open WebUI here, which we are about to get.
+Now we have access to the console. We will need to enter the command line for the Open WebUI container here, which we are about to get.
 
 ## Getting Open WebUI with Docker
 - Visit the website of Open WebUI:
