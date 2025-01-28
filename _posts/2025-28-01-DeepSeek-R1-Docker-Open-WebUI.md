@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Run DeepSeek R1 and Other AI Models Locally with Docker and a Ch4tGPT-alike Web Interface (Open WebUI)
-description: A quick guide to install, set up and run DeepSeek R1 and other AI models locally with Docker and a Ch4tGPT-alike web interface (Open WebUI)
+description: A quick guide to install, set up and run DeepSeek R1 and other AI models locally with Docker and a Ch4tGPT-like web interface (Open WebUI)
 date:   2025-01-28 09:00:00 +0300
 image:  '/images/10050.jpg'
 tags:   [AI-Model, Artificial-Intelligence, Guides]
