@@ -8,96 +8,101 @@ tags:   [AI-Model, Artificial-Intelligence, Guides]
 ---
 
 ## Getting Ollama and the AI Model
-The first thing we need to do is getting the AI model/models we want to use following these steps:
-- Go to Ollama: https://ollama.com
-- Download the version for Windows (Or any other OS you are using): https://ollama.com/download
-- Open and install Ollama. A PowerShell window will appear once the process is completed. 
-- Now we can use PowerShell to install and run AI models using commands on PowerShell. For example, we can install Deepseek R1 (8b) with the following command:
+To set up and use AI models locally, follow these steps:
+
+### 1. Download Ollama
+- Visit the Ollama website: [https://ollama.com](https://ollama.com).
+- Download the version for your operating system: [https://ollama.com/download](https://ollama.com/download).
+- Open the installer and complete the installation process. A PowerShell window will appear once the process is completed. Note: Do not enter "ollama run llama3.2" unless you really want to install llama3.2, which is a different AI model than Deepseek R1.
+
+![[/images/ollama_1.png]]
+### 2. Install an AI Model:
+- After installing Ollama, you can use PowerShell to download and install AI models. For example, to install Deepseek R1 (8B), use the following command in PowerShell:
+
 ```shell
 ollama run deepseek-r1:8b
 ```
 
-- Wait for the model to get downloaded and installed. After the installation, we can already interact with our AI model, but with the next steps we will also set up a web interface that looks and feels like Ch4tGPT to use our AI model.
+- Wait for the model to download and install. Once complete, you can start interacting with the AI model via PowerShell, but we do not have a web interface like Ch4tGPT yet, this guide explains how to achieve this using Docker and Open WebUI in the following steps.
 
-I made a table with multiple Deepseek models you can install (I recommend Deepseek R1 7B or 8B or even 1.5B for lower to medium GPU/PC):
+##  Deepseek R1 Models Table
+Below is a table to help you choose the right model based on your hardware:
 
-| AI Model Name      | Recommended GPU           | Model Speed                       | Model Accuracy | Installation Command           |
-| ------------------ | ------------------------- | --------------------------------- | -------------- | ------------------------------ |
-| Deepseek R1 (1.5B) | Lower GPU/PCs         | Highest                           | Lowest         | ollama run deepseek-r1:1.5b    |
-| Deepseek R1 (7B)   | Medium-Higher GPU/PCs |                                   |                | ollama run deepseek-r1:7b      |
-| Deepseek R1 (8B)   | Medium-Higher GPU/PCs |                                   |                | ollama run deepseek-r1:8b      |
-| Deepseek R1 (14B)  | RTX 3080                  |                                   |                | ollama run deepseek-r1:14b<br> |
-| Deepseek R1 (32B)  |                           |                                   |                | ollama run deepseek-r1:32b     |
-| Deepseek R1 (70B)  | Two RTX 4090              | Lowest (Better Hardware required) | Highest        | ollama run deepseek-r1:70b     |
+| AI Model Name      | Recommended GPU     | Speed   | Accuracy | Installation Command          |
+| ------------------ | ------------------- | ------- | -------- | ----------------------------- |
+| Deepseek R1 (1.5B) | Lower-end GPU/PCs   | Fast    | Low      | `ollama run deepseek-r1:1.5b` |
+| Deepseek R1 (7B)   | Medium-high GPUs    | Medium  | Medium   | `ollama run deepseek-r1:7b`   |
+| Deepseek R1 (8B)   | Medium-high GPUs    | Medium  | Medium   | `ollama run deepseek-r1:8b`   |
+| Deepseek R1 (14B)  | RTX 3080 or similar | Medium  | High     | `ollama run deepseek-r1:14b`  |
+| Deepseek R1 (32B)  | Higher-end GPUs     | Slow    | High     | `ollama run deepseek-r1:32b`  |
+| Deepseek R1 (70B)  | Two RTX 4090 GPUs   | Slowest | Highest  | `ollama run deepseek-r1:70b`  |
 
-Note: I tested the models with my RTX 3080 on Windows 10 x64 and I found the Deepseek R1 (8B) and Deepseek R1 (14B) models to run the best with the RTX 3080 GPU.
+**Note:** Based on my personal tests, Deepseek R1 (8B) and (14B) provide great performance with a RTX 3080 or similar GPU on Windows 10 x64.
 
-Other AI Models we can install:
-
-| AI Model        | Installation Command |
-| --------------- | -------------------- |
-| Llama 3.3 (70B) | ollama run llama3.3  |
-| Phi4 (14B)      | ollama run phi4      |
+**Other AI Models**: You can also install additional models using these commands:
+- **Llama 3.3 (70B)**: `ollama run llama3.3`
+- **Phi4 (14B)**: `ollama run phi4`
 
 ## Installing Docker
-We will use Docker and Open WebUI to simulate the web interface and make it look like Ch4tGPT following these steps:
-- Go to Docker website:
+To create a web interface for the AI model, we’ll use Docker and Open WebUI. Follow these steps:
+### 1. Download and Install Docker
+- Visit Docker's official website: [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop).
+- Choose the Personal Plan (free).
+- Sign up for a personal-use account if prompted.
+- Download Docker Desktop for Windows: [Docker Desktop Setup](https://docs.docker.com/desktop/setup/install/windows-install/).
+- Run the installer and proceed with the default options. Restart your computer after installation.
+
+### 2. Start Docker Desktop
+- Open Docker Desktop after restarting your computer.
+
+![[/images/docker1.png]]
+- If Ollama doesn't start automatically, launch it manually:
+    - Press `Windows Keyboard Key + X` → Select **Run PowerShell (Administrator)**.
+    - Re-run the installation command for your desired model, e.g.:
 ```shell
-https://www.docker.com/products/docker-desktop/
-```
-- Choose Personal Plan for $0. 
-- Sign up for a Personal use account, not Workplace. 
-- Download Docker after that from:
-```shell
-https://docs.docker.com/desktop/setup/install/windows-install/
-```
-
-- Click on "Docker Desktop for Windows - x86_64".
-
-- Install Docker Desktop with the downloaded installer, just let all boxes checked and press Ok/Next, let the installation proceed and restart your computer once the installation is completed.
-
-- Start Docker Desktop again after restarting your computer.
-
-- Start Ollama manually if it doesnt start automatically after restarting your computer, for example:
-```shell
-# Open PowerShell
--> Keyboard Windows Key (Between left "Ctrl" and "Alt" keys)+ X
--> Run PowerShell (Administrator)
-```
-
-```shell
-# We can re-run the command we used for the installation
 ollama run deepseek-r1:8b
 ```
 
-- Go to Docker Desktop -> Click on ">_ Terminal" (bottom right) -> Click on "Enable". 
-
-Now we have access to the console. We will need to enter the command line for the Open WebUI container here, which we are about to get.
+### 3. Enable Docker Terminal
+- In Docker Desktop, click on “>_ Terminal” (bottom right).
+![[/images/docker_terminal_1.png]]
+- Click on **Enable** to access the Docker console.
 
 ## Getting Open WebUI with Docker
-- Visit the website of Open WebUI:
-
-```shell
-https://docs.openwebui.com/
-```
-
-We got two Quick Start options with Docker commands, we will use the first one (You can check the documentation and experiment with other options later). 
-
-- Enter the following command in the Docker console and wait for the whole process to complete, it may take a while:
-
+### 1. Run Open WebUI in Docker
+- In the Docker console, enter the following command:
 ```shell
 docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
 ```
 
-- Check if the container appears on Docker after running the command above.
-
+![/images/[docker2.png]]
+- Wait for the process to complete. This may take some time.
+### 2. Verify the Installation
+- Check Docker Desktop to ensure the Open WebUI container is running. It should look like this:
+![[/images/docker3.png]]
 ## Accessing the AI Model Web Interface Locally
-- Visit the following URL in any web browser to access Open WebUI:
-```shell
-http://localhost:3000
-```
+### 1. Access the local Web Interface
+- Open any web browser and go to: [http://localhost:3000](http://localhost:3000).
 
-- Sign up with an administrator account and log in (This is just for the WebUI, your AI model will still run locally and not through internet)
-- Select the AI model (Top left), in my case `deepseek-r1:8b`, and start to chat. 
+![[/images/ui_1.png]]
+
+### 2. Sign Up and Log In
+- Click on Get started.
+- Create an Admin Account to get access. Note: This is for the WebUI only, your AI model will run locally without internet dependency.
+
+![[/images/ui_2.png]]
+
+### 3. Select and Use the AI Model
+- In the WebUI (top left corner), select your installed model (For example: `deepseek-r1:8b`).
+![[ai_model_1 1.png]]
+- Start interacting with the model.
+
+![[/images/ds_11.png]]
+
+![[/images/ds_12.png]]
 
 Enjoy your local AI model!
+
+
+
+
