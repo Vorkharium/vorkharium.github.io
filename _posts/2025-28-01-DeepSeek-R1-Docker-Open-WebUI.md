@@ -7,6 +7,8 @@ image:  '/images/10050.jpg'
 tags:   [AI-Model, Artificial-Intelligence, Guides]
 ---
 
+This is a quick guide to install and run DeepSeek R1 and other AI Models locally through a web interface, just like Ch4tGPT, completely free. (Beginner-friendly, no coding needed)
+
 ## Getting Ollama and the AI Model
 The first thing we need to do is getting the AI model/models we want to use following these steps:
 
