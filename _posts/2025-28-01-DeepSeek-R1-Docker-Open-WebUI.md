@@ -112,5 +112,3 @@ docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-
 Enjoy your local AI model!
 
 
-
-
