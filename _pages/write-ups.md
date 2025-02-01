@@ -379,7 +379,7 @@ image: '/images/01.jpg'
 
 <div style="display: flex; justify-content: center; gap: 15px; margin-top: 15px;">
     <div style="position: relative; display: inline-block;">
-        <a href="/THM-Mr-Robot-CTF-Write-Up">
+        <a href="/THM-Mr-Robot-CTF-Write-up">
             <img src="/images/thm_mr_robot_ctf.png" alt="THM Mr Robot CTF" 
                  style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
             <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
@@ -391,7 +391,7 @@ image: '/images/01.jpg'
     </div>
 
     <div style="position: relative; display: inline-block;">
-        <a href="/THM-Kenobi-Write-Up">
+        <a href="/THM-Kenobi-Write-up">
             <img src="/images/thm_kenobi.png" alt="THM Kenobi" 
                  style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
             <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
@@ -403,7 +403,7 @@ image: '/images/01.jpg'
     </div>
 
     <div style="position: relative; display: inline-block;">
-        <a href="/THM-UltraTech-Write-Up">
+        <a href="/THM-UltraTech-Write-up">
             <img src="/images/thm_ultratech.png" alt="THM UltraTech" 
                  style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
             <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
@@ -415,7 +415,7 @@ image: '/images/01.jpg'
     </div>
 
     <div style="position: relative; display: inline-block;">
-        <a href="/THM-Skynet-Write-Up">
+        <a href="/THM-Skynet-Write-up">
             <img src="/images/thm_skynet.png" alt="THM Skynet" 
                  style="width: 200px; height: 120px; border-radius: 15px; object-fit: cover;">
             <div style="position: absolute; bottom: 10px; left: 10px; color: white; 
