@@ -17,7 +17,7 @@ image: '/images/01.jpg'
     <li style="margin: 5px 0; font-weight: bold;">🔺 Certified Red Team Operator (CRTO)</li>
     <li style="margin: 5px 0; font-weight: bold;">🔺 HTB Certified Penetration Testing Specialist (CPTS)</li>
     <li style="margin: 5px 0; font-weight: bold;">🔺 HTB Certified Bug Bounty Hunter (CBBH)</li>
-    <li style="margin: 5px 0; font-weight: bold;">🔺 TCM Practical Network Penetration Tester (PNPT)</li>
+    <li style="margin: 5px 0; font-weight: bold;">🔺 Practical Network Penetration Tester (PNPT)</li>
   </ul>
 </div>
 
