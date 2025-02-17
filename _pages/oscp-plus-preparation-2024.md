@@ -5,7 +5,8 @@ permalink: /oscp-plus-preparation-2024/
 image: '/images/01.jpg'
 ---
 <div style="text-align: center; margin-top: 30px;">
-  <p>This is a collection of write-ups I created while preparing for the OSCP exam in November 2024 using Hack The Box and TryHackMe. The boxes are divided into three categories: Active Directory, Windows, and Linux. I recommend completing all of them when preparing for the OSCP+, as their content falls within the exam's scope.</strong>.</p>
+  <p>This is a collection of write-ups I created while preparing for the OSCP+ exam in November 2024 using Hack The Box and TryHackMe. The boxes are divided into three categories: Active Directory, Windows, and Linux. I recommend completing all of them when preparing for the OSCP+, as their content falls within the exam's scope.</strong>
+  </p>
 </div>
 
 <div style="margin-top: 40px; text-align: center;">
