@@ -6,7 +6,7 @@ image: '/images/01.jpg'
 ---
 <div style="text-align: center; margin-top: 30px;">
   <p>Hi, my name is Raúl, also known as <strong>Vorkharium</strong>.</p>
-  <p>I am a passionate Ethical Hacker and Tech Enthusiast. My skills include: Network Penetration Testing, WebApp / API Penetration Testing, Active Directory (Entra ID) Exploitation and Red Teaming.</p>
+  <p>I am a passionate Ethical Hacker and Tech Enthusiast. My skills include: Network Penetration Testing, WebApp / API Penetration Testing, Active Directory Exploitation and Red Teaming.</p>
 </div>
 
 <div style="margin-top: 40px;">
