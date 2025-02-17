@@ -1,6 +1,6 @@
 ---
 layout: page
-title: OSCP+ Preparation 2024
+title: OSCP+ Preparation Q4 2024
 permalink: /oscp-plus-preparation-2024/
 image: '/images/01.jpg'
 ---
